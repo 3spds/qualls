@@ -1,0 +1,512 @@
+"Imaging small vibrations have been of interest since Chladni first placed sand on a vibrating plate to make modal patterns visible. Discuss methods that have since been developed to remote sense and optically image sub-micrometer vibrations (e.g. laser Doppler vibrometry, holographic interferometry, electronic speckle pattern interferometry, etc.) including your own method currently being developed. Discuss the pros and cons of each method, and how your own method capitalizes on the strengths---or attempts to overcome any limitations---of its predecessors in the context of your particular application requirement(s)."
+
+-Tamara Smyth
+
+<!--more-->
+
+<h3 style="text-align: left;"><a name="sec_practical">Part 1:
+Practical Considerations for Vibratory Measurement Methods</a></h3>
+
+The process of measuring structure-borne vibration differs significantly from that of vibrations in air. The task is complicated by several factors, the most obvious of which is the difficulty of measuring variables at any location besides the boundary. This predicament is exactly inverted in air-borne sound, where measurements can easily occur within the field of interest, and boundary measurements are relegated to specialized sensors. [p.3][<a href="#Cremer1973">7</a>] Furthermore, the variables which can be readily measured in traditional structure-borne acoustics are kinematic variables: displacement and its derivatives. Pressure---the old standby of air-borne acousticians---must typically be inferred from these variables. Referring back to <a href="http://www.joemariglio.com/blog/?p=1275#sec_npwaveqnd">chapter 1, section 1</a>, we can see that the structure-borne equivalent of acoustical pressure, stress, must be calculated as a 2nd-rank tensor, because of its directionality.
+
+Furthermore, the excursions of the kinematic variables in a solid as a result of vibratory stress can be quite small. The precise relationship between these variables depends primarily on the material's elasticity constants, $$c_{ijkl}$$, which are sensitive to the directionality and polarization of the vibratory motion, relative to the particles in the solid. See <a href="http://www.joemariglio.com/blog/?p=1275#sec_npwaveqnd">chapter 1, section 1</a> for an introductory look at this formalization.
+
+For example, given equation <a href="http://www.joemariglio.com/blog/?p=1275#recrelation">(1.7)</a>, we can calculate the ratio of the inter-particulate equilibrium length to the length under unit normal stress of a piece of polycrystalline aluminum with a density of $$2,695 \frac{kg}{m^2}$$. This value will be the amount of compression observed as the result of $$1 \frac{N}{m^2}$$. Substituting in the value of $$c_{11} = 11.1$$, with units of $$10^{10} \frac{N}{m^2}$$,[p.12][<a href="#Ballantine1997">3</a>] we find the material will deviate on the order of $$\frac{1}{11.1E10}$$ from its original position. Given the boundary conditions for a free surface (see <a href="http://www.joemariglio.com/blog/?p=1275#sec_lossy">chapter 1, section 2</a>), we conclude that the stress compression wave traveling through this material will be zero at the surface and the kinematic waves will be at a maximum magnitude.
+
+Another rule of thumb to derive the orders of magnitude entailed by structure-borne sound is the maximal strain a given material can withstand before fracture. In the orders of magnitude near this limit, the constitutive relation equation <a href="http://www.joemariglio.com/blog/?p=1275#recrelation">(1.7)</a> no longer holds, and becomes nonlinear. For most materials, the strains in the nonlinear region between fracture and Hookean linearity are on the order of $$10^{-3}$$ to $$10^{-5}$$. [p.16][<a href="#Ballantine1997">3</a>]
+
+As should be clear from these back-of-the-envelope calculations, the direct observation of vibration in a solid is generally restricted to those in the possession of a microscope. However, many individuals have devised methods for indirectly observing such phenomena. A famous example occurred in 1787, in Wittenberg, Germany, where a 31 year-old Ernst Chladni first published the results of an experiment which would captivate the imaginations of scientists and laypeople alike.[<a href="#Stockmann2007">30</a>][<a href="#Ullmann2007">32</a>] His experiment, which will be discussed in greater depth in section <a href="http://www.joemariglio.com/blog/?p=1425#chladni">(3.6)</a> of this document, consisted of sprinkling a fine powder over the surface of an object, and setting it into vibration using a violin bow. The particles collected along the nodal lines, where the incident kinematic waves were at a minimum amplitude. The dynamic shapes and synesthetic correspondence between sight and sound helped to canonize acoustics as a legitimate scientific discipline.
+
+The techniques discussed in pages that follow will be assessed according to a number of attributes: cost, field-readiness, quality, generality, and impedance. In this context, <em>cost</em> refers to economic cost---measured in dollars, not flops. <em>Field-readiness</em> is actually a cluster of concerns including mechanical robustness, portability, and ease of calibration. These considerations may take on a variety of forms, depending on the technique: for example tube lasers are not very field-ready because of their high power drain. The term <em>quality</em> refers to the information content of the measurements, meaning linearity (or linearizability), signal-to-noise ratio (SNR), gain-bandwidth-product (GBP), and sensitivity. <em>Generality</em> means we ask ``what can it measure?'' For example, a technique which measures perturbations in the magnetic field would be difficult to apply to the general case. Finally, <em>impedance</em> refers not to electrical impedance---as any modern sensor can be trivially impedance-matched with proper gain-staging---but rather mechanical impedance, as explored in <a href="http://www.joemariglio.com/blog/?p=1275#sec_impedance">chapter 1, section 4</a>. Sometimes, despite our best efforts, these considerations will become interdependent. This is the nature of considerations.
+
+<h3 style="text-align: left;"><a name="sec_coupling">Part 2:
+Vibration Sensors that Require Inertial Coupling</a></h3>
+
+A large number of structural vibration measurement devices require the mechanical coupling of the sensor to the object of interest. Even fairly recent articles in structural vibration analysis cite methods that involve these devices.[<a href="#Han2003">14</a>][<a href="#Kerschen2002">17</a>] Using sensors which mechanically couple to the vibrating body has many advantages: they often provide high quality measurements with a low cost, extremely field-ready apparatus. Furthermore, many of these devices are reversible, meaning they can also serve as actuators.[p.69][<a href="#Cremer1973">7</a>] In some applications, these sensors can be extremely precise, and can hone in on specific mode families within the material.[p.36][<a href="#Ballantine1997">3</a>]
+
+The drawbacks to using mechanically coupled sensors most frequently involve the acoustic impedance load concomitant with their operation. All sensors have inertia, and this will always result in a normal stress being added to the system, in the location of the sensor. Recall that the characteristic impedance of a material is given by the stress over the particle velocity in the medium, or $$T/\dot{u}$$. If the impedance of the sensor is high enough, the dynamic behavior of the object changes. This can be somewhat ameliorated by ensuring the sensors are extremely lightweight, or perhaps by the clever use of suspension springs.[p.4][<a href="#Cremer1973">7</a>] Recall from section <a href="http://www.joemariglio.com/blog/?p=1275#sec_impedance">chapter 1, section 4</a> that at an interface between two impedances $$Z_1$$ and $$Z_2$$, if $$Z_2$$ is much higher than $$Z_1$$, the reflected wave will not be completely inverted at the interface, and a partial standing-wave will result. The least adversely affected frequencies are those for which the sensor has a resonance. Since the sensor's inertial and restorative forces are $$\pi$$ apart in phase at such frequencies, the impedance will tend toward zero. However, the severely limited bandwidth of such a measuring device would not make for a particularly good sensor.[p.9][<a href="#Cremer1973">7</a>]
+
+The carbon microphone is an element which changes its resistance in response to strain. The principle of operation is simple: carbon particles are suspended in a insulating substrate, which are pressed together when the material exhibits strain. A voltage across the element encodes the strain into changes in current. This type of instrument is very light-weight, cheap, and can be made into force sensing resistors (FSR's) and strain gauges. However, carbon microphones do not have reasonable signal to noise ratios or bandwidths for high-quality vibration sensing. Furthermore, they are fairly easily damaged. Their generality is also questionable, since they must be glued onto the object of study. They do, however, work fairly well for measuring low frequencies.[p.26][<a href="#Cremer1973">7</a>]
+
+Variable inductance sensors typically measure displacement. They are usually implemented with an alternating voltage, and the displacement is encoded into the current. This approach allows the engineer to filter out interference sidebands easily. However, the carrier frequency must high enough that the entire bandwidth of interest can pass through without artifacts. Typically the usable bandwidth is from DC to about one quarter the carrier frequency. This technique encodes the signal onto the amplitude of the carrier wave. An alternative to the variable inductance method is to use an LC oscillator with the inductor safely hidden within the housing, and instead measuring variable capacitance. In this case, the frequency of the circuit will vary as $$\begin{equation}\omega_0 = \frac{1}{\sqrt{LC}} \text{,} \end{equation}$$
+
+although there will also be some amplitude modulation as well. The second plate of the capacitor may either be the object itself or some foil attached to it. The variable capacitance sensor can measure very small excursions of the material. The mechanical impedance entailed by this method can be fairly low, at least in comparison to others in its family. However, the technique is susceptible to interference, and not particularly field-ready.[<a href="#Cremer1973">7</a>]
+
+By far, the most common type of coupled instrument for structure-borne sound is the piezoelectric transducer. These devices are extremely convenient and cheap. Furthermore, they can be made to be quite accurate. Because of the potentially high efficiency with which these devices can convert energy from stress to current and back, piezoelectrics are desirable in low power or high frequency applications. When used as sensors, they can be made to approach ideal accelerometers.[p.67][<a href="#Cremer1973">7</a>] They are so important in structure-borne sound that we will consider their unique acoustic properties in moderate detail.
+
+Piezoelectric materials are generally crystals or amorphous ceramics that have asymmetries in their atomic lattice.[p.17][<a href="#Kino1987">18</a>] These materials have a different set of constitutive relations, and therefore a different wave equation, which explains the lengthy title of <a href="http://www.joemariglio.com/blog/?p=1275#sec_npwaveqnd">chapter 1, section 1</a>. These materials exhibit coupling between strain and electrical polarization, which is the result of unevenly distributed charges in the lattice. This coupling results in two effects, which are always observed together: the <em>direct</em> piezoelectric effect, wherein the material develops a macroscopic net charge distribution as the result of mechanical strain, and the <em>converse</em> piezoelectric effect, wherein mechanical strain occurs as the result of the application of an electric field.[p.23][<a href="#Ballantine1997">3</a>] The constitutive relations for piezoelectric materials may be derived from an adjustment of the non-piezoelectric elastic constitutive relations, as defined in equation <a href="http://www.joemariglio.com/blog/?p=1275#ecrelation">(1.5)</a>, by adding a second equation, resulting in a system of equations[p.24][<a href="#Ballantine1997">3</a>],
+
+$$!\begin{align}\label{pecrelation} T_I &= \sum_{J=1}^6 \left( c_{IJ}^E S_J \right)- \sum_{k=1}^3 \left( e_{Ik}E_k \right) \notag\\ D_i &= \sum_{j = 1}^3 \left( \epsilon_{ij}^S E_j \right) + \sum_{J = 1}^6 \left( e_{iJ} S_J \right) \qquad \text{,} \end{align}$$
+
+where $$e_{Ij}$$ is a 3rd-rank tensor in reduced notation (see <a href="http://www.joemariglio.com/blog/?p=1275#sec_npwaveqnd">chapter 1, section 1</a>) describing the piezoelectric stress constants, $$D_i$$ is a 1st-rank tensor containing the electrical displacement components, $$\epsilon_{ij}$$ is a 2nd-rank tensor of the permittivity constants, and $$E_j$$ is a 1st-rank tensor containing the electric field components.[p.24][<a href="#Ballantine1997">3</a>] $$c_{IJ}^E$$ is analogous to the elasticity tensor, $$c_{IJ}$$, from equation <a href="http://www.joemariglio.com/blog/?p=1275#recrelation">(1.7)</a>, except that we have now defined its components for the condition of zero electric field.[p.19][<a href="#Kino1987">18</a>] The above system of equations shows the nature of the interdependence of the electric and mechanical variables: stress relates to strain through the elasticity constants $$c$$ (as usual), and to the electric field through the piezoelectric stress constants $$e$$, while the electric displacement $$D$$ relates to the electric field $$E$$ through the permittivity constants $$\epsilon$$, and to the strain through the piezoelectric stress constants once again. The entire system forms a loop of dependence among the variables. A piezoelectric solid requires $$3\times6 = 18$$ constants to describe each of these relationships, and thus fully characterize it. Furthermore, strain patterns will vary with the piezoelectric material chosen.[p.24][<a href="#Ballantine1997">3</a>]
+
+From the constitutive relations defined in equations \eqref{pecrelation}, we can now derive the <em>Piezoelectric Wave Equation</em> in a few simple steps. First, we note that the electric field components, $$E$$, can be written in terms of potential, $$\phi$$, as $$E_k = {}^{-\partial \phi}/_{\partial x_k}$$. We also note that $$S_J = {}^{\partial u_l}/_{\partial x_k}$$, which comes from <a href="http://www.joemariglio.com/blog/?p=1275#recrelation">(1.7)</a>. Substituting these into our definition of $$T_I$$ from \eqref{pecrelation}, we find[p.24][<a href="#Ballantine1997">3</a>]
+
+$$!\begin{equation} T_{ij} = \sum_{J=1}^6 \left( c_{IJ}^E \frac{\partial u_l}{\partial x_k}\right) + \sum_{k=1}^3 \left( e_{Ik} \frac{\partial \phi}{\partial x_k} \right) \qquad \text{,} \end{equation}$$
+
+differentiating both sides with respect to $x_j$, and noting, just as we did in <a href="http://www.joemariglio.com/blog/?p=1275#motion">(1.4)</a>, that $${}^{\partial T_I} /_\partial x_j = \rho \ddot{u}_i$$ gives the piezoelectric wave equation[p.27][<a href="#Ballantine1997">3</a>]:
+
+$$!\begin{equation}\label{pwaveq} \rho\ddot{u}_i = \sum_{j,k,l = 1}^3 \left( c_{ijkl} \frac{\partial^2 u_l}{\partial x_k \partial x_j} \right) + \sum_{j,k=1}^3 e_{ijk}\left( \frac{\partial^2 \phi}{\partial x_k \partial x_j} \right) \end{equation}$$
+
+The above system represents 3 equations, but there are four unknowns: $$u_{xyz}$$ and $$\phi$$. If we believe the divergence of electric displacement $$\nabla \cdot D = 0$$, which is true for a piezoelectric solid with no free charges, we can find the fourth equation to be[p.27][<a href="#Ballantine1997">3</a>]
+
+$$!\begin{equation}\label{pwaveq_phi}\sum_{i,k,l=1}^3 e_{ikl}\frac{\partial^2 u_l}{\partial x_k \partial_i} - \sum_{i,k=1}^3 \epsilon_{ik} \frac{\partial^2 \phi}{\partial x_k \partial x_i} = 0 \qquad \text{.} \end{equation}$$
+
+Piezoelectric coupling changes the effective elasticity coefficient $$c$$. To find this effect, we solve the system of equations for a plane shear wave. We start by setting two of our particle displacement components, $$u$$, to zero, and combining equations \eqref{pwaveq} and \eqref{pwaveq_phi}. Since our hypothetical wave only has displacement coefficients along a single component---notated as $$x$$---we will drop the tensor notation for clarity.[p.27][<a href="#Ballantine1997">3</a>]
+
+$$!\begin{align}c \frac{\partial^2 u}{\partial x^2} + e \frac{\partial^2 \phi}{\partial x^2} &= \rho \ddot{u}\label{pwaveq_plane}\\ e \frac{\partial^2 u}{\partial x^2} - \epsilon \frac{\partial^2 \phi}{\partial x^2} &= 0\notag \end{align}$$
+
+Manipulating the the second equation's $$\phi$$ term to enable subtracting it from the first equation yields:
+
+$$!\begin{equation} \frac{e^2}{\epsilon} \frac{\partial^2 u}{\partial x^2} - e \frac{\partial^2 \phi}{\partial x^2} = 0 \qquad \text{,} \end{equation}$$
+
+which can now be added to equation \eqref{pwaveq_plane}, to cancel the $$\phi$$ terms,
+
+$$\begin{equation} \left(\frac{e^2}{\epsilon} + c\right) \frac{\partial^2u}{\partial x^2} = \rho \ddot{u} \qquad \text{.} \end{equation}$$
+
+Comparing the left-hand side of the above equation to that of equation <a href="http://www.joemariglio.com/blog/?p=1275#npwaveq">(1.9)</a> shows the relationship between the elasticity coefficient $c'$ in a material exhibiting piezoelectric coupling, and the elasticity coefficient $$c$$ in a material not exhibiting such coupling (for that vibratory regime), all other things being equal, to be
+
+$$!\begin{align} c' = c\left( 1 + \frac{e^2}{c \epsilon}\right) c' = c (1 + K^2) \qquad \text{.} \end{align}$$
+
+This value, $$K^2 = e^2/c \epsilon$$, is called the <em>electromechanical coupling coefficient</em>, and it is given for a wave with a specific propagation direction and specific particulate displacement direction, on a particular material. Thus, it has the same dimensionality as $$c$$.[p.28][<a href="#Ballantine1997">3</a>] N.B. this is a different variable from $$k$$, the spatial frequency, although they are intimately related. Piezoelectric stiffening always results in a lower spatial frequency $$k = \omega / v$$, and a higher phase velocity $$v$$, relative to the effective values, since
+
+$$!\begin{align} k' &= \omega \ \sqrt{\frac{\rho}{c'}} = \frac{\omega}{v'} \notag\\ \text{and} \qquad v' &= v \sqrt{1 + K^2} \qquad \text{.}\label{pvelocity_K} \end{align}$$
+
+Ceramics like PZT can have a $$K^2$$ value of up to $$0.5$$, while other substances like gallium arsenide can have $$K^2$$ on the order of $$10^{-4}$$.[p.22][<a href="#Kino1987">18</a>]
+
+
+Perhaps the most common method of incorporating piezoelectrics into vibrational measurement involves simply coupling the element to a surface and reading off the voltage-encoded acceleration signal. These are the kind of sensors typically used as ``contact microphones.'' Care must be taken to provide the the correct electrical impedance load to these sensors, otherwise the frequency response will be muffled. Care must also be taken to ensure the mechanical coupling is secure: in semi-permanent applications, the author prefers a double coat of epoxy, and for temporary applications, rare earth magnets. This method is cost-effective, as the resonant properties of the piezoelectric can be ignored, and virtually no external gear is needed. Piezoelectrics are at least as field ready as any other accelerometer; perhaps moreso because of how readily they can be replaced should things go awry. The only real drawback is the mechanical impedance caused by coupling.
+
+The piezoelectric effect is frequently used in the implementation of other devices as well. As electromechanical resonators, piezoelectrics are extremely selective in frequency, which allows them to be used as efficient oscillators and filters.[p.27][<a href="#Kino1987">18</a>] There are several variants of piezoelectric sensors, each one sensing a different mode of vibration. However, the vibrations most of these devices are intended to sense are forced. These forced signals are often produced by the converse piezoelectric effect.[p.154][<a href="#Cremer1973">7</a>] Therefore, despite their novelty, their applicability to the topic at hand---that of spatially measuring acoustic vibration in the field---is fatally limited.
+
+<em>Thickness Shear Mode resonators</em> (TSM), as their name implies, act on the shear mode of vibration as it propagates the thickness of the crystal. TSM resonators are similar in form factor to the general purpose ``piezo-discs,'' however they are much more sensitive when driven to resonance. By tracking fluctuations in the resonant frequency of the crystal, a rigidly bound mass may be measured.[p.37][<a href="#Ballantine1997">3</a>]
+
+The measurement works using the fairly simple hypothesis offered by Lord Rayleigh: that the mechanical resonance only occurs when the peak kinetic energy balances the peak potential energy in a system. A mass that has been rigidly coupled to the surface of the crystal results in a change in kinetic energy, since the surface is naturally an anti-node for the strain wave, without a change in potential energy, which is zero at the surface regardless.[p.43][<a href="#Ballantine1997">3</a>]
+
+Recall from earlier discussions of the boundary behaviors of a vibrating body <a href="http://www.joemariglio.com/blog/?p=1275#sec_impedance">chapter 1, section 4</a> that the incident surface of a reflected wave is the result of a change in impedance. When the impedance of at the surface is zero, the reflection is $$\pi$$, and the shear wave traveling across the sensor matches the resonance given by the object alone. However, if the impedance on the other side of the interface is nonzero, the wave is no longer rotated by $$\pi$$, and in the case of our forced vibration in <a href="http://www.joemariglio.com/blog/?p=1275#sec_impedance">chapter 1, section 4</a>, a partial standing wave resulted.[p.119][<a href="#Cremer1973">7</a>] In this case, the vibration is not held at a given frequency, but rather held at resonance, so the frequency of the vibration changes to match the impedance ratio at the barrier.
+
+The quality of TSM measurements, when applied correctly, is outstanding: the sensor can be driven at any of the thickness shear modes, which, similarly to the example we gave in <a href="http://www.joemariglio.com/blog/?p=1275#sec_modes">chapter 1, section 6</a>, would favor odd integer multiples of the zero-th modal wave-number, itself likely in the megahertz range. The sensitivity of the TSM is given by the <em>Sauerbrey equation</em>,[p.44][<a href="#Ballantine1997">3</a>]
+
+$$!\begin{equation} \delta f = - \frac{2 f_1^2 \rho_s}{sqrt{\mu_q \rho_q}} \qquad \text{,} \end{equation}$$
+
+where $$\rho_s$$ is the surface mass density, or mass per unit area. Since the fluctuations of frequency as the result of incident mass density are proportional to the square of the resonant frequency, this technique can be calibrated to many applications, particularly in the medical and chemical fields. While typically TSM's measure the contribution of mass density most directly, the Rayleigh hypothesis should hold for any net force in the system. The fact that these devices must inject vibrations into the object to perform measurements is troubling as well. However, as long as the vibratory frequencies of interest are sufficiently low relative to the resonator, this should not pose much of a problem. Even the nonlinear relationship between incident mass density must be corrected for after the fact.
+
+Although they vary over a wide range, the transducer itself is fairly cheap, and the implementation circuit is fairly simple. The frequency and stability of the crystal are the two primary factors in the cost vs quality curve. Digitizing the signal with consumer audio equipment would require heterodyning with a high frequency oscillator, perhaps also supplied by a crystal for stability purposes.
+
+The measurement is only precise when the object of interest is thin in comparison with the wavelength of the vibration. This is because a reflection from the opposite boundary of the object measured would then cause its own reflections, and in fact would behave similarly to the coupled sensor as described earlier in this section. As a result of this, typically TSM's are used to measure the mass of rigid, thin films. Therefore, generality is not a strong point of this technique.
+
+We previously discussed <em>Surface Acoustic Waves</em> in section <a href="http://www.joemariglio.com/blog/?p=1275#sec_waves">chapter 1, section 3</a>, in the context of boundary interactions in vibrating objects. These waves have practical uses mostly related to communications and non-destructive testing. That being said, the field of SAW devices is ripe for development. The basic idea for a SAW device is to line a material with strips of piezoelectric material, which alternate to form a pattern that corresponds to the mode of vibration of interest. These striated piezoelectrics, called <em>Interdigital Transducers</em>, can be either sensors or transducers. Frequently, these are designed as two-port devices, to encompass both behaviors.[p.36][<a href="#Ballantine1997">3</a>]
+
+Using the IDT as a building-block, along with materials selected for favorable acoustic properties, ultrasonic mechanical circuits can be made to perform a number of signal processing tasks.[p.318][<a href="#Kino1987">18</a>] These devices can perform massive computations in parallel, such as taking arbitrarily large Fourier Transforms, applying filtering, and inverse transforming.[p.318][<a href="#Kino1987">18</a>] Sensor-actuator components have been constructed that exploit a dizzying array of vibratory regimes, for a variety of applications. <em>Acoustic Plate Mode</em> devices (APM), which excite shear plate modes both symmetric and asymmetric, and <em>Flexural Plate Wave</em> sensors, which are typically used in micromachining processes, both seem especially well-suited for measuring properties of fluids.[p.106][<a href="#Ballantine1997">3</a>][p.115][<a href="#Ballantine1997">3</a>]
+
+However, for our purposes, the essential problem with such devices remains one of impedance. Even in the cases where APM and FPW devices can measure the effects of individual molecules, there is a complex vibratory reaction between the field being measured and the tools used to measure it.[p.120][<a href="#Ballantine1997">3</a>] The quality of the measurements is clearly very high, field readiness and generality questionable, but the impedance is the true site of failure here. We will revisit the topic of piezoelectric devices after a brief characterization of the field in which they may be more useful to us: optics.
+
+<h3 style="text-align: left;"><a name="sec_optics">Part 3:
+A Brief Overview of Electromagnetic Theory</a></h3>
+
+The characterization of light sources is essential for any optical imaging application. Like sound, light can be described as a wave phenomenon: a solution to the differential wave equation. This time, the wave equation derives from the differential form of Maxwell's equations for free space. This model is known as the <em>Classical</em> model, and we will largely content ourselves with this oversimplification, just as we did for acoustics earlier in this document. The vector formulation of Maxwell's equations is concisely descriptive: [p.44][<a href="#Hecht1987">15</a>]
+$$\begin{align}\label{maxwell} \nabla^2 E &= \epsilon_0 \mu_0 \frac{\partial^2 E}{\partial t^2} \notag\\ \nabla^2 B &= \epsilon_0 \mu_0 \frac{\partial^2 B}{\partial t^2} \end{align}$$
+
+Above, $$E$$ and $$B$$ are vectors with $$x, y,$$ and $$z$$ components. $$\epsilon_0$$ and $$\mu_0$$ are the permittivity and permeability of free space, respectively. Thus, the propagation speed of such a disturbance (in a vacuum) is $$v = 1/\sqrt{\epsilon_0 \mu_0}$$. Light is a coupled electromagnetic field disturbance---that is, an electric and magnetic field, moving in synchrony---each component of which satisfies the scalar differential wave equation, just as we saw for sound in <a href="http://www.joemariglio.com/blog/?p=1275#sec_npwaveqnd">chapter 1, section 1</a>. That equation, which we have seen before in terms of exponential functions in equation <a href="http://www.joemariglio.com/blog/?p=1275#npwaveq">(1.9)</a>, looks like this when written more generally. [p.44][<a href="#Hecht1987">15</a>]
+
+$$!\begin{equation}\label{waveq_light} \frac{\partial^2\Psi}{\partial x^2} + \frac{\partial^2 \Psi}{\partial y^2} + \frac{\partial^2 \Psi}{\partial z^2}= \frac{1}{v_0^2}\frac{\partial^2\Psi}{\partial t^2} \end{equation}$$
+
+We will once again restrict our discussion of wave propagation to harmonic plane waves, without loss of generality (cf. section <a href="http://www.joemariglio.com/blog/?p=1275#sec_lossy">chapter 1, section 2</a>) because light behaves linearly at relatively small amplitudes, just like sound.[p.286][<a href="#Hecht1987">15</a>] Recall that harmonic waves are of the form, e.g., $$e^{-\mathsf{i}(\omega t \pm kx)}$$. Harmonic waves are also called <em>monochromatic</em>, in the context of light. In a vacuum, both constituent fields of light propagate in transverse waves, and they are in phase. Their axes of displacement are not only perpendicular to their propagation direction, but to each other.  Plane waves can therefore be oriented, or <em>polarized</em>, by rotating these vectors along the plane of constant phase.[p.45][<a href="#Hecht1987">15</a>]
+Just like acoustic waves, electromagnetic waves transmit energy without globally translating matter, according to the classical model. We can now define the energy per unit volume of a traveling harmonic plane wave. This invites cautious analogies to equation <a href="http://www.joemariglio.com/blog/?p=1275#kinetic">(1.10)</a>. That equation, which we have seen before in terms of exponential functions in equation <a href="http://www.joemariglio.com/blog/?p=1275#npwaveq">(1.9)</a>:
+
+$$!\begin{align}\label{em_energy}W_E &= \frac{\epsilon_0 E^2}{2}\notag\\ W_B &= \frac{\mu_0 B^2}{2}\qquad \text{,} \end{align}$$
+
+with the notable difference that with light, we have two field variables to keep straight, whereas acoustic waves only had kinetic energy. N.B. the above equations are distinct from our treatment in section <a href="http://www.joemariglio.com/blog/?p=1275#sec_lossy">chapter 1, section 2</a> of kinetic versus potential energy. While in acoustics, we described impedance and damping in terms of complex numbers, which changed the phase relationships between $$W_k$$ and $$W_p$$, this is not the case with $$W_E$$ and $$W_B$$. The electric and magnetic fields cannot be out of phase with one another: doing so would violate Maxwell's Equations.[p.46][<a href="#Hecht1987">15</a>] Because these two disturbances are always connected to each other---with a real-valued constant, no less---the description of one field disturbance or another is typically sufficient. The standard conceit is to describe the $$E$$-field, since its magnitudes are much ``larger.'' A simple manipulation of Maxwell's Equations reveals by how much  (for plane waves):[p.45][<a href="#Hecht1987">15</a>]
+
+$$!\begin{equation}\label{EvB} E_i = v_0 B_j \qquad \text{,} \end{equation}$$
+
+where $$v_0$$ is $$2.997E8$$ meters per second. The <em>energy</em> in each field, however, is the same. The total energy per unit volume of the wave is then given by[p.46][<a href="#Hecht1987">15</a>]
+
+$$!\begin{equation}\label{emEtotal} W_t = W_E + W_B = \epsilon_0 E^2 = \frac{B^2}{2} \qquad \text{.} \end{equation}$$
+
+To calculate the total power flow per unit area, we use the \emph{Poynting vector}, 
+
+$$!\begin{equation}\label{poynting} S(x,y,z) = v_0^2 \epsilon_0 E(x,y,z) \times B(x,y,z) \end{equation}$$
+
+where the operator $$\times$$ denotes a cross-product.[p.46][<a href="#Hecht1987">15</a>] The Poynting vector is an instantaneous measure that fluctuates in length with twice the frequency of the radiation. This makes it impossible to observe directly, and essentially meaningless for time-averaged values. Generally, to quantify the degree to which something is illuminated, the measure to use is <em>irradiance</em>. Irradiance is the field variable that most sensors will measure. It is defined by
+
+$$!\begin{align}\label{irradiance} I = \epsilon_0 v_0 \langle E^2 \rangle_T \qquad \text{,} \end{align}$$
+
+wherein the braces and the subscript, $$\langle \rangle_T$$, denote a time-average.[p.48][<a href="#Hecht1987">15</a>]
+
+The angle of reflection $$\theta_r$$, exhibited by a wavefront of light after striking a reflective surface, will always be equal to the angle of the wavefront's incident, $$\theta_i$$. When light travels through an appropriately transparent, non-dispersive material, the permittivity $$\epsilon$$ and permeability $$\mu$$, and, as a result, the velocity $$v$$, change. While this change in propagation velocity does not affect the temporal frequency (color) of the light, it alters the angle of transmitted light, $$\theta_t$$, and the amplitude of the reflected and transmitted components. The ratio which describes this change in propagation is called the <em>relative index-of-refraction</em> between the two media and it is given by <em>Snell's Law</em>[p.97][<a href="#Hecht1987">15</a>]:
+
+$$!\begin{equation}\label{snell_em} \eta_{ti} \equiv \frac{\sin{\theta_i}}{\sin{theta_t}} = \frac{v_i}{v_t} \end{equation}$$
+
+In contrast to this value, which compares two materials, there is also an index-of-refraction $\eta$, which describes a given material's properties in relation to a vacuum. The incident, transmitted, and reflected vectors are all coplanar, and that plane is called the plane-of-incidence. To find the amplitudes and polarizations of the resulting refracted and reflected light, we must split the incident $$E$$-field into components which are parallel and perpendicular to this plane. Assuming the change in permeability is negligible, we can use the <em>Fresnel equations</em>:[p.109][<a href="#Hecht1987">15</a>]
+
+$$!\begin{align}\label{fresnel} r_\perp \equiv \left( \frac{E_0r}{E_0i} \right)_\perp = \frac{n_i \cos{\theta_i} - n_t \cos{\theta_t}}{n_i \cos{\theta_i} + n_t \cos{\theta_t}}\notag\\ t_\perp \equiv \left( \frac{E_0t}{E_0i} \right)_\perp = \frac{2n_i \cos{\theta_i}}{n_i \cos{\theta_i} + n_t \cos{\theta_t}}\notag\\ {}\notag\\ r_\parallel \equiv \left( \frac{E_0r}{E_0i} \right)_\parallel = \frac{n_t \cos{\theta_i} - n_i \cos{\theta_t}}{n_i \cos{\theta_t} + n_t \cos{\theta_i}}\\ t_\parallel \equiv \left( \frac{E_0t}{E_0i} \right)_\parallel = \frac{2n_i \cos{\theta_i}}{n_i \cos{\theta_t} + n_t \cos{\theta_i}}\notag \end{align}$$
+
+These equations may be verified using the boundary conditions and Maxwell's equations. The boundary conditions require that the $$E$$-field component tangent to the boundary be continuous, while the $$E$$-field component normal to the boundary must rotate by $$\pi$$. N.B. for a given interface and polarization, may be an angle where $$\theta_t = \pi / 2$$, called the <em>critical angle</em>. At this angle, all of the light is internally reflected.[p.112][<a href="#Hecht1987">15</a>] Electromagnetic waves that propagate in this regime bear certain similarities to mechanical waves in SAW devices, in that their propagation is restricted. However, the similarities have more to do with the applications than with the physical phenomena.[p.440][<a href="#Kino1987">18</a>]
+
+It is common to simplify the propagation of waves into <em>rays</em>: straight lines perpendicular to the wavefronts. The ray model loses a lot of detail, even in its description of free-space propagation, however it is beneficial for back-of-the-envelope estimates of some interactions.[p.95][<a href="#Hecht1987">15</a>] Making the further assumption that such rays travel together in bundles which subtend only small angles from the main axis of an optical system, is called the <em>Paraxial approximation</em>. This allows us to assume that optical components behave linearly, and as a result, many free-space optical systems can be easily modeled as matrix multiplications.[p.444][<a href="#Goodman2005">13</a>] This technique, of constructing <em>ray transfer matrices</em>, has implications for both modeling and regression analysis.
+
+On the other hand, this assumes that all light travels as a plane wave, which is a fine assumption to make until these waves start interfering with each other. <em>Huygen's principle</em> is another useful approximation that suggests all the points of a propagating wavefront are the sources of spherical wavelets, which add together to form the wavefront at some later time. This assumption will help us visualize phenomena related to <em>diffraction</em>.[p.100][<a href="#Hecht1987">15</a>]
+
+Diffraction is a broadly defined family of effects caused by the confinement of waves. It is caused by the constructive and destructive interference patterns endemic to all waves, exacerbated by the discontinuities in propagation factors at the boundaries. It is especially  apparent when the extent of the wave's confinement is comparable to their wavelength.[p.32][<a href="#Goodman2005">13</a>] However, diffraction is present in even the most finely calibrated optical systems. 
+
+Optical systems that are theoretically perfect---from a geometrical optics perspective, at least---are said to be ``diffraction limited.''[p.143][<a href="#Hecht1987">15</a>] There are several methods for describing the performance of the optical system in this state. These depend on application-specific assumptions, such as the coherence---chromatic purity, measured in average spatial beat length. Despite their differences, however, all of these measures somehow involve the <em>Airy pattern</em>, a radially symmetric function of irradiance over deviation angle. The Airy pattern is essentially a cross-section of an ideal point-source at infinity, which has passed through an aperture at some point in the optical path, i.e.,[p.445][<a href="#Hecht1987">15</a>]
+
+$$!\begin{equation}\label{airy_patt} I(\theta) = \left[ \frac{2 J_1 (ka \sin{\theta})}{ka \sin{\theta}} \right]^2 \qquad \text{,} \end{equation}$$
+
+where $$J_1(u)$$ is a Bessel function of the 1st kind, order zero, $$k$$ is the spatial frequency of the light source, $$a$$ is the aperture radius, and $$\theta$$ is the angle of deviation from the center.[p.445][<a href="#Hecht1987">15</a>]
+
+By ``at infinity,'' we mean that the wavefronts of the point source---ostensibly spherical---have traveled sufficiently far to become plane waves. Since all lenses, mirrors, etc are of finite radius, we can assume any distant object fits this description. In the neighborhood of $$\theta = 0$$, this function is at a maximum. This circular region is known as the <em>Airy disk</em>:[p.445][<a href="#Hecht1987">15</a>] 
+
+$$!\begin{equation} (\Delta \varphi)_{min} = \Delta \theta = \frac{1.22 \lambda}{D} \qquad \text{,} \end{equation}$$
+
+where $$D$$ is the diameter of the aperture, and $$\lambda$$ is the wavelength. This disk is the result of <em>Fraunhofer</em> (far-field) diffraction, and the Airy pattern from equation \eqref{airy_patt} is the Fourier Transform of the aperture.[p.496][<a href="#Hecht1987">15</a>] Sadly, time and space constraints preclude the author from providing this fascinating proof. However, an excellent form of it may be found in[p.112][<a href="#Goodman2005">13</a>]. 
+
+<h3 style="text-align: left;"><a name="sec_lasers">Part 4:
+Laser Beam Characterization via Transverse EM Modes</a></h3>
+
+<em>Lasers</em> use resonance to produce a beam of polarized, monochromatic light. These devices provide a light source which can create finely detailed images of vibratory motion. In order to reliably image vibration with laser light, we must characterize the beam lasers produce. This will both provide us with the means to interpret the results of imaging, and equip us with a vocabulary to differentiate the quality of illumination sources. 
+
+While there are several implementations for lasers, all designs are based on the principle of optical feedback. An easily visualized case is the gas laser. In gas lasers, the resonance is produced in a halogen tube which is periodically excited and relaxed electrically. During the relaxation part of this cycle, the gas mixture releases photons, which are initially scattered in all directions. The component frequencies of this light are limited by the properties of the <em>transition bandwidth</em> of the gases used. Either end of the tube is affixed with high reflectance mirrors, one or both of which can also transmit light. Prior to reaching the mirrors, the light passes through angled polarizing filters, which only permit the emission of light whose $$E$$-field is parallel to the plane-of-incidence. \cite[p.564]{Hecht1987}
+
+Because of the phase-aligning effect of the boundaries in the cavity, light in this tube behaves like vibration in a solid object with two free ends. For reference, the case of a solid object with a single free end was discussed in <a href="http://www.joemariglio.com/blog/?p=1275#sec_modes">chapter 1, section 6</a>. In the present case, the minimum round-trip length the light must traverse before emission is $$2L$$, if $$L$$ is the length of the tube. Light at this frequency would constitute the first longitudinal cavity mode. Note that these are not longitudinal waves, as only transverse waves are possible. A given tube theoretically has an infinite number of these modes, at integer multiples of the fundamental, however, these must coincide with the transition bandwidth of the material in order to be emitted.[p.558][<a href="#Hecht1987">15</a>]
+
+In addition to longitudinal modes, the light inside the tube can exhibit standing waves that are transverse to the tube's axis as well. These modes are called <em>Transverse Electric and Magnetic</em> modes, or $$TEM_{mn}$$ for short. $$TEM_{mn}$$ indeces refer to the mode number for each axis of symmetry, and prescribe much of the beam's behavior on exiting the tube. Depending on the construction of the laser, these irradiance profiles can be either rectangularly symmetric (Hermite-Gaussian),
+
+$$!\begin{equation}\label{rect_mode} U_{mn}(x, y, z) = H_m\left(\frac{x}{w}\right)H_n\left(\frac{y}{w}\right)u(x,y,z)\qquad \text{,} \end{equation}$$
+
+where $$H$$ refers to a pair of Hermite polynomials, and $$w$$ is the radius of the beam, or circularly symmetric (Laguerre-Gaussian),
+
+$$!\begin{equation}\label{circ_mode} U_{pl}(r, \varphi, z) = L_{pl}\left(\frac{r}{w}, \varphi\right)u(r, z)\qquad \text{,} \end{equation}$$
+
+where $$L$$ refers to a Laguerre polynomial, $$r$$ is a radial coordinate and $\varphi$ is an angular coordinate.[p.4][<a href="#Marshall2004">23</a>] The function $$u$$ refers to the Gaussian Distribution, of the form
+
+$$!\begin{equation}\label{gauss} u = \sqrt{ \frac{2}{\pi}} e^{-\frac{x^2 + y^2}{w^2}} = \sqrt{ \frac{2}{\pi}}e^{-\frac{r^2}{w^2}} \qquad \text{,} \end{equation}$$
+
+depending on the axis of symmetry.[p.5][<a href="#Marshall2004">23</a>] In addition to these modes, there also exist \emph{degenerate modes}, notated as $$TEM_{mn}^*$$, which consist of two modes that share a frequency, arranged in quadrature.[p.6][<a href="#Marshall2004">23</a>] These modes are loosely analogous to those found in plates. 
+
+Typical lasers exhibit several of these modes simultaneously. This is possible because modes are energetically orthogonal (cf. <a href="http://www.joemariglio.com/blog/?p=1275#sec_modes">chapter 1, section 6</a>). Mixed-mode beams are generally more tolerant to microscopic impurities on the lenses or mirrors, and therefore sometimes desirable for specific tasks. However, the irradiance profile which best minimizes divergence from the collinear regime---due to diffraction---is the Gaussian distribution, equation \eqref{gauss}.[p.13][<a href="#Marshall2004">23</a>]
+
+The Airy disk is a reasonable place to start characterizing the irradiance profiles of monochromatic beams: 84% of the irradiance may be localized this way. Another 7% may be localized within the second null of the bessel function. However, the width of such beams is not constant, and so measurements which take into account only the width at the aperture fail to completely characterize the beam.[p.2][<a href="#Marshall2004">23</a>]
+
+A Gaussian, fundamental-mode ($$TEM_{00}$$), non-aberrant laser beam differs from the cylinder implied by such measurements, and also from the cone implied by ray tracing. These spatial distortions amount to a hyperbolic change in radius over the propagation length, of the form:[p.562][<a href="#Hecht1987">15</a>]
+
+$$!\begin{equation}\label{wz} w(z) = w_0 \sqrt{ 1 + \left( \frac{\lambda z}{\pi w_0^2} \right)^2 } \qquad \text{,} \end{equation}$$
+
+where $$z$$ is the position along the beam, measured from the location of the minimum radius, or ``waist.'' The radius $$w_0$$ is the smallest radius the beam achieves, which occurs at $$z=0$$. N.B. ray tracing would have us believe this radius to be zero, but diffraction causes this to be limited by the wavelength, $$\lambda$$. $$z=0$$ usually occurs some distance away from the aperture.[p.11][<a href="#Marshall2004">23</a>] Obviously, if this distance is known, we could call it $$z_0$$ and replace the occurrences of $$z$$ in these equations with $$z-z_0$$ to shift the spatial functions the appropriate amount.
+
+A complete characterization of the ideal fundamental-mode beam merely requires a knowledge of the length over which the cross sectional area doubles, from the minimum. This range is called the <em>Rayleigh range</em> $$z_R$$, and is, equivalently, the region where radius grows from $$w_0$$ to $$\sqrt{2}w_0$$. From $$z_R$$, we may infer all other spatial parameters of an ideal beam. Thus, the Rayleigh range is an extremely important aspect of the beam, given by[p.562][<a href="#Hecht1987">15</a>]
+
+$$!\begin{equation}\label{zr} z_R = \frac{\pi w_0^2}{\lambda} \qquad \text{.} \end{equation}$$
+
+An ideal fundamental-mode beam will also have variations in the curvature of its wavefronts. This measure is given by the beam's <em>radius of curvature</em>, $$R(z)$$, expressed as a function of $$z$$:[p.12][<a href="#Marshall2004">23</a>]
+
+$$!\begin{equation}\label{rz} R(z) = z \left(1 - \frac{z_R^2}{z^2} \right) \qquad \text{.} \end{equation}$$
+
+Within the Rayleigh range, $$z_R$$, these curvatures will be arbitrarily close to plane waves. At the edges, $$\pm z_R$$, the magnitude of the curvature is maximized. At $$z=0$$ and $$z=\pm \infty$$, the magnitude of curvature is minimized. The sign of the curvature matches the sign of $$z$$. This parameter will affect the beam's interaction with lenses, as well as define regions where near-field (Rayleigh) versus far-field (Fraunhofer) diffraction regimes are attainable. 
+
+We can also determine the phase-shift $$\psi$$ accumulated across the beam as a function of $$z$$:[p.12][<a href="#Marshall2004">23</a>]
+
+$$!\begin{equation}\label{psiz} \psi(z) = -\tan^{-1}\left(\frac{z}{z_R}\right) \qquad \text{,} \end{equation}$$
+
+in comparison to an ideal plane wave. 
+
+The full angular divergence, $$\theta$$, is the largest angle developed by the beam on either side of the $$z$$ axis. Once again, this angle is asymptotically approached in the far positive and negative fields. This limit is given by[p.12][<a href="#Marshall2004">23</a>]
+
+$$!\begin{equation}\label{fadiv} \theta = \frac{2\lambda}{\pi w_0} = \frac{2w_0}{z_R} \qquad \text{.} \end{equation}$$
+
+The above equations \eqref{wz} \eqref{zr} \eqref{rz} & \eqref{psiz} must be adjusted for the case of mixed-mode beams. To do this, we consider that the given combination of higher-order modes are related to a fundamental mode, <em>embedded Gaussian</em> beam, which may or may not be mixed into the given beam. We posit that the diameter of this embedded Gaussian beam is proportional to that of the given beam at all points $$z$$. This ratio is $$M$$. By custom, the values of the mixed-mode beam are capitalized, and $$M \equiv W_0 / w_0$$. Noting that $$Z_R = z_r$$, and making both substitutions into our equations \eqref{wz} \eqref{rz} \& \eqref{fadiv}, gives us another set of equations that characterize the mixed-mode parameters:[p.13][<a href="#Marshall2004">23</a>]
+
+$$!\begin{align}\label{mixed_mode} &Z_R = \frac{\pi W_0^2}{M^2 \lambda} = z_R\notag\\ {}\notag\\ &W(z) = W_0 \sqrt{1 +\left(\frac{z^2}{z_R^2}\right)}\notag\\ {}\notag\\ &R(z) = z \left(1 - \frac{z_R^2}{z^2} \right)\notag\\ {}\notag\\ &\Theta = \frac{2M^2 \lambda}{\pi W_0}= \frac{W_0}{z_R} = M\theta \end{align}$$
+
+Equation \eqref{psiz} cannot apply to the mixed-mode case in a straightforward way, because our Gaussian beam had only one frequency component, whereas the mixed-mode beam ostensibly has more. The value used to denote this relationship is $$M^2$$, because it is an invariant of the beam, and unchanged by optical elements.[p.15][<a href="#Marshall2004">23</a>]
+
+
+
+&nbsp;
+<h3><a name="SECTION00500000000000000000">
+Bibliography</a></h3>
+<dl> <dd> </dd> <dt><a name="Backer2007">1</a>&nbsp;
+
+</dt> <dd>A Bäcker.
+
+Random waves and more: Eigenfunctions in chaotic and mixed systems.
+
+<em>The European Physical Journal Special Topics</em>, 145:161-169,
+2007.
+
+</dd> <dt><a name="Baker1990">2</a>&nbsp;
+
+</dt> <dd>J.R. Baker, R.I. Laming, T.H. Wilmshurst, and N.a. Halliwell.
+
+A new, high sensitivity laser vibrometer.
+
+<em>Optics &amp; Laser Technology</em>, 22(4):241-244, August 1990.
+
+</dd> <dt><a name="Ballantine1997">3</a>&nbsp;
+
+</dt> <dd> D. S. Ballantine, R. M. White, S. J. Martin, A. J. Ricco, G. C. Frye,
+H. Wohltjen, and E. T. Zellers.&nbsp;
+
+<em>Acoustic Wave Sensors</em>.
+
+Academic Press, Inc, San Diego, CA, 1997.
+
+</dd> <dt><a name="Bonds2012">4</a>&nbsp;
+
+</dt> <dd>ME Bonds.
+
+Aesthetic Amputations: Absolute Music and the Deleted Endings of
+Hanslick's Vom Musikalisch-Schonen.
+
+<em>NINETEENTH CENTURY MUSIC</em>, 36(1):3-23, 2012.
+
+</dd> <dt><a name="Chen2012">5</a>&nbsp;
+
+</dt> <dd>Kevin K. Chen, Clarence W. Rowley, and Jonathan H. Tu.
+
+Variants of Dynamic Mode Decomposition: Boundary Condition, Koopman,
+and Fourier Analyses.
+
+<em>Journal of Nonlinear Science</em>, 22(6):887-915, April 2012.
+
+</dd> <dt><a name="Courant1937">6</a>&nbsp;
+
+</dt> <dd>R Courant and D Hilbert.
+
+<em>Methods of mathematical physics</em>.
+
+John Wiley and Sons, Inc, New York, 2 edition, 1937.
+
+</dd> <dt><a name="Cremer1973">7</a>&nbsp;
+
+</dt> <dd>L. Cremer and M. Heckl.
+
+<em>Structure-Borne Sound</em>.
+
+Springer-Verlag, Berlin, 2 edition, 1973.
+
+</dd> <dt><a name="dewar2012">8</a>&nbsp;
+
+</dt> <dd>Andrew Dewar.
+
+Reframing Sounds: Recontextualization as Compositional Process in
+the Work of Alvin Lucier.
+
+<em>LMJ</em>, 2012.
+
+</dd> <dt><a name="Feeny1998">9</a>&nbsp;
+
+</dt> <dd>BF Feeny and R. Kappagantu.
+
+On the physical interpretation of proper orthogonal modes in
+vibrations.
+
+<em>Journal of Sound and Vibration</em>, 4(211):607 616, 1998.
+
+</dd> <dt><a name="Fodor2002">10</a>&nbsp;
+
+</dt> <dd>I K Fodor.
+
+A Survey of Dimension Reduction Techniques.
+
+2002.
+
+</dd> <dt><a name="Foucalt1984">11</a>&nbsp;
+
+</dt> <dd>Michel Foucalt.
+
+Nietzsche, Genalogy, History.
+
+In Paul Rabinow, editor, <em>The Foucault Reader</em>. Pantheon, New
+York, 1984.
+
+</dd> <dt><a name="Giuliani2003">12</a>&nbsp;
+
+</dt> <dd>Guido Giuliani, Simone Bozzi-Pietra, and S Donati.
+
+Self-mixing laser diode vibrometer.
+
+<em>Measurement Science and ...</em>, page 14 24, 2003.
+
+</dd> <dt><a name="Goodman2005">13</a>&nbsp;
+
+</dt> <dd>Joseph W. Goodman.
+
+<em>Introduction to Fourier Optics</em>.
+
+Ben Roberts, Greenwood Village, CO, 3 edition, 2005.
+
+</dd> <dt><a name="Han2003">14</a>&nbsp;
+
+</dt> <dd>S. Han and B. Feeny.
+
+Application of proper orthogonal decomposition to structural
+vibration analysis.
+
+<em>Mechanical Systems and Signal Processing</em>, 2003.
+
+</dd> <dt><a name="Hecht1987">15</a>&nbsp;
+
+</dt> <dd>Eugene Hecht and A. R. Ganesan.
+
+<em>Optics</em>.
+
+Addison-Westley, Boston, 4 edition, 1987.
+
+</dd> <dt><a name="Jenny2001">16</a>&nbsp;
+
+</dt> <dd>Hans Jenny.
+
+<em>Cymatics: a study of wave phenomena and vibration</em>.
+
+3 edition, 2001.
+
+</dd> <dt><a name="Kerschen2002">17</a>&nbsp;
+
+</dt> <dd>G Kerschen and JC Golinval.
+
+Physical interpretation of the proper orthogonal modes using the
+singular value decomposition.
+
+<em>Journal of Sound and Vibration</em>, 2002.
+
+</dd> <dt><a name="Kino1987">18</a>&nbsp;
+
+</dt> <dd>Gordon S. Kino.
+
+<em>Acoustic Waves</em>.
+
+Prentice-Hall, Inc, Englewood Cliffs, NJ, 1987.
+
+</dd> <dt><a name="kuivila2012">19</a>&nbsp;
+
+</dt> <dd>Ronald Kuivila.
+
+Images and Actions in the Music of Alvin Lucier.
+
+<em>Leonardo Music Journal</em>, 2012.
+
+</dd> <dt><a name="Latour2011">20</a>&nbsp;
+
+</dt> <dd>Bruno Latour.
+
+Politics of nature: East and West perspectives.
+
+<em>Ethics &amp; Global Politics</em>, 4(1):1-10, March 2011.
+
+</dd> <dt><a name="lucier1995">21</a>&nbsp;
+
+</dt> <dd>Alvin Lucier.
+
+<em>Reflections</em>.
+
+Musiktexte, Koln, 3 edition, 1995.
+
+</dd> <dt><a name="lucier2012">22</a>&nbsp;
+
+</dt> <dd>Alvin Lucier.
+
+<em>Music 109</em>.
+
+Wesleyan University Press, Middletown, CT, 2012.
+
+</dd> <dt><a name="Marshall2004">23</a>&nbsp;
+
+</dt> <dd>GF Marshall and GE Stutz.
+
+<em>Handbook of optical and laser scanning</em>.
+
+2004.
+
+</dd> <dt><a name="Nelson1992">24</a>&nbsp;
+
+</dt> <dd>P. A. Nelson and S. J. Elliot.
+
+<em>Active Control of Sound</em>.
+
+Academic Press, Inc, San Diego, CA, 1992.
+
+</dd> <dt><a name="Pickering1986">25</a>&nbsp;
+
+</dt> <dd>CJD Pickering, NA Halliwell, and TH Wilmshurst.
+
+The laser vibrometer: a portable instrument.
+
+<em>Journal of sound and vibration</em>, 07:471-485, 1986.
+
+</dd> <dt><a name="Press1988">26</a>&nbsp;
+
+</dt> <dd> William H. Press, Saul A. Teukolsky, William T. Vetterling, and Brian P.
+Flannery.&nbsp;
+
+<em>Numerical Recipes in C</em>.
+
+Cambridge University Press, New York, 2 edition, 1988.
+
+</dd> <dt><a name="Reid1992">27</a>&nbsp;
+
+</dt> <dd>Christopher E. Reid and Thomas B. Passin.
+
+<em>Signal Processing in C</em>.
+
+John Wiley and Sons, Inc, New York, 1992.
+
+</dd> <dt><a name="Roos1996">28</a>&nbsp;
+
+</dt> <dd>P a Roos, M Stephens, and C E Wieman.
+
+Laser vibrometer based on optical-feedback-induced frequency
+modulation of a single-mode laser diode.
+
+<em>Applied optics</em>, 35(34):6754-61, December 1996.
+
+</dd> <dt><a name="scherz07">29</a>&nbsp;
+
+</dt> <dd>P Scherz.
+
+<em>Practical Electronics for Inventors</em>.
+
+McGraw-Hill, New York, 2 edition, 2007.
+
+</dd> <dt><a name="Stockmann2007">30</a>&nbsp;
+
+</dt> <dd>HJ Stöckmann.
+
+Chladni meets Napoleon.
+
+<em>The European Physical Journal Special Topics</em>, 2007.
+
+</dd> <dt><a name="Strang2009">31</a>&nbsp;
+
+</dt> <dd>Gilbert Strang.
+
+<em>Introduction to Linear Algebra</em>.
+
+Wellesley-Cambridge Press, Wellesley, 4 edition, 2009.
+
+</dd> <dt><a name="Ullmann2007">32</a>&nbsp;
+
+</dt> <dd>D. Ullmann.
+
+Life and work of EFF Chladni.
+
+<em>The European Physical Journal Special Topics</em>, 2007.
+
+</dd> <dt><a name="Watkins2010">33</a>&nbsp;
+
+</dt> <dd>David S. Watkins.
+
+<em>Fundamentals of Matrix Computations</em>.
+
+John Wiley and Sons, Inc, Hoboken, NJ, 3 edition, 2010.
+
+</dd> <dt><a name="yang2012">34</a>&nbsp;
+
+</dt> <dd>J Yang.
+
+Semiotics, Presence and the Sublime in the Work of Alvin Lucier.
+
+<em>Leonardo Music Journal</em>, 2012.
+
+</dd> </dl>

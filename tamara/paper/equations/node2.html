@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Michelson Interferometry</TITLE>
+<META NAME="description" CONTENT="Michelson Interferometry">
+<META NAME="keywords" CONTENT="equations">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="equations.css">
+
+<LINK REL="next" HREF="node3.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="equations.html">
+<LINK REL="next" HREF="node3.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html37"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html35"
+  HREF="equations.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html29"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html38"
+  HREF="node3.html">Laser Doppler Vibrometry</A>
+<B> Up:</B> <A NAME="tex2html36"
+  HREF="equations.html">Ph.D. Qualifying Examination</A>
+<B> Previous:</B> <A NAME="tex2html30"
+  HREF="node1.html">Interferometry</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00002000000000000000">
+Michelson Interferometry</A>
+</H2>
+ The <SPAN  CLASS="textit">Michelson Interferometer</SPAN> is a basic amplitude-splitting interferometry technique which is seldom used on its own for instrumentation purposes.[<A
+ HREF="node7.html#Hecht1987">15</A>, p.&nbsp;387] However, it is well studied and serves as a model on top of which other features may be added. 
+
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="207" HEIGHT="155" ALIGN="BOTTOM" BORDER="0"
+ SRC="./michaelson2.jpg"
+ ALT="Image michaelson2">
+
+</DIV>
+Light travels from the <SPAN  CLASS="textit">source</SPAN> into a beam-splitter <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.png"
+ ALT="$O$"></SPAN>, at an angle. The beam is partially reflected and partially transmitted. The reflected component travels to mirror <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$M_1$"></SPAN> and the transmitted component to mirror <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$M_2$"></SPAN>. Both beams are reflected by their respective mirrors straight back into the beam-splitter, where one component of the of either wave is then projected down to the <SPAN  CLASS="textit">Detector</SPAN>.
+
+<P>
+N.B. element <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$C$"></SPAN> is a clear piece of dielectric with the same index of refraction and width as the beam-splitter <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.png"
+ ALT="$O$"></SPAN>. It corrects for the difference in path lengths between the two beams. However, this will not correct for the additional phase term <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$k_0$"></SPAN>, which is introduced as the result of internal reflection on the <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$OM_2$"></SPAN> leg, which occurs at <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.png"
+ ALT="$O$"></SPAN>. There will also be a secondary set of beams (omitted), which will occur on the left side of <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.png"
+ ALT="$O$"></SPAN>.[<A
+ HREF="node7.html#Hecht1987">15</A>, p.388]
+
+<P>
+This implementation is still not exactly correct in theory, but after a little calibration,  This will result in a fringe pattern at <SPAN  CLASS="textit">Detector</SPAN>, the nulls of which are fairly close to:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+2d\cos{\theta_m} = m\lambda_0
+\end{equation}
+ -->
+<A NAME="mfringe"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="mfringe"></A><IMG
+ WIDTH="112" HEIGHT="55" BORDER="0"
+ SRC="img18.png"
+ ALT="\begin{displaymath}
+2d\cos{\theta_m} = m\lambda_0
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">0</SPAN>.<SPAN CLASS="arabic">0</SPAN>.1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.png"
+ ALT="$m$"></SPAN> is any integer--call it the <SPAN  CLASS="textit">order</SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="$d$"></SPAN> is the distance between the mirrors, and <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$\lambda_0$"></SPAN> is the wavelength of the light source. The fact that the fringe diameters are wavelength-dependent is a dispersion byproduct of the beam-splitter. If the light source has multiple wavelengths present, interference still occurs. This would cause other fringes to appear at the appropriate values for <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$\lambda_0$"></SPAN>.[<A
+ HREF="node7.html#Hecht1987">15</A>, p.&nbsp;388] For every component wavelength. 
+
+<P>
+If instead, we use a monochromatic source, the interference between two parallel mirrors <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$M_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$M_2$"></SPAN> will consist of many concentric rings. These rings are called <SPAN  CLASS="textit">fringes of equal inclination</SPAN>. Each ring has a fixed order, <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.png"
+ ALT="$m$"></SPAN>, which is its distance in number of rings from the center. By counting the number of rings, we can find the number of half-wavelengths between the mirrors <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$M_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$M_2$"></SPAN>. As the mirrors move closer together, the order decreases, and one after another, the rings move toward the center of the bull's-eye and disappear. 
+To find the angular radius of a particular ring, <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$p$"></SPAN>, we use the following:[<A
+ HREF="node7.html#Hecht1987">15</A>, p.&nbsp;390]
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\cos{\theta_p} \approx \theta_p = \sqrt{ \frac{p \lambda_0}{d} }
+\end{equation}
+ -->
+<A NAME="haidinger"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="haidinger"></A><IMG
+ WIDTH="141" HEIGHT="65" BORDER="0"
+ SRC="img23.png"
+ ALT="\begin{displaymath}
+\cos{\theta_p} \approx \theta_p = \sqrt{ \frac{p \lambda_0}{d} }
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">0</SPAN>.<SPAN CLASS="arabic">0</SPAN>.2)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where, since the rings are stationary, <!-- MATH
+ $\theta_p = \theta_m$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$\theta_p = \theta_m$"></SPAN>. We will see a different case below. Furthermore, since we presume to look only at a small angle subtended from the detector, we can use a Taylor approximation to make the formula faster to calculate. [<A
+ HREF="node7.html#Hecht1987">15</A>, p.&nbsp;390]
+
+<P>
+If we replace <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$M_1$"></SPAN> with an arbitrary surface, we could use this as a rangefinder. It turns out that for some applications, this sort of topology works well.[<A
+ HREF="node7.html#Hecht1987">15</A>, p.&nbsp;390] Adding an attenuator on the <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$OM_2$"></SPAN> leg--now called the <SPAN  CLASS="textit">reference beam</SPAN>--we could theoretically adjust for losses due to scattering. This will be necessary for the system to produce an interference pattern in the first place.
+
+<P>
+Keep in mind that for a wavelength <SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.png"
+ ALT="$\lambda=500$"></SPAN> nm, and a distance <SPAN CLASS="MATH"><IMG
+ WIDTH="50" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img26.png"
+ ALT="$d = 10$"></SPAN> cm, the order <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$m_0$"></SPAN>, which corresponds to the number of fringes in the pattern, will be <SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$400,000$"></SPAN>.
+While interpreting the fringe pattern as a whole is something our eyes can do quickly, it is unreasonable to assume our detector would have the spatial resolution or frame rate necessary to do this in real time. Furthermore, it isn't necessary, as long as we decide to look at the velocity instead. 
+
+<P>
+A typical interferometer only has a single photodetector, or at most an array. A single photodetector can be used to count the number of fringes that pass over a single point, and would be able to detect the magnitude of the velocity. In general, to detect the velocity while preserving the direction, a slightly different technique is used.[<A
+ HREF="node7.html#Baker1990">2</A>, p.&nbsp;241]
+
+<P>
+The cost of building such a device as a prototype is not very high. There are potentially some optical components that would need to be well made. In particular, the mirrors would have to be of good quality, and everything would have to be mounted with finely adjustable stands. However, to construct a housing for the device would be costly.
+
+<P>
+The field-readiness of the device, as described above, is fairly low. There are 8 minimum components, counting the reference attenuator (discussed but not shown), that would each require fully locking, adjustable supports. Furthermore, unless one added additional mirrors, the maximum distance that could be measured with the device is the length of the reference beam. Therefore an arm must be constructed to house it, etc.
+
+<P>
+The quality is limited by the devices inability to discern direction of motion. The device is clearly much better suited for displacement measurements. If the fringe patterns could be analyzed more directly, it could be made to track direction, but that would necessitate a loss in frame rate, field readiness, and an increase in cost.
+
+<P>
+The device is fairly general. It can measure vibrations even on rough surfaces by calibrating the reference beam.
+ 
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html37"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html35"
+  HREF="equations.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html29"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html38"
+  HREF="node3.html">Laser Doppler Vibrometry</A>
+<B> Up:</B> <A NAME="tex2html36"
+  HREF="equations.html">Ph.D. Qualifying Examination</A>
+<B> Previous:</B> <A NAME="tex2html30"
+  HREF="node1.html">Interferometry</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+joe
+2014-01-08
+</ADDRESS>
+</BODY>
+</HTML>

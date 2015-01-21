@@ -1,0 +1,371 @@
+# Created by Octave 3.6.2, Tue Dec 10 01:14:50 2013 PST <joe@skanda>
+# name: fname
+# type: sq_string
+# elements: 1
+# length: 70
+/media/joe/Milarepa/Quall_Docs/miller/experiments/experiment02/trial01
+
+
+# name: mics
+# type: scalar
+4
+
+
+# name: smodes
+# type: scalar
+4
+
+
+# name: amodes
+# type: scalar
+4
+
+
+# name: winsize
+# type: scalar
+100
+
+
+# name: rlo
+# type: scalar
+0
+
+
+# name: rhi
+# type: scalar
+0.1
+
+
+# name: fname
+# type: sq_string
+# elements: 1
+# length: 70
+/media/joe/Milarepa/Quall_Docs/miller/experiments/experiment02/trial02
+
+
+# name: mics
+# type: scalar
+4
+
+
+# name: smodes
+# type: scalar
+4
+
+
+# name: amodes
+# type: scalar
+4
+
+
+# name: winsize
+# type: scalar
+100
+
+
+# name: rlo
+# type: scalar
+0.1
+
+
+# name: rhi
+# type: scalar
+0.2
+
+
+# name: fname
+# type: sq_string
+# elements: 1
+# length: 70
+/media/joe/Milarepa/Quall_Docs/miller/experiments/experiment02/trial03
+
+
+# name: mics
+# type: scalar
+4
+
+
+# name: smodes
+# type: scalar
+4
+
+
+# name: amodes
+# type: scalar
+4
+
+
+# name: winsize
+# type: scalar
+100
+
+
+# name: rlo
+# type: scalar
+0.2
+
+
+# name: rhi
+# type: scalar
+0.3
+
+
+# name: fname
+# type: sq_string
+# elements: 1
+# length: 70
+/media/joe/Milarepa/Quall_Docs/miller/experiments/experiment02/trial04
+
+
+# name: mics
+# type: scalar
+4
+
+
+# name: smodes
+# type: scalar
+4
+
+
+# name: amodes
+# type: scalar
+4
+
+
+# name: winsize
+# type: scalar
+100
+
+
+# name: rlo
+# type: scalar
+0.3
+
+
+# name: rhi
+# type: scalar
+0.4
+
+
+# name: fname
+# type: sq_string
+# elements: 1
+# length: 70
+/media/joe/Milarepa/Quall_Docs/miller/experiments/experiment02/trial05
+
+
+# name: mics
+# type: scalar
+4
+
+
+# name: smodes
+# type: scalar
+4
+
+
+# name: amodes
+# type: scalar
+4
+
+
+# name: winsize
+# type: scalar
+100
+
+
+# name: rlo
+# type: scalar
+0.4
+
+
+# name: rhi
+# type: scalar
+0.5
+
+
+# name: fname
+# type: sq_string
+# elements: 1
+# length: 70
+/media/joe/Milarepa/Quall_Docs/miller/experiments/experiment02/trial06
+
+
+# name: mics
+# type: scalar
+4
+
+
+# name: smodes
+# type: scalar
+4
+
+
+# name: amodes
+# type: scalar
+4
+
+
+# name: winsize
+# type: scalar
+100
+
+
+# name: rlo
+# type: scalar
+0.5
+
+
+# name: rhi
+# type: scalar
+0.6
+
+
+# name: fname
+# type: sq_string
+# elements: 1
+# length: 70
+/media/joe/Milarepa/Quall_Docs/miller/experiments/experiment02/trial07
+
+
+# name: mics
+# type: scalar
+4
+
+
+# name: smodes
+# type: scalar
+4
+
+
+# name: amodes
+# type: scalar
+4
+
+
+# name: winsize
+# type: scalar
+100
+
+
+# name: rlo
+# type: scalar
+0.6
+
+
+# name: rhi
+# type: scalar
+0.7
+
+
+# name: fname
+# type: sq_string
+# elements: 1
+# length: 70
+/media/joe/Milarepa/Quall_Docs/miller/experiments/experiment02/trial08
+
+
+# name: mics
+# type: scalar
+4
+
+
+# name: smodes
+# type: scalar
+4
+
+
+# name: amodes
+# type: scalar
+4
+
+
+# name: winsize
+# type: scalar
+100
+
+
+# name: rlo
+# type: scalar
+0.7
+
+
+# name: rhi
+# type: scalar
+0.7999999999999999
+
+
+# name: fname
+# type: sq_string
+# elements: 1
+# length: 70
+/media/joe/Milarepa/Quall_Docs/miller/experiments/experiment02/trial09
+
+
+# name: mics
+# type: scalar
+4
+
+
+# name: smodes
+# type: scalar
+4
+
+
+# name: amodes
+# type: scalar
+4
+
+
+# name: winsize
+# type: scalar
+100
+
+
+# name: rlo
+# type: scalar
+0.8
+
+
+# name: rhi
+# type: scalar
+0.9
+
+
+# name: fname
+# type: sq_string
+# elements: 1
+# length: 70
+/media/joe/Milarepa/Quall_Docs/miller/experiments/experiment02/trial10
+
+
+# name: mics
+# type: scalar
+4
+
+
+# name: smodes
+# type: scalar
+4
+
+
+# name: amodes
+# type: scalar
+4
+
+
+# name: winsize
+# type: scalar
+100
+
+
+# name: rlo
+# type: scalar
+0.9
+
+
+# name: rhi
+# type: scalar
+1
+
+

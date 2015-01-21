@@ -1,0 +1,565 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Impedance and Behavior at an Interface</TITLE>
+<META NAME="description" CONTENT="Impedance and Behavior at an Interface">
+<META NAME="keywords" CONTENT="web_equations">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="web_equations.css">
+
+<LINK REL="next" HREF="node6.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node1.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html102"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html100"
+  HREF="node1.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html94"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html103"
+  HREF="node6.html">General Plane Wave Reflection</A>
+<B> Up:</B> <A NAME="tex2html101"
+  HREF="node1.html">Miller Puckette</A>
+<B> Previous:</B> <A NAME="tex2html95"
+  HREF="node4.html">Other Types of Waves</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00140000000000000000"></A><A NAME="sec:impedance"></A>
+<BR>
+Impedance and Behavior at an Interface
+</H1>
+In forward-moving plane waves, the <SPAN  CLASS="textit">specific acoustic impedance</SPAN> is defined as <!-- MATH
+ $Z = {}^{{}{}-T}/{}_{\dot{u}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img119.png"
+ ALT="$Z = {}^{{}{}-T}/{}_{\dot{u}}$"></SPAN> and bears a relationship with the concept in electronics. In both fields, the term <SPAN CLASS="MATH"><IMG
+ WIDTH="74" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img120.png"
+ ALT="$Z$"></SPAN> is a complex amplitude. In the case of alternating electromagnetic fields, objects like resistors, capacitors, and inductors are often modeled as complex impedances. This way, a simple electronic part can be described by its effects on the phase differences between the voltage <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.png"
+ ALT="$V$"></SPAN> across it, and current <SPAN CLASS="MATH"><IMG
+ WIDTH="56" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.png"
+ ALT="$I$"></SPAN> through it.[<A
+ HREF="node33.html#scherz07">29</A>, p.&nbsp;168] In acoustics, the concept is analogous, and the two variables encompassed by complex acoustic impedance are velocity, <!-- MATH
+ $\dot{u} = \frac{\partial u}{\partial t}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img122.png"
+ ALT="$\dot{u} = \frac{\partial u}{\partial t}$"></SPAN>, instead of current, and stress, <!-- MATH
+ $T = \frac{m\ddot{u}}{Area}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="53" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$T = \frac{m\ddot{u}}{Area}$"></SPAN>, instead of voltage.[<A
+ HREF="node33.html#Cremer1973">7</A>, p.&nbsp;9] <A NAME="tex2html6"
+  HREF="footnode.html#foot489"><SUP><SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">6</SPAN></SUP></A>
+<P>
+Just as with electromagnetic phenomena, when an acoustic plane wave meets a perpendicular planar change in impedance (e.g., a resistor, or in the case of light, a mirror), there is a component, <SPAN CLASS="MATH"><IMG
+ WIDTH="70" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img124.png"
+ ALT="$T_{B1}$"></SPAN>, of the incident wave's stress, <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$T_{F1}$"></SPAN>, that reflects back the way it came, and a component, <SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img126.png"
+ ALT="$T_{F2}$"></SPAN>, that transmits across the interface, continuing in the direction, <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$T_{F1}$"></SPAN>, had been going. For acoustic waves meeting the interface obliquely, the story is much more complicated. These interactions differ considerably from the interactions exhibited by light at a specular interface, or electronic signals traveling down a transmission line. We will briefly explore the phenomena related to oblique acoustic reflection in section <A HREF="node6.html#sec:refrac">1.5</A>. Presently, we concern ourselves with the 1 dimensional case of acoustic impedance boundaries, which, when defined in terms of the stress, is very closely matched to the electromagnetic case, and much simpler than the general acoustic case.
+
+<P>
+In contrast to the specific impedance, which is an intrinsic property of the material in a resting state, the <SPAN  CLASS="textit">characteristic impedance</SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img127.png"
+ ALT="$Z_0$"></SPAN>, is defined for a material through which a wave propagates. Characteristic impedance is depends on the wave propagating through the medium. For a forward-propagating plane wave with stress vector <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.png"
+ ALT="$T_F$"></SPAN>, particle velocity <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img129.png"
+ ALT="$\dot{u}_F$"></SPAN>, and phase velocity <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img130.png"
+ ALT="$v_F$"></SPAN>, traveling through a material of unstressed density <SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.png"
+ ALT="$\rho$"></SPAN>, the characteristic impedance is defined as
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+Z_0 = -\frac{T_F}{\dot{u}_F} = v_F \rho \text{.}
+\end{equation}
+ -->
+<A NAME="z0F"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="z0F"></A><IMG
+ WIDTH="23" HEIGHT="31" BORDER="0"
+ SRC="img131.png"
+ ALT="\begin{displaymath}
+Z_0 = -\frac{T_F}{\dot{u}_F} = v_F \rho \text{.}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">4</SPAN>.1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+To compare this characteristic impedance with that of a backward-propagating plane wave, i.e.,
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+Z_1 = -\frac{T_B}{\dot{u}_B} = -v_B \rho
+\end{equation}
+ -->
+<A NAME="z0B"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="z0B"></A><IMG
+ WIDTH="125" HEIGHT="66" BORDER="0"
+ SRC="img132.png"
+ ALT="\begin{displaymath}
+Z_1 = -\frac{T_B}{\dot{u}_B} = -v_B \rho
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">4</SPAN>.2)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+we see the sign has been reversed.
+
+<P>
+To develop the equations that determine the effect of characteristic impedance changes on wave propagation, consider a harmonic, longitudinal, plane wave, traveling in the <SPAN CLASS="MATH"><IMG
+ WIDTH="347" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.png"
+ ALT="$+x$"></SPAN> direction through a material of characteristic impedance <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img134.png"
+ ALT="$Z_1$"></SPAN>, toward an infinitely long interface with a second material of characteristic impedance <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img135.png"
+ ALT="$Z_2$"></SPAN>. At this interface, the values for the waves related to the stress, <SPAN CLASS="MATH"><IMG
+ WIDTH="313" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$T$"></SPAN>, and particle velocity, <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img136.png"
+ ALT="$\dot{u}$"></SPAN>, must be continuous. These boundary conditions must be obeyed at all times. Therefore, to find the coefficients of reflection and transmission, we first attend to the left side of the interface, summing the contributions from the incident and reflected waves. We try, [<A
+ HREF="node33.html#Kino1987">18</A>, p.&nbsp;10]
+<BR>
+<A NAME="limptv"></A><IMG
+ WIDTH="15" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img137.png"
+ ALT="\begin{singlespace}
+\begin{align}
+T_{1} &amp;= T_{F1}e^{-\mathsf{i}k_1x} + T_{B1}e^{...
+...^{-\mathsf{i}k_1x} + \dot{u}_{B1}e^{\mathsf{i}k_1x}
+\end{align}\end{singlespace}">
+<BR>
+These are the two stress and particular velocity waves, traveling toward, and reflected from, the interface.
+The wave number <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.png"
+ ALT="$k$"></SPAN>, and thus wavelength <SPAN CLASS="MATH"><IMG
+ WIDTH="367" HEIGHT="45" ALIGN="BOTTOM" BORDER="0"
+ SRC="img138.png"
+ ALT="$\lambda$"></SPAN>, is dependent on the characteristic impedance of the medium. Also notice in the above notation, we are not describing <SPAN CLASS="MATH"><IMG
+ WIDTH="313" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$T$"></SPAN> as a tensor, but as a wave in the <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$x$"></SPAN> direction. In the entirety of this example, the <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$x$"></SPAN> directionality of the stress and particle velocity waves is assumed. Continuing the convention established in equations (<A HREF="#z0F">1.4.1</A>) and (<A HREF="#z0B">1.4.2</A>), the stresses <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$T_{F1}$"></SPAN> &amp; <SPAN CLASS="MATH"><IMG
+ WIDTH="70" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img124.png"
+ ALT="$T_{B1}$"></SPAN> and particle velocities <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img139.png"
+ ALT="$\dot{u}_{F1}$"></SPAN> &amp; <SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img140.png"
+ ALT="$\dot{u}_{B1}$"></SPAN>, each correspond to parameters of the forward- and backward- propagating waves. We are now prepared to define the reflection coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img141.png"
+ ALT="$\Gamma$"></SPAN>:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\Gamma = \frac{T_{B1}}{T_{F1}} \text{,}
+\end{equation}
+ -->
+<A NAME="gamma"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="gamma"></A><IMG
+ WIDTH="10" HEIGHT="16" BORDER="0"
+ SRC="img142.png"
+ ALT="\begin{displaymath}
+\Gamma = \frac{T_{B1}}{T_{F1}} \text{,}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">4</SPAN>.3)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+as the ratio of these two amplitudes.
+Writing the velocities in terms of stress from equations (<A HREF="#z0F">1.4.1</A>) and (<A HREF="#z0B">1.4.2</A>), we can describe the total stress and particle velocity on the left side of the interface, <SPAN CLASS="MATH"><IMG
+ WIDTH="312" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img143.png"
+ ALT="$T_1$"></SPAN> &amp; <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img136.png"
+ ALT="$\dot{u}$"></SPAN>, in terms of the incident wave's stress contribution and the reflection coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img141.png"
+ ALT="$\Gamma$"></SPAN>, i.e.:
+<BR>
+<A NAME="limptv2"></A><IMG
+ WIDTH="23" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img144.png"
+ ALT="\begin{align}
+T_{1} &amp;= T_{F1}\left(e^{-\mathsf{i}k_1x} + \Gamma e^{\mathsf{i}k_...
+...1}}{Z_1}\left(e^{-\mathsf{i}k_1x} - \Gamma e^{\mathsf{i}k_1x}\right)
+\end{align}">
+<BR>
+
+<P>
+Meanwhile, to the right of the interface, a single transmitted wave propagates in the <SPAN CLASS="MATH"><IMG
+ WIDTH="347" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.png"
+ ALT="$+x$"></SPAN> direction:
+<BR>
+<A NAME="rimptv"></A><IMG
+ WIDTH="376" HEIGHT="65" ALIGN="BOTTOM" BORDER="0"
+ SRC="img145.png"
+ ALT="\begin{align}
+T_{2} &amp;= T_{F2}e^{-\mathsf{i}k_2x}\notag \\
+\dot{u}_{2} &amp;= -\frac{T_{F2}}{Z_2}e^{-\mathsf{i}k_2x}
+\end{align}">
+<BR>
+
+<P>
+Because this interface's boundary conditions require the stress <SPAN CLASS="MATH"><IMG
+ WIDTH="313" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$T$"></SPAN> and velocity <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img136.png"
+ ALT="$\dot{u}$"></SPAN> to be continuous at the interface, we can rewrite the formula for the reflection coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img141.png"
+ ALT="$\Gamma$"></SPAN> in terms of the two characteristic impedances:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\Gamma = \frac{Z_2 - Z_1}{Z_2 + Z_1} \text{,}
+\end{equation}
+ -->
+<A NAME="zgamma"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="zgamma"></A><IMG
+ WIDTH="337" HEIGHT="65" BORDER="0"
+ SRC="img146.png"
+ ALT="\begin{displaymath}
+\Gamma = \frac{Z_2 - Z_1}{Z_2 + Z_1} \text{,}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">4</SPAN>.4)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+and we can define the stress transmission coefficient, <SPAN CLASS="MATH"><IMG
+ WIDTH="327" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$\mathcal{T}_T$"></SPAN>, and power transmission coefficient, <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img148.png"
+ ALT="$\mathcal{T}_P$"></SPAN>, as
+<BR>
+<A NAME="stc_ptc"></A><IMG
+ WIDTH="26" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img149.png"
+ ALT="\begin{align}
+\mathcal{T}_T &amp;\equiv \frac{T_{F2}}{T_{F1}} = 1 + \Gamma = \frac{2...
+...rac{T_{F2}^2}{Z_2}\right)/\left(\frac{T_{F1}^2}{Z_1}\right) \text{.}
+\end{align}">
+<BR>
+The above description, presented using longitudinal waves, is nearly analogous in the case of shear waves. For a shear wave, the axis of particle velocity is orthogonal to the wave propagation axis, and there would typically be lower values for phase velocity <SPAN CLASS="MATH"><IMG
+ WIDTH="321" HEIGHT="56" ALIGN="BOTTOM" BORDER="0"
+ SRC="img89.png"
+ ALT="$v$"></SPAN> and impedance <SPAN CLASS="MATH"><IMG
+ WIDTH="74" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img120.png"
+ ALT="$Z$"></SPAN>. However, other than these somewhat minor distinctions, as long as the plane wave's propagation vector is normal to an interface (alternatively, when the angle-of-incidence, <SPAN CLASS="MATH"><IMG
+ WIDTH="423" HEIGHT="81" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$\theta_i = 0$"></SPAN>), this simple behavior is observed.[<A
+ HREF="node33.html#Kino1987">18</A>, pp.&nbsp;9-14]
+
+<P>
+We can now test this model by demonstrating the effect of <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img134.png"
+ ALT="$Z_1$"></SPAN> versus <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img135.png"
+ ALT="$Z_2$"></SPAN> on the reflection and transmission of waves incident on a free boundary, i.e., when <SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img151.png"
+ ALT="$Z_1 \gg Z_2$"></SPAN>. Consider a rod extending in the <SPAN CLASS="MATH"><IMG
+ WIDTH="65" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img152.png"
+ ALT="$-x$"></SPAN> direction all the way to <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img153.png"
+ ALT="$-\infty$"></SPAN>. At <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.png"
+ ALT="$x = 0$"></SPAN>, this rod ends, and the boundary is completely free. This rod's width, <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$z$"></SPAN>, and height, <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$y$"></SPAN>, are small compared to the wavelengths of interest. Thus, wave propagation in this rod is restricted to a single dimension: its length. At the boundary, vibrations in this rod exhibit perfect lossless reflection. Incidentally, reverting to a single dimension also permits us to talk about force <SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img155.png"
+ ALT="$F$"></SPAN>, rather than stress <SPAN CLASS="MATH"><IMG
+ WIDTH="313" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$T$"></SPAN>, which assumes an area. The interface is the outer surface of the object, so <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img156.png"
+ ALT="$Z_2 \approx 0$"></SPAN>, and therefore <!-- MATH
+ $\Gamma \approx -1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$\Gamma \approx -1$"></SPAN>. Using (<A HREF="#limptv2">1.4.5</A>), we predict that the left side of the interface should have inverted stress waves traveling in opposite directions. Furthermore, again plugging into our formula (<A HREF="#limptv2">1.4.5</A>), the model tells us 
+that the left side of the interface should have non-inverted particle velocity waves, again traveling in opposite directions. 
+
+<P>
+The boundary conditions, which must be satisfied at all times, are
+
+<P>
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+x = 0 \qquad \text{\&} \qquad F = 0
+\end{equation}
+ -->
+<A NAME="freeboundary"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="freeboundary"></A><IMG
+ WIDTH="50" HEIGHT="30" BORDER="0"
+ SRC="img158.png"
+ ALT="\begin{displaymath}
+x = 0 \qquad \text{\&amp;} \qquad F = 0
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">4</SPAN>.5)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+for this rod, because the end at <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.png"
+ ALT="$x = 0$"></SPAN> is free to move in a vacuum.
+
+<P>
+The rod is excited with a longitudinal sinusoidal <SPAN  CLASS="textit">wave-train</SPAN>: a wave that lasts long enough to be considered infinite. The function that describes this wave is <!-- MATH
+ $e^{\mathsf{i}(\omega t - kx)}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="357" HEIGHT="132" ALIGN="BOTTOM" BORDER="0"
+ SRC="img159.png"
+ ALT="$e^{\mathsf{i}(\omega t - kx)}$"></SPAN> . Since the wave is infinitely long, we don't have to worry about where the wave ``starts:'' it has no begining or end. Since we assume the system does not produce new frequencies, this wave can be represented as a <SPAN  CLASS="textit">phasor</SPAN>, which means we will only write the terms inside the exponent. Thus, this wave can be written in terms of its force like so:
+
+<P>
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+F_f = (\omega t - kx) \text{.}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="56" HEIGHT="19" BORDER="0"
+ SRC="img160.png"
+ ALT="\begin{displaymath}
+F_f = (\omega t - kx) \text{.}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">4</SPAN>.6)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+The above scenario seems innocuous enough. However, the boundary conditions have already been violated. At <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.png"
+ ALT="$x = 0$"></SPAN>, the force is a sinusoid (like it is everywhere), whose amplitude is not zero at all times. To satisfy the boundary conditions in (<A HREF="#freeboundary">1.4.9</A>), we introduce a second wave-train, identical in all senses except for its propagation direction,
+
+<P>
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+F_b = (\omega t + kx) \text{,}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="109" HEIGHT="57" BORDER="0"
+ SRC="img161.png"
+ ALT="\begin{displaymath}
+F_b = (\omega t + kx) \text{,}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">4</SPAN>.7)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+and so the total distribution of force along this fictitious rod, as a function of space and time is:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+F(x, t) = F_f (\omega t - kx) + F_b (\omega t + kx) \text{.}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="108" HEIGHT="57" BORDER="0"
+ SRC="img162.png"
+ ALT="\begin{displaymath}
+F(x, t) = F_f (\omega t - kx) + F_b (\omega t + kx) \text{.}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">4</SPAN>.8)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+To satisfy the boundary condition, we posit that
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+F_b (t, 0) = -F_f (t, 0) \text{,}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="257" HEIGHT="57" BORDER="0"
+ SRC="img163.png"
+ ALT="\begin{displaymath}
+F_b (t, 0) = -F_f (t, 0) \text{,}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">4</SPAN>.9)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+which is consistent with our model's prediction above, in which the reflected force wave is inverted at a free end. [<A
+ HREF="node33.html#Cremer1973">7</A>, p.&nbsp;116]
+
+<P>
+An interesting property here is that these two wave-trains would sum together such that, at all points, their phases would remain constant. Thus, the stress and velocity components of the disturbance would have phase velocities of zero, and the phenomenon that was once a traveling wave would no longer appear to be traveling at all: it would produce a <SPAN  CLASS="textit">standing wave</SPAN>. There would be points along the rod where the magnitude of the wave is always at a minimum (equilibrium). These points, which expand into lines when we talk about a two-dimensional surface, are called <SPAN  CLASS="textit">nodes</SPAN>. Conversely, there will be other points along which the wave reaches a maximum once every time cycle. These regions are called <SPAN  CLASS="textit">anti-nodes</SPAN>. 
+
+<P>
+Since the left boundary is at <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img153.png"
+ ALT="$-\infty$"></SPAN>, this rod does not impart any particular restrictions on what wavelengths will satisfy the boundary conditions. As a result, we have to continue putting energy into it in order to see any of this behavior. [<A
+ HREF="node33.html#Cremer1973">7</A>, p.319] But what would happen if we gave the rod a finite length? So long as the relationship between the distance these waves travel and their fluctuation in time 
+remains fixed (see equation (<A HREF="node3.html#drelation">1.2.2</A>)), we can imagine that a given amount of distance, with a given set of boundary conditions, would only allow for certain frequencies of wave phenomena to be reinforced in this way. We will return to this concept when we begin to talk about the vibratory <SPAN  CLASS="textit">state</SPAN> of an object, in section <A HREF="node7.html#sec:modes">1.6</A>.
+
+<P>
+A soft barrier could be modeled as an interface with a material of characteristic impedance <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img135.png"
+ ALT="$Z_2$"></SPAN>, still smaller than the initial impedance <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img134.png"
+ ALT="$Z_1$"></SPAN>, but this time, <SPAN CLASS="MATH"><IMG
+ WIDTH="349" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img164.png"
+ ALT="$\vert\Gamma\vert &lt; 1$"></SPAN>. In this case, when the incident and reflected waves superpose, their wave velocities will not completely cancel, because the reflected wave will only be partially reflected. Thus there will be a traveling component and a standing component apparent within the rod, and only a traveling component on the outside. The traveling component--and therefore, the net energy--will propagate in the direction of the incident wave, with an amplitude equal to their difference. The resulting wave behavior within an object is sometimes referred to as a <SPAN  CLASS="textit">partial</SPAN> standing wave. [<A
+ HREF="node33.html#Hecht1987">15</A>, p.&nbsp;275]
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html102"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html100"
+  HREF="node1.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html94"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html103"
+  HREF="node6.html">General Plane Wave Reflection</A>
+<B> Up:</B> <A NAME="tex2html101"
+  HREF="node1.html">Miller Puckette</A>
+<B> Previous:</B> <A NAME="tex2html95"
+  HREF="node4.html">Other Types of Waves</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+joe
+2014-01-09
+</ADDRESS>
+</BODY>
+</HTML>

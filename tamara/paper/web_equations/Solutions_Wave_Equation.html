@@ -1,0 +1,708 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Solutions to the Wave Equation with Losses</TITLE>
+<META NAME="description" CONTENT="Solutions to the Wave Equation with Losses">
+<META NAME="keywords" CONTENT="web_equations">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="web_equations.css">
+
+<LINK REL="next" HREF="Other_Types_Waves.html">
+<LINK REL="previous" HREF="Derivation_Non_Piezoelectri.html">
+<LINK REL="up" HREF="Miller_Puckette.html">
+<LINK REL="next" HREF="Other_Types_Waves.html">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" 
+	TEXT="BLACK" 
+	LINK="BLACK" 
+	ALINK="BLUE"
+	VLINK="GRAY">
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+
+<A NAME="tex2html84"
+  HREF="Other_Types_Waves.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.png"></A> <A NAME="tex2html85"
+  HREF="Other_Types_Waves.html">Other Types of Waves</A>
+<BR>
+
+<A NAME="tex2html82"
+  HREF="Miller_Puckette.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.png"></A> <A NAME="tex2html83"
+  HREF="Miller_Puckette.html">Miller Puckette</A>
+<BR>
+
+<A NAME="tex2html76"
+  HREF="Derivation_Non_Piezoelectri.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.png"></A> <A NAME="tex2html77"
+  HREF="Derivation_Non_Piezoelectri.html">Derivation of the Non-Piezoelectric Wave Equation (no damping)</A>
+<BR>
+
+<HR>
+<BR>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00120000000000000000"></A><A NAME="sec:lossy"></A>
+<BR>
+Solutions to the Wave Equation with Losses
+</H1>
+
+<P>
+The Non-piezoelectric Wave Equation (<A HREF="Derivation_Non_Piezoelectri.html#npwaveq">1.1.9</A>) is in fact a system of 3 equations, for <SPAN CLASS="MATH"><IMG
+ WIDTH="2195" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img66.png"
+ ALT="$i = x, y, z$"></SPAN>. 
+A possible solution to this equation could be a harmonic plane wave propagating forward in the positive x direction[<A
+ HREF="Bibliography.html#Ballantine1997">3</A>, p.&nbsp;12]:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+u(x,y,z,t) = \Re\{(u_x x + u_y y + u_z z) e^{\mathsf{i}(\omega t - k x)}\}
+\end{equation}
+ -->
+<A NAME="planewave"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="planewave"></A><IMG
+ WIDTH="73" HEIGHT="31" BORDER="0"
+ SRC="img67.png"
+ ALT="\begin{displaymath}
+u(x,y,z,t) = \Re\{(u_x x + u_y y + u_z z) e^{\mathsf{i}(\omega t - k x)}\}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">2</SPAN>.1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+<SPAN  CLASS="textit">Harmonic</SPAN> solutions to the wave equation (<A HREF="Derivation_Non_Piezoelectri.html#npwaveq">1.1.9</A>) consist of a complex exponential <!-- MATH
+ $e^{\mathsf{i}(\omega t \pm k x_i)}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="2297" HEIGHT="57" ALIGN="BOTTOM" BORDER="0"
+ SRC="img68.png"
+ ALT="$e^{\mathsf{i}(\omega t \pm k x_i)}$"></SPAN>, wherein the term <SPAN CLASS="MATH"><IMG
+ WIDTH="68" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img69.png"
+ ALT="$\mathsf{i}$"></SPAN> denotes the imaginary number, <!-- MATH
+ $\mathpalette
+\setbox 0=\hbox{$:\oldsqrt{!\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox 2=\hbox{\vrule height\ht0 depth -\dimen0}{\box0\lower0.4pt\box2}:}{-1}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="8" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img70.png"
+ ALT="$\mathpalette
+\setbox 0=\hbox{$:\oldsqrt{! }$}\dimen0=\ht0
+\advance\dimen0-0.2...
+...
+\setbox 2=\hbox{\vrule height\ht0 depth -\dimen0}{\box0\lower0.4pt\box2}:}{-1}$"></SPAN>. This notation visually differentiates it from the index <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$i$"></SPAN>. The term <SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="48" ALIGN="BOTTOM" BORDER="0"
+ SRC="img71.png"
+ ALT="$e$"></SPAN> denotes <SPAN  CLASS="textit">Euler's number</SPAN>, or <!-- MATH
+ $\lim_{x \to \infty} (1 + \frac{1}{x})^x$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img72.png"
+ ALT="$\lim_{x \to \infty} (1 + \frac{1}{x})^x$"></SPAN>, whose <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$y$"></SPAN>-intercept is 1. 
+
+<P>
+Equation (<A HREF="#planewave">1.2.1</A>) uses the parameter <SPAN CLASS="MATH"><IMG
+ WIDTH="119" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img73.png"
+ ALT="$\omega$"></SPAN> to refer to the <SPAN  CLASS="textit">angular frequency</SPAN> of the wave. If <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img74.png"
+ ALT="$f$"></SPAN> is the <SPAN  CLASS="textit">frequency</SPAN> of the wave in cycles / second, <!-- MATH
+ $\omega = 2\pi f$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img75.png"
+ ALT="$\omega = 2\pi f$"></SPAN>, so <SPAN CLASS="MATH"><IMG
+ WIDTH="119" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img73.png"
+ ALT="$\omega$"></SPAN> simply counts the rotations (over time) in terms of <SPAN CLASS="MATH"><IMG
+ WIDTH="63" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img76.png"
+ ALT="$2\pi$"></SPAN>. <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.png"
+ ALT="$k$"></SPAN> is the <SPAN  CLASS="textit">wave number</SPAN>, essentially the spatial analogue of <SPAN CLASS="MATH"><IMG
+ WIDTH="119" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img73.png"
+ ALT="$\omega$"></SPAN>. By convention, for forward-traveling waves, the term <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img78.png"
+ ALT="$kx$"></SPAN> is negative, whereas for backward-traveling waves, the sign is reversed. The <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img79.png"
+ ALT="$\Re\{x\}$"></SPAN> operator extracts the real component from a complex-valued <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$x$"></SPAN>. [<A
+ HREF="Bibliography.html#Ballantine1997">3</A>,<A
+ HREF="Bibliography.html#Kino1987">18</A>,<A
+ HREF="Bibliography.html#Cremer1973">7</A>] 
+
+<P>
+Notice also how the wave function in equation (<A HREF="#planewave">1.2.1</A>) describes variations in the <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$x$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$y$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$z$"></SPAN> components of the <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$u$"></SPAN> vector, which represents particle displacement. These components <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img80.png"
+ ALT="$u_x$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img81.png"
+ ALT="$u_y$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.png"
+ ALT="$u_z$"></SPAN> are amplitudes of the wave along each axis. Since the wave function maintains the same phase relationships across these axes, and the only variation is amplitude, the surfaces of constant phase are planes, orthogonal to the propagation vector, which is in this case a unit vector in the <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$x$"></SPAN> direction. 
+
+<P>
+Consider if the only non-zero component in the vector <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$u$"></SPAN> were <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img80.png"
+ ALT="$u_x$"></SPAN>. This would mean that the harmonic variation in particle displacement would only occur in the direction of the wave propagation. The wave motion would be expressed solely as a periodic compression and extension of the particle lattice. Such waves are called <SPAN  CLASS="textit">longitudinal</SPAN> waves. Conversely, if the only non-zero component in the vector <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$u$"></SPAN> were either one of the components perpendicular to the direction of wave propagation, i.e., <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img81.png"
+ ALT="$u_y$"></SPAN> or <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.png"
+ ALT="$u_z$"></SPAN> in the case of equation (<A HREF="#planewave">1.2.1</A>), the motion would be called a <SPAN  CLASS="textit">shear</SPAN> wave. This is analogous to the formalization posed in the discussions in <A HREF="Derivation_Non_Piezoelectri.html#sec:npwaveq_nd">1.1</A> surrounding the definitions of stress and strain tensors. In the simplest case of a non-piezoelectric, isotropic solid, all waves can be considered a combination of longitudinal and shear plane waves. [<A
+ HREF="Bibliography.html#Kino1987">18</A>, p.&nbsp;15]
+
+<P>
+Since, in equation (<A HREF="#planewave">1.2.1</A>), the values <SPAN CLASS="MATH"><IMG
+ WIDTH="119" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img73.png"
+ ALT="$\omega$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img83.png"
+ ALT="$t$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.png"
+ ALT="$k$"></SPAN>, and <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$x$"></SPAN>, which multiply <SPAN CLASS="MATH"><IMG
+ WIDTH="68" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img69.png"
+ ALT="$\mathsf{i}$"></SPAN>, are real-valued, the exponential <!-- MATH
+ $e^{\mathsf{i}(\omega t \pm kx)}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img84.png"
+ ALT="$e^{\mathsf{i}(\omega t \pm kx)}$"></SPAN> is complex. It can be stated in terms of its real and imaginary components separately as[<A
+ HREF="Bibliography.html#Cremer1973">7</A>, p.&nbsp;5]:
+<BR>
+<IMG
+ WIDTH="65" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="\begin{singlespace}
+\begin{align*}
+\Re \{e^{\mathsf{i}(\omega t \pm kx)}\} &amp;= ...
+... t \pm kx)}\} &amp;= \mathsf{i} \sin(\omega t \pm kx)
+\end{align*}\end{singlespace}">
+<BR>
+In order to make a physical measurement, we must ultimately extract the real component. To do this, we must subtract the imaginary component from the complex exponential function. 
+It is often convenient to consider cases of wave motion wherein the material responds in a linear way to perturbations, e.g. for small values of <SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="81" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$S$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="2177" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$T$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$u$"></SPAN>. This is precisely the approximation implied by Hooke's Law, as invoked in section <A HREF="Derivation_Non_Piezoelectri.html#sec:npwaveq_nd">1.1</A>. The <SPAN  CLASS="textit">superposition principle</SPAN> states that any solution to the wave equation, (<A HREF="Derivation_Non_Piezoelectri.html#npwaveq">1.1.9</A>), can be described as a sum of harmonic solutions, of the form <!-- MATH
+ $e^{\mathsf{i}(\omega t \pm kx)}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img84.png"
+ ALT="$e^{\mathsf{i}(\omega t \pm kx)}$"></SPAN>. This means a thorough consideration of the harmonic case is sufficient to provide a generalized account, provided the restrictions imposed by linearity are obeyed.[<A
+ HREF="Bibliography.html#Cremer1973">7</A>, p.&nbsp;5] Thus, we must assume the real-valued measurements of wave behavior to be the linear superposition of two complex exponential functions, with their imaginary components inverted. The physical meaning of this is to form any solution to the wave equation as a superposition of pairs propagating sinusoids, which travel in opposite directions. This is known as <SPAN  CLASS="textit">D'Alembert'
+s 
+solution</SPAN> to the wave equation. We will use it many times.[<A
+ HREF="Bibliography.html#Cremer1973">7</A>, p.&nbsp;119]
+
+<P>
+Since <!-- MATH
+ $\frac{\partial^2 u_i}{\partial x^2} = -\omega^2 u_{i}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="197" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$\frac{\partial^2 u_i}{\partial x^2} = -\omega^2 u_{i}$"></SPAN> and <!-- MATH
+ $\frac{\partial^2 u_i}{\partial t^2} = -k^2 u_{i}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="100" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img87.png"
+ ALT="$\frac{\partial^2 u_i}{\partial t^2} = -k^2 u_{i}$"></SPAN>, it is possible to rewrite equation (<A HREF="#planewave">1.2.1</A>) into the <SPAN  CLASS="textit">dispersion relation</SPAN> for a longitudinal wave[<A
+ HREF="Bibliography.html#Ballantine1997">3</A>, p.&nbsp;20]:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\rho \omega^2 = c_{IJ}k^2
+\end{equation}
+ -->
+<A NAME="drelation"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="drelation"></A><IMG
+ WIDTH="101" HEIGHT="44" BORDER="0"
+ SRC="img88.png"
+ ALT="\begin{displaymath}
+\rho \omega^2 = c_{IJ}k^2
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">2</SPAN>.2)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+<A NAME="tex2html3"
+  HREF="footnode.html#foot319"><SUP><SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">3</SPAN></SUP></A> This relation allows us to calculate <SPAN CLASS="MATH"><IMG
+ WIDTH="2185" HEIGHT="56" ALIGN="BOTTOM" BORDER="0"
+ SRC="img89.png"
+ ALT="$v$"></SPAN>: the speed at which a surface of constant phase propagates through the material. Recall, in the longitudinal plane wave case we began developing in equation (<A HREF="#planewave">1.2.1</A>), the surface is a plane, and the direction of particulate displacement of the wave is collinear to the vector of wave propagation. The term <SPAN CLASS="MATH"><IMG
+ WIDTH="2185" HEIGHT="56" ALIGN="BOTTOM" BORDER="0"
+ SRC="img89.png"
+ ALT="$v$"></SPAN>, known as the <SPAN  CLASS="textit">phase velocity</SPAN> of a wave, describes the velocity with which those surfaces propagate through the material. The formula for <SPAN CLASS="MATH"><IMG
+ WIDTH="2185" HEIGHT="56" ALIGN="BOTTOM" BORDER="0"
+ SRC="img89.png"
+ ALT="$v$"></SPAN> in any dimension <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$x$"></SPAN> is <!-- MATH
+ $v_x = \mathpalette
+\setbox 0=\hbox{$:\oldsqrt{!\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox 2=\hbox{\vrule height\ht0 depth -\dimen0}{\box0\lower0.4pt\box2}:}{\frac{c_{IJ}}{\rho}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img90.png"
+ ALT="$v_x = \mathpalette
+\setbox 0=\hbox{$:\oldsqrt{! }$}\dimen0=\ht0
+\advance\dime...
+...\vrule height\ht0 depth -\dimen0}{\box0\lower0.4pt\box2}:}{\frac{c_{IJ}}{\rho}}$"></SPAN>. [<A
+ HREF="Bibliography.html#Ballantine1997">3</A>, p.&nbsp;20]
+
+<P>
+When the elasticity coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="464" HEIGHT="135" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.png"
+ ALT="$c_{IJ}$"></SPAN> is complex, it can represent energy losses in the wave equation due to viscous forces between neighboring particles. This is a major source of attenuation in waves as they propagate through solids and liquids, although it is not the only one. The stresses due to viscosity <SPAN CLASS="MATH"><IMG
+ WIDTH="79" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img91.png"
+ ALT="$T_{\eta_I}$"></SPAN> on a plane wave are[<A
+ HREF="Bibliography.html#Kino1987">18</A>, p.&nbsp;8][<A
+ HREF="Bibliography.html#Ballantine1997">3</A>, p.&nbsp;21]:
+
+<P>
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+T_{\eta_{I}} = \sum_{J=1}^6\eta_{IJ} \dot{S}_{J}
+\end{equation}
+ -->
+<A NAME="tviscous"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="tviscous"></A><IMG
+ WIDTH="32" HEIGHT="36" BORDER="0"
+ SRC="img92.png"
+ ALT="\begin{displaymath}
+T_{\eta_{I}} = \sum_{J=1}^6\eta_{IJ} \dot{S}_{J}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">2</SPAN>.3)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+The term <SPAN CLASS="MATH"><IMG
+ WIDTH="2199" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img93.png"
+ ALT="$\eta$"></SPAN> has been introduced above to refer to the <SPAN  CLASS="textit">coefficient of viscosity</SPAN>.<A NAME="tex2html4"
+  HREF="footnode.html#foot338"><SUP><SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">4</SPAN></SUP></A> N.B. <SPAN CLASS="MATH"><IMG
+ WIDTH="2199" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img93.png"
+ ALT="$\eta$"></SPAN> is a tensor with the same symmetries as <SPAN CLASS="MATH"><IMG
+ WIDTH="464" HEIGHT="135" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.png"
+ ALT="$c_{IJ}$"></SPAN>. The viscous stresses <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img94.png"
+ ALT="$T_{\eta_{IJ}}$"></SPAN> affect the total stresses <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$T_I$"></SPAN> in the following way:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+T_I = \sum_{J=1}^6 c_{IJ}S_J + \eta_{IJ} \dot{S}_{J}
+\end{equation}
+ -->
+<A NAME="ttotal"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="ttotal"></A><IMG
+ WIDTH="40" HEIGHT="36" BORDER="0"
+ SRC="img95.png"
+ ALT="\begin{displaymath}
+T_I = \sum_{J=1}^6 c_{IJ}S_J + \eta_{IJ} \dot{S}_{J}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">2</SPAN>.4)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Recall that a wave propagating in the positive direction has a negative displacement term. Therefore, <SPAN CLASS="MATH"><IMG
+ WIDTH="2199" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img93.png"
+ ALT="$\eta$"></SPAN> effectively scales a frictional force, in the direction opposing the particle velocity. In the case of a mechanical harmonic wave, <!-- MATH
+ $\dot{S}_{J} = \mathsf{i}\omega S_{J}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="2226" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.png"
+ ALT="$\dot{S}_{J} = \mathsf{i}\omega S_{J}$"></SPAN>, and therefore the <SPAN CLASS="MATH"><IMG
+ WIDTH="77" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img97.png"
+ ALT="$S_{J}$"></SPAN> term may be factored out of the sum like so:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+T_I = \sum_{J=1}^6 (c_{IJ} + \mathsf{i}\omega\eta_{IJ})S_J
+\end{equation}
+ -->
+<A NAME="tcomplex"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="tcomplex"></A><IMG
+ WIDTH="27" HEIGHT="36" BORDER="0"
+ SRC="img98.png"
+ ALT="\begin{displaymath}
+T_I = \sum_{J=1}^6 (c_{IJ} + \mathsf{i}\omega\eta_{IJ})S_J
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">2</SPAN>.5)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+This permits us to describe both elasticity and damping with a single complex variable. We now apply this development from equation (<A HREF="#tcomplex">1.2.5</A>) to the Non-piezoelectric Wave Equation (<A HREF="Derivation_Non_Piezoelectri.html#npwaveq">1.1.9</A>):
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\rho\frac{\partial^2 u_i}{\partial t^2} = \sum_{j,k,l=1}^3(c_{ijkl} + \mathsf{i}\omega\eta_{ijkl})\frac{\partial^2 u_k}{\partial x_j^2 \partial x_l^2}
+\end{equation}
+ -->
+<A NAME="dampednpwe"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="dampednpwe"></A><IMG
+ WIDTH="190" HEIGHT="81" BORDER="0"
+ SRC="img99.png"
+ ALT="\begin{displaymath}
+\rho\frac{\partial^2 u_i}{\partial t^2} = \sum_{j,k,l=1}^3(...
+...ta_{ijkl})\frac{\partial^2 u_k}{\partial x_j^2 \partial x_l^2}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">2</SPAN>.6)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Each component of this system can be independently found, using solutions of the form <!-- MATH
+ $u_i(x, t) = \Re\{A e^{\mathsf{i}(\omega t \pm kx_i)}e^{-\alpha x_i}\}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="2274" HEIGHT="76" ALIGN="MIDDLE" BORDER="0"
+ SRC="img100.png"
+ ALT="$u_i(x, t) = \Re\{A e^{\mathsf{i}(\omega t \pm kx_i)}e^{-\alpha x_i}\}$"></SPAN>. What was once a sinusoid propagating in the <SPAN CLASS="MATH"><IMG
+ WIDTH="216" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.png"
+ ALT="$x_i$"></SPAN> direction forever has now been ``enveloped'' by a falling exponential curve, whose level depends on the distance propagated by the wave and a scaling term on the function, <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img102.png"
+ ALT="$\alpha$"></SPAN>. In phenomenological terms, <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img102.png"
+ ALT="$\alpha$"></SPAN> determines how quickly the sinusoid decays, as a function of the distance it has propagated. It might help clarify the effects of damping to show this attenuation term as it relates to phase velocity <SPAN CLASS="MATH"><IMG
+ WIDTH="2185" HEIGHT="56" ALIGN="BOTTOM" BORDER="0"
+ SRC="img89.png"
+ ALT="$v$"></SPAN>, angular frequency <SPAN CLASS="MATH"><IMG
+ WIDTH="119" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img73.png"
+ ALT="$\omega$"></SPAN>, density <SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.png"
+ ALT="$\rho$"></SPAN>, and the reactive portion of the elastic coefficient, <SPAN CLASS="MATH"><IMG
+ WIDTH="2199" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img93.png"
+ ALT="$\eta$"></SPAN>. Substituting the above solution for <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.png"
+ ALT="$u_i$"></SPAN> and simplifying results in the following dispersion relation[<A
+ HREF="Bibliography.html#Nelson1992">24</A>, p.&nbsp;12][<A
+ HREF="Bibliography.html#Ballantine1997">3</A>, p.&nbsp;22]:
+<BR>
+<A NAME="ddispersion"></A><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img104.png"
+ ALT="\begin{singlespace}
+\begin{align}
+-\rho\omega^2 &amp;= (c_{IJ}+\mathsf{i}\omega\eta...
+... k c_{IJ} + \omega\eta_{IJ}(\alpha^2 - k^2)] \notag
+\end{align}\end{singlespace}">
+<BR>
+<A NAME="tex2html5"
+  HREF="footnode.html#foot402"><SUP><SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">5</SPAN></SUP></A> Finally, we isolate the real and imaginary components:
+<BR>
+<A NAME="idispersion"></A><A NAME="rdispersion"></A><IMG
+ WIDTH="2353" HEIGHT="96" ALIGN="BOTTOM" BORDER="0"
+ SRC="img105.png"
+ ALT="\begin{singlespace}
+\begin{align}
+-\rho\omega^2 &amp;= c_{IJ}(\alpha^2 - k^2) - 2\...
+...c_{IJ} + \mathsf{i}\omega\eta_{IJ}(\alpha^2 - k^2)
+\end{align}\end{singlespace}">
+<BR>
+The attenuation factor <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img102.png"
+ ALT="$\alpha$"></SPAN> can be approximated by assuming <SPAN CLASS="MATH"><IMG
+ WIDTH="2257" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.png"
+ ALT="$k \gg \alpha$"></SPAN>, therefore the term <!-- MATH
+ $(\alpha^2 - k^2) \approx k^2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img107.png"
+ ALT="$(\alpha^2 - k^2) \approx k^2$"></SPAN> in equation (<A HREF="#idispersion">1.2.9</A>). After solving for <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img102.png"
+ ALT="$\alpha$"></SPAN> and simplifying, the result is[<A
+ HREF="Bibliography.html#Ballantine1997">3</A>, p.&nbsp;22]:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\alpha = \frac{\omega^2\eta_{IJ}}{2\rho v^3}
+\end{equation}
+ -->
+<A NAME="alpha"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="alpha"></A><IMG
+ WIDTH="111" HEIGHT="36" BORDER="0"
+ SRC="img108.png"
+ ALT="\begin{displaymath}
+\alpha = \frac{\omega^2\eta_{IJ}}{2\rho v^3}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">2</SPAN>.7)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The viscous attenuation coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img102.png"
+ ALT="$\alpha$"></SPAN> is therefore proportional to the square of the frequency. This accounts for why, e.g., high frequencies get attenuated more than low frequencies, all other things considered. Furthermore, it has an inverse relationship to the cube of the phase velocity. Since shear waves typically travel slower than longitudinal waves, they often experience less attenuation per unit length. 
+
+<P>
+Another way to look at complex coefficients of elasticity is in terms of energy. Recall in section <A HREF="Derivation_Non_Piezoelectri.html#sec:npwaveq_nd">1.1</A> that we defined instantaneous values for the kinetic and potential energy per unit volume, in equations (<A HREF="Derivation_Non_Piezoelectri.html#kinetic">1.1.10</A>) and (<A HREF="Derivation_Non_Piezoelectri.html#potential">1.1.11</A>), respectively. For a periodic wave, the average kinetic energy is given by[<A
+ HREF="Bibliography.html#Kino1987">18</A>, p.&nbsp;7]:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+W_k = \frac{\Re\{\rho \dot{u} \dot{u}^*\}}{4}\qquad \text{,}
+\end{equation}
+ -->
+<A NAME="akinetic"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="akinetic"></A><IMG
+ WIDTH="82" HEIGHT="74" BORDER="0"
+ SRC="img109.png"
+ ALT="\begin{displaymath}
+W_k = \frac{\Re\{\rho \dot{u} \dot{u}^*\}}{4}\qquad \text{,}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">2</SPAN>.8)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+and the average potential energy
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+W_p = \frac{\Re\{TS^*\}}{4} = \frac{\Re\{cSS^*\}}{4}\qquad \text{.}
+\end{equation}
+ -->
+<A NAME="apotential"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="apotential"></A><IMG
+ WIDTH="159" HEIGHT="70" BORDER="0"
+ SRC="img110.png"
+ ALT="\begin{displaymath}
+W_p = \frac{\Re\{TS^*\}}{4} = \frac{\Re\{cSS^*\}}{4}\qquad \text{.}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">2</SPAN>.9)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The total energy is still the sum of these, [<A
+ HREF="Bibliography.html#Kino1987">18</A>, p.&nbsp;7]
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+W_a = \frac{\Re\{\rho \dot{u} \dot{u}^* + TS^*\}}{4} = \frac{\Re\{TS^*\}}{2} \qquad \text{,}
+\end{equation}
+ -->
+<A NAME="etotal"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="etotal"></A><IMG
+ WIDTH="251" HEIGHT="70" BORDER="0"
+ SRC="img111.png"
+ ALT="\begin{displaymath}
+W_a = \frac{\Re\{\rho \dot{u} \dot{u}^* + TS^*\}}{4} = \frac{\Re\{TS^*\}}{2} \qquad \text{,}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">2</SPAN>.10)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+and the complex power flow through an area, <SPAN CLASS="MATH"><IMG
+ WIDTH="2281" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$A$"></SPAN>, is
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+P_a = -\frac{\dot{u}^*TA}{2} \qquad \text{.}
+\end{equation}
+ -->
+<A NAME="ptotal"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="ptotal"></A><IMG
+ WIDTH="13" HEIGHT="16" BORDER="0"
+ SRC="img113.png"
+ ALT="\begin{displaymath}
+P_a = -\frac{\dot{u}^*TA}{2} \qquad \text{.}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">2</SPAN>.11)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+This setup supports the effort to make apparent what happens to the power flow, depending on <SPAN CLASS="MATH"><IMG
+ WIDTH="2204" HEIGHT="75" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$c$"></SPAN>. If <SPAN CLASS="MATH"><IMG
+ WIDTH="2204" HEIGHT="75" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$c$"></SPAN> is real, the propagation is lossless, and the power <SPAN CLASS="MATH"><IMG
+ WIDTH="2208" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img114.png"
+ ALT="$P_a$"></SPAN> is real. If <SPAN CLASS="MATH"><IMG
+ WIDTH="2204" HEIGHT="75" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$c$"></SPAN> is complex, then so is <SPAN CLASS="MATH"><IMG
+ WIDTH="2208" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img114.png"
+ ALT="$P_a$"></SPAN>, but of course we only take the real component. Thus power (and therefore energy) is conserved, albeit in a complex form.[<A
+ HREF="Bibliography.html#Kino1987">18</A>, p.&nbsp;8] Yet another way to describe this loss is in terms of <SPAN  CLASS="textit">impedance</SPAN>, which will be explored in section <A HREF="Impedance_Behavior_at.html#sec:impedance">1.4</A>. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html84"
+  HREF="Other_Types_Waves.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.png"></A> <A NAME="tex2html85"
+  HREF="Other_Types_Waves.html">Other Types of Waves</A>
+<BR>
+
+<A NAME="tex2html82"
+  HREF="Miller_Puckette.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.png"></A> <A NAME="tex2html83"
+  HREF="Miller_Puckette.html">Miller Puckette</A>
+<BR>
+
+<A NAME="tex2html76"
+  HREF="Derivation_Non_Piezoelectri.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.png"></A> <A NAME="tex2html77"
+  HREF="Derivation_Non_Piezoelectri.html">Derivation of the Non-Piezoelectric Wave Equation (no damping)</A>
+<BR>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<HR>Copyright &#169; <I>2014-01-09</I><BR>
+<A href="http://www.ucsd.edu/">
+	My Own Center for My Own Studies (MOCMOS),</A>
+&nbsp;
+<A href="http://www.ucsd.edu/"> UCSD</A>,
+<A HREF="http://www.etc.com/">Etc.</A>
+
+</ADDRESS>
+</BODY>
+</HTML>

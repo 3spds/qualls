@@ -1,0 +1,37 @@
+@conference{<farina07>,
+AUTHOR = "Farina, A.",
+TITLE = "Advancements in impulse response measurements by sine sweeps",
+PUBLISHER = {Audio Engineering Society, 122nd Convention},
+YEAR = "2007"
+}
+
+@book{<hecht87>,
+AUTHOR = "Hecht, Eugene",
+TITLE = "Optics",
+PUBLISHER = {Addison-Westley},
+EDITION = "4",
+YEAR = "1987"
+}
+
+@misc{<barb09>,
+Author = "George Barbastathis, Colin Sheppard, and Se Baek Oh",
+TITLE = "2.71 Optics, Spring 2009",
+HOWPUBLISHED = "Massachusetts Institute of Technology: MIT OpenCourseWare",
+YEAR = "2009",
+NOTE = "http://ocw.mit.edu (Accessed 14 Jun, 2013)."
+}
+
+@book{<graeme96>,
+Author = "Graeme, J.",
+TITLE = "Photodiode Amplifiers",
+PUBLISHER = {McGraw-Hill, New York},
+YEAR = "1996"
+}
+
+@book{<scherz07>,
+Author = "Scherz, P.",
+TITLE = "Practical Electronics for Inventors",
+PUBLISHER = {McGraw-Hill, New York},
+YEAR = "2007",
+Edition = "2"
+}

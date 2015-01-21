@@ -1,0 +1,316 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Other Modal Measurement Techniques</TITLE>
+<META NAME="description" CONTENT="Other Modal Measurement Techniques">
+<META NAME="keywords" CONTENT="web_equations">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="web_equations.css">
+
+<LINK REL="next" HREF="Proposed_Mode_Solver.html">
+<LINK REL="previous" HREF="Modal_Analysis_via.html">
+<LINK REL="up" HREF="Miller_Puckette.html">
+<LINK REL="next" HREF="Proposed_Mode_Solver.html">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" 
+	TEXT="BLACK" 
+	LINK="BLACK" 
+	ALINK="BLUE"
+	VLINK="GRAY">
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+
+<A NAME="tex2html144"
+  HREF="Proposed_Mode_Solver.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.png"></A> <A NAME="tex2html145"
+  HREF="Proposed_Mode_Solver.html">A Proposed Mode-Solver</A>
+<BR>
+
+<A NAME="tex2html142"
+  HREF="Miller_Puckette.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.png"></A> <A NAME="tex2html143"
+  HREF="Miller_Puckette.html">Miller Puckette</A>
+<BR>
+
+<A NAME="tex2html136"
+  HREF="Modal_Analysis_via.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.png"></A> <A NAME="tex2html137"
+  HREF="Modal_Analysis_via.html">Modal Analysis via Partial Differential Equations</A>
+<BR>
+
+<HR>
+<BR>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00180000000000000000"></A><A NAME="sec:modes_other"></A>
+<BR>
+Other Modal Measurement Techniques
+</H1>
+
+<P>
+There are many numerical techniques for measuring modes in the wild. The above technique itself could made into one, although it is fairly ill-suited to the restrictions imposed by many real-time applications. Not all techniques are appropriate for field work. Many are extremely sensitive to environmental or sensor noise, and many are numerically unstable. The author's own technique, which will be presented and assessed at the close of this document, represents a first attempt at fitting the constraints in his own applications. 
+
+<P>
+Furthermore, there is a distinct difference in constraints that apply to those algorithms designed for <SPAN  CLASS="textit">modeling</SPAN> a given phenomenon, versus those designed for <SPAN  CLASS="textit">measuring</SPAN> one. Up until this point, we have blithely assumed the information regarding spring constants, damping, and mass matrices would be readily available. This is a caveat not only of the method outlined in section <A HREF="Modal_Analysis_via.html#sec:PDEmodes">1.7</A>, but others that will be named in this section. For some applications, this is fine, of course. However, the methods for extracting modal information that require some prior knowledge about the object to be measured, and specifically its governing equations, are at a distinct disadvantage in other applications. Similarly, those which require the object be excited by a known signal are unfortunately ill-suited for many applications. That being said, frequently the cost of these techniques in terms of convenience is compensated by robustness, accuracy, or speed.
+
+<P>
+The first of these families of techniques we will assess are related to <SPAN  CLASS="textit">Proper Orthogonal Decomposition</SPAN>. [<A
+ HREF="Bibliography.html#Han2003">14</A>] [<A
+ HREF="Bibliography.html#Kerschen2002">17</A>] [<A
+ HREF="Bibliography.html#Feeny1998">9</A>] The basic process is not specific to the field of structure-borne sound, although each variant implies a slightly different implementation. Other epithets are: <SPAN  CLASS="textit">Singular Value Decomposition</SPAN> and <SPAN  CLASS="textit">Principle Components Analysis</SPAN>. These techniques all begin by arranging column vectors of zero-centered data into a matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="2281" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$A$"></SPAN>, and creating a <SPAN  CLASS="textit">Covariance matrix</SPAN>, given as <SPAN CLASS="MATH"><IMG
+ WIDTH="2292" HEIGHT="67" ALIGN="MIDDLE" BORDER="0"
+ SRC="img225.png"
+ ALT="$R = 1/n A A'$"></SPAN> , where <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img188.png"
+ ALT="$n$"></SPAN> is the number of columns, i.e. the length of the recording in samples. 
+
+<P>
+The process proceeds by finding the eigenvectors and eigenvalues of <SPAN CLASS="MATH"><IMG
+ WIDTH="91" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img226.png"
+ ALT="$R$"></SPAN>. The eigenvectors of this matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="91" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img226.png"
+ ALT="$R$"></SPAN> are guaranteed to be orthogonal, because <SPAN CLASS="MATH"><IMG
+ WIDTH="91" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img226.png"
+ ALT="$R$"></SPAN> is guaranteed to be real and symmetric. These orthogonal eigenvectors are called the <SPAN  CLASS="textit">Proper Orthogonal Modes</SPAN>, and the eigenvalues are the <SPAN  CLASS="textit">Proper Orthogonal Values</SPAN>. However, recall the earlier statements made in section <A HREF="Modes_Introduction.html#sec:modes">1.6</A> about the orthogonality of the mode shapes. The modes are (occasionally) orthogonal with respect to the mass matrix of the object. Actually, the modes are only orthogonal in terms of their energy. [<A
+ HREF="Bibliography.html#Cremer1973">7</A>] <SPAN  CLASS="textit">POD</SPAN> attempts to fix this problem by multiplying <SPAN CLASS="MATH"><IMG
+ WIDTH="91" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img226.png"
+ ALT="$R$"></SPAN> by the mass matrix.[<A
+ HREF="Bibliography.html#Han2003">14</A>] This is a cold comfort though, because it requires knowledge about the mass matrix, careful placement of the sensors, and perfect energetic isolation of the object. 
+
+<P>
+On the other hand, the Singular Value Decomposition factorizes the matrix as
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+A = U\Sigma W^* ,
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="14" HEIGHT="16" BORDER="0"
+ SRC="img227.png"
+ ALT="\begin{displaymath}
+A = U\Sigma W^* ,
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">8</SPAN>.1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="2186" HEIGHT="56" ALIGN="BOTTOM" BORDER="0"
+ SRC="img228.png"
+ ALT="$U$"></SPAN> are the eigenvectors of <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img229.png"
+ ALT="$A A'$"></SPAN> , and W the eigenvectors of <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img230.png"
+ ALT="$A'A$"></SPAN>. The squared eigenvalues are stored in <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img231.png"
+ ALT="$\Sigma$"></SPAN>, and are called the Singular Values. Modern formulations of the Singular Value Decomposition find the eigenvalues of <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img229.png"
+ ALT="$A A'$"></SPAN> without calculating it directly, and therefore could be used to implement POD (and other algorithms) extremely quickly. [<A
+ HREF="Bibliography.html#Watkins2010">33</A>, p.&nbsp;368] The SVD can be used to compute a pseudoinverse when a matrix is singular (and thus no inverse exists), a useful application in <SPAN  CLASS="textit">Least Squares</SPAN> approximations (see below). PCA is essentially a POD, with the vectors ordered by the size of their corresponding <SPAN CLASS="MATH"><IMG
+ WIDTH="2232" HEIGHT="45" ALIGN="BOTTOM" BORDER="0"
+ SRC="img138.png"
+ ALT="$\lambda$"></SPAN>. The first few principle components will normally contain the majority of the information in a dataset. [<A
+ HREF="Bibliography.html#Fodor2002">10</A>, p.&nbsp;4] 
+
+<P>
+Another option for mode-solving techniques are those centered around Least Squares methods for estimation. Least Squares is a family of algorithms for regression and prediction, typically of large datasets. Regression and prediction are similar questions, but they are posed differently: regression takes data presumed to already have happened, and fits a line (usually in a fairly high dimensional dataset) that minimizes the mean squared orthogonal distance between the line and all of the points in the dataset. On the other hand, linear prediction first performs a regression and then predicts the next component. This is applied iteratively each time a new component comes in. <SPAN  CLASS="textit">Fourier series</SPAN> are in this family- they fit arbitrarily complicated functions with simpler functions, minimizing error in the least-squares sense. [<A
+ HREF="Bibliography.html#Strang2009">31</A>, p.&nbsp;224] 
+
+<P>
+By fitting the previous data vectors and predicting future data, these algorithms essentially do the inverse of the modeling process described in section <A HREF="Modal_Analysis_via.html#sec:PDEmodes">1.7</A>. The goal is usually to construct a matrix which predicts the next component based on previous components. Once this is done, the task becomes an eigenvector search. In certain fields, these matrices are very large, and finding eigenvectors can become computationally intense. There have been a number of numerical techniques developed to assist with this complexity. 
+
+<P>
+<SPAN  CLASS="textit">Krylov subspaces</SPAN> attempt to search for and approximate the eigenvectors of large matrices. These approximate eigenvectors and eigenvalues are called <SPAN  CLASS="textit">Ritz</SPAN> values and vectors. Krylov subspaces are spanned by the vectors formed by power iteration: a vector is chosen either at random or according to the application, and mapped onto matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="2281" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$A$"></SPAN>, whose eigenvectors we are searching for. The process of multiplying the vector by increasingly high powers of the matrix, and storing the result at each iteration, continues until the vectors converge within machine precision or some arbitrary number of iterations has been reached. The vectors span a space, called the Krylov subspace. [<A
+ HREF="Bibliography.html#Watkins2010">33</A>, p.&nbsp;428] However, this basis is not terribly useful because the vectors typically converge, so they are made orthonormal using <SPAN  CLASS="textit">Gram-Schmidt</SPAN>, which constructs an orthonormal basis by subtracting the components of vectors that project onto previously selected bases. [<A
+ HREF="Bibliography.html#Strang2009">31</A>, p.&nbsp;234] In practice, 
+doing this all at the end of the algorithm is probably a bad idea, because the numerical error accumulates both with the power iteration and Gram-Schmidt. [<A
+ HREF="Bibliography.html#Watkins2010">33</A>, p.&nbsp;439] The <SPAN  CLASS="textit">Arnoldi</SPAN> method applies a Gram-Schmidt-like orthonormalization step with each power iteration. It does not store the powers of the matrix at all. In fact, each successive step merely multiplies the previous vector by the matrix and then applies Gram-Schmidt. [<A
+ HREF="Bibliography.html#Watkins2010">33</A>, p.&nbsp;440] 
+
+<P>
+Dynamic Mode Decomposition [<A
+ HREF="Bibliography.html#Chen2012">5</A>] is a relatively new technique which uses least-squares prediction to form a companion matrix, virtually identical to the one described in section <A HREF="Modal_Analysis_via.html#sec:PDEmodes">1.7</A>. However, rather than placing the coefficients to a pre-determined polynomial in the coefficients block, DMD fills this block with predictor vectors which construct the data with minimum squared error. These are vectors of the form
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+c = (K'  K)^{-1} K' ,
+\end{equation}
+ -->
+<A NAME="normal_eq"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="normal_eq"></A><IMG
+ WIDTH="11" HEIGHT="16" BORDER="0"
+ SRC="img232.png"
+ ALT="\begin{displaymath}
+c = (K' K)^{-1} K' ,
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">8</SPAN>.2)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="2201" HEIGHT="57" ALIGN="BOTTOM" BORDER="0"
+ SRC="img233.png"
+ ALT="$K$"></SPAN> is a matrix of the previous observations, arranged in columns (the example in section <A HREF="Modal_Analysis_via.html#sec:PDEmodes">1.7</A> used rows, which seems more common). This is a classic least-squares prediction formulation, and in cases where <SPAN CLASS="MATH"><IMG
+ WIDTH="2201" HEIGHT="57" ALIGN="BOTTOM" BORDER="0"
+ SRC="img233.png"
+ ALT="$K$"></SPAN> has linearly independent columns the use of the expanded pseudoinverse is not necessary. The Ritz values and vectors (found using Arnoldi) of this companion matrix should correspond to the eigenfrequencies and eigenmodes of the system. [<A
+ HREF="Bibliography.html#Chen2012">5</A>]
+
+<P>
+Another approach is to find the SVD of <SPAN CLASS="MATH"><IMG
+ WIDTH="2201" HEIGHT="57" ALIGN="BOTTOM" BORDER="0"
+ SRC="img233.png"
+ ALT="$K$"></SPAN>, and let <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img234.png"
+ ALT="$K_{*}$"></SPAN> be <SPAN CLASS="MATH"><IMG
+ WIDTH="2201" HEIGHT="57" ALIGN="BOTTOM" BORDER="0"
+ SRC="img233.png"
+ ALT="$K$"></SPAN> with the data shifted by one column. The diagonalization to solve is now
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+U^*K_{*}W\Sigma^{-1} = Y\Lambda Y^{-1}\text{,}
+\end{equation}
+ -->
+<A NAME="diag_dmd"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="diag_dmd"></A><IMG
+ WIDTH="30" HEIGHT="36" BORDER="0"
+ SRC="img235.png"
+ ALT="\begin{displaymath}
+U^*K_{*}W\Sigma^{-1} = Y\Lambda Y^{-1}\text{,}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">8</SPAN>.3)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+setting <SPAN CLASS="MATH"><IMG
+ WIDTH="2226" HEIGHT="56" ALIGN="BOTTOM" BORDER="0"
+ SRC="img236.png"
+ ALT="$V = UY$"></SPAN>. Each column in <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.png"
+ ALT="$V$"></SPAN> should then be scaled by each unique <SPAN CLASS="MATH"><IMG
+ WIDTH="2232" HEIGHT="45" ALIGN="BOTTOM" BORDER="0"
+ SRC="img138.png"
+ ALT="$\lambda$"></SPAN>, with each subsequent component of the column in <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.png"
+ ALT="$V$"></SPAN> taken to the next integer power of <SPAN CLASS="MATH"><IMG
+ WIDTH="2232" HEIGHT="45" ALIGN="BOTTOM" BORDER="0"
+ SRC="img138.png"
+ ALT="$\lambda$"></SPAN>. [<A
+ HREF="Bibliography.html#Chen2012">5</A>]
+
+<P>
+This method is less sensitive to noise, but only works if the data matrix is full column rank. Another option is to implement what they call the ``snapshots'' method, which is used if the rows greatly outnumber the columns. This approach takes <SPAN CLASS="MATH"><IMG
+ WIDTH="64" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img237.png"
+ ALT="$K'K$"></SPAN> instead of <SPAN CLASS="MATH"><IMG
+ WIDTH="2201" HEIGHT="57" ALIGN="BOTTOM" BORDER="0"
+ SRC="img233.png"
+ ALT="$K$"></SPAN>, which shrinks the dataset. The full factorization is <!-- MATH
+ $K'K = W\Sigma^2W'$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img238.png"
+ ALT="$K'K = W\Sigma^2W'$"></SPAN>. Then it proceeds with (<A HREF="#diag_dmd">1.8.3</A>), except that <!-- MATH
+ $U = KW\Sigma^{-1}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="117" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img239.png"
+ ALT="$U = KW\Sigma^{-1}$"></SPAN> .[<A
+ HREF="Bibliography.html#Chen2012">5</A>]
+
+<P>
+In order to satisfy the boundary conditions, the data for these methods is usually mean-subracted. However, the authors showed that subtracting the mean from the data over the entire sample before taking the DMD is identical to taking the Discrete Fourier Trasform. The DFT is undesirable in this application for several reasons. First of all, it does not compute an error vector, which in this case would contain the forcing function and sensor noise. Second, the DFT cannot calculate drift on timescales larger than its window size. Third, the <SPAN CLASS="MATH"><IMG
+ WIDTH="2232" HEIGHT="45" ALIGN="BOTTOM" BORDER="0"
+ SRC="img138.png"
+ ALT="$\lambda$"></SPAN>s of the DFT have predetermined frequencies, located at the complex roots of unity. When the eigenfrequencies of the system land between these frequencies, the DFT gives misleading and erroneous data. Also, the DFT requires an integer number of cycles to be analyzed, and typically a windowing regime. [<A
+ HREF="Bibliography.html#Chen2012">5</A>]
+
+<P>
+There are a number of advantages to this method. It does not require that integer periods be analyzed, and requires no windowing. The algorithm is capable of predicting both linear and nonlinear behavior. It attempts to resolve true modal information, such as exact eigenfrequencies, damping / growth, and eigenmodes. It can resolve frequencies much lower than the block size. One thing that was noticeably missing from the article was a discussion of realtime considerations. [<A
+ HREF="Bibliography.html#Chen2012">5</A>]
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html144"
+  HREF="Proposed_Mode_Solver.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.png"></A> <A NAME="tex2html145"
+  HREF="Proposed_Mode_Solver.html">A Proposed Mode-Solver</A>
+<BR>
+
+<A NAME="tex2html142"
+  HREF="Miller_Puckette.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.png"></A> <A NAME="tex2html143"
+  HREF="Miller_Puckette.html">Miller Puckette</A>
+<BR>
+
+<A NAME="tex2html136"
+  HREF="Modal_Analysis_via.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.png"></A> <A NAME="tex2html137"
+  HREF="Modal_Analysis_via.html">Modal Analysis via Partial Differential Equations</A>
+<BR>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<HR>Copyright &#169; <I>2014-01-09</I><BR>
+<A href="http://www.ucsd.edu/">
+	My Own Center for My Own Studies (MOCMOS),</A>
+&nbsp;
+<A href="http://www.ucsd.edu/"> UCSD</A>,
+<A HREF="http://www.etc.com/">Etc.</A>
+
+</ADDRESS>
+</BODY>
+</HTML>

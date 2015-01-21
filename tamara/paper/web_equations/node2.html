@@ -1,0 +1,679 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Derivation of the Non-Piezoelectric Wave Equation (no damping)</TITLE>
+<META NAME="description" CONTENT="Derivation of the Non-Piezoelectric Wave Equation (no damping)">
+<META NAME="keywords" CONTENT="web_equations">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="web_equations.css">
+
+<LINK REL="next" HREF="node3.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="node1.html">
+<LINK REL="next" HREF="node3.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html72"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html70"
+  HREF="node1.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html64"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html73"
+  HREF="node3.html">Solutions to the Wave</A>
+<B> Up:</B> <A NAME="tex2html71"
+  HREF="node1.html">Miller Puckette</A>
+<B> Previous:</B> <A NAME="tex2html65"
+  HREF="node1.html">Miller Puckette</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00110000000000000000"></A><A NAME="sec:npwaveq_nd"></A>
+<BR>
+Derivation of the Non-Piezoelectric 
+<BR>
+Wave Equation (no damping)
+</H1>
+
+<P>
+When an object vibrates, waves propagate through it. The term <SPAN  CLASS="textit">wave</SPAN> is used to describe the transfer of energy without the global translation of matter. To begin to talk about vibrations in finite substrates such as objects, we must first consider the case of a material without boundaries. The behaviors of finite objects will then precipitate from this more abstract case.
+
+<P>
+In fluids of sufficiently low viscosity, <SPAN  CLASS="textit">stress</SPAN> is the force normal to the surface per unit area:
+<A NAME="stressnorm"></A><IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="\begin{equation*}
+T = \frac{F_n}{\text{Area}}
+\end{equation*}">
+This is sometimes called the <SPAN  CLASS="textit">nominal stress</SPAN>, and it gives a reasonable
+approximation under certain conditions.
+In general cases, e.g. for solids or viscous liquids in 3 dimensions, stress is best described as a 2<SUP>nd</SUP>-rank tensor. Viewed in this sense, <SPAN CLASS="MATH"><IMG
+ WIDTH="313" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$T$"></SPAN> 
+describes the stress components on each face of an infinitesimally small cubic
+volume. We will refer to such an infinitesimal volume as a <SPAN  CLASS="textit">particle</SPAN>. Each component <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$T_{ij}$"></SPAN> describes the stress exerted in a single dimension <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$i$"></SPAN>, on a single surface <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="17" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$j$"></SPAN> on the particle. [<A
+ HREF="node33.html#Ballantine1997">3</A>,<A
+ HREF="node33.html#Kino1987">18</A>]
+
+<P>
+Stress on the object results in <SPAN  CLASS="textit">strain</SPAN>, a dimensionless proportion of
+displacements given by the ratio of the length of a stressed particle to an unstressed one Consider a lattice of particles with springs connecting them. Strain represents how much each spring has been deformed from its equilibrium point.
+The displacement, <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$u$"></SPAN>, is a vector that represents the particle's position along
+the <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$x$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$y$"></SPAN>, and <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$z$"></SPAN> axes. Changes in these displacements will propagate throughout the object, from particle to particle. [<A
+ HREF="node33.html#Ballantine1997">3</A>,<A
+ HREF="node33.html#Kino1987">18</A>]
+
+<P>
+Of particular interest are the local deformations of the object, rather than the
+overall translation of the object in space. These local deformations are given by the displacement gradient, <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="$\nabla u$"></SPAN>, another 2<SUP>nd</SUP>-rank tensor[<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;12]:
+<BR>
+<A NAME="dispgrad"></A><IMG
+ WIDTH="29" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.png"
+ ALT="\begin{singlespace}
+\begin{equation*}
+\nabla u = \begin{pmatrix}
+\frac{\partial...
+...&amp;
+\frac{\partial u_z}{\partial z}
+\end{pmatrix}\end{equation*}\end{singlespace}">
+<BR>
+This tensor describes local translations and rotations between neighboring
+particles. It was produced by taking the partial derivative of each component in vector <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$u$"></SPAN> with respect to each spatial dimension.
+
+<P>
+The strain tensor <SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="81" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$S$"></SPAN> eliminates the contributions given by rotations, allowing us to describe only local rarefactions, compressions, or shear movements. The formula for <SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="81" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$S$"></SPAN> is:
+<IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="\begin{equation*}
+S = \frac{\nabla u + \left(\nabla u \right)'}{2} \notag \\
+\end{equation*}">
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="336" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$x'$"></SPAN> denotes the <SPAN  CLASS="textit">matrix transpose</SPAN> of <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$x$"></SPAN>, wherein the column and row indeces are exchanged, i.e., <!-- MATH
+ $x_{i,j}' = x_{j,i}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="16" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$x_{i,j}' = x_{j,i}$"></SPAN>. <A NAME="tex2html1"
+  HREF="footnode.html#foot1746"><SUP><SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">1</SPAN></SUP></A>Alternatively, in terms of the components of <SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="81" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$S$"></SPAN>, we can write[<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;13]:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+S_{ij} = \frac{1}{2}\left(\frac{\partial u_i}{\partial x_j} + \frac{\partial
+u_j}{\partial x_i}\right)
+\end{equation}
+ -->
+<A NAME="strain"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="strain"></A><IMG
+ WIDTH="15" HEIGHT="16" BORDER="0"
+ SRC="img18.png"
+ ALT="\begin{displaymath}
+S_{ij} = \frac{1}{2}\left(\frac{\partial u_i}{\partial x_j} + \frac{\partial
+u_j}{\partial x_i}\right)
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">1</SPAN>.1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+<A NAME="tex2html2"
+  HREF="footnode.html#foot1747"><SUP><SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">2</SPAN></SUP></A>
+<P>
+In equation (<A HREF="#strain">1.1.1</A>), each element of the strain matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$S_{ij}$"></SPAN> describes
+changes in displacement for combinations of two 
+directions, which could be identical. The diagonal elements in strain matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$S_{ij}$"></SPAN>, with <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$i=j$"></SPAN>, relate to rarefactions and compressions, where the two directions of changing displacement are the same 
+(e.g. <SPAN  CLASS="textit">longitudinal</SPAN> waves). The off-diagonal components <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$S_{ij}$"></SPAN> (with  <SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$i
+\neq j$"></SPAN>) relate to shear motions, where the two directions of changing
+displacement are different (e.g. <SPAN  CLASS="textit">transverse</SPAN> waves). [<A
+ HREF="node33.html#Ballantine1997">3</A>, 14]
+
+<P>
+We are now equipped to derive the equation of motion within an elastic solid.
+It is useful and common to assume the change in stress <SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$ \Delta T_i$"></SPAN> acts on a
+particle along the basis lengths <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img26.png"
+ ALT="$ \Delta x$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$ \Delta y$"></SPAN>, 
+and <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$ \Delta z$"></SPAN> uniformly. This approximation is valid only because we will take the particle's volume to the infinitesimal limit later in the derivation. It is similar in spirit to the ``Lumped Element Model'' of Maxwell's Equations in electronics.
+
+<P>
+To find a force <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$F_x$"></SPAN> acting in the <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$x$"></SPAN> direction, for example, we multiply the appropriate stress component of tensor <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$\Delta T_x$"></SPAN> by the areas of each of the faces on the particle, i.e.[<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;15]:
+<BR>
+<A NAME="forcecomp"></A><IMG
+ WIDTH="37" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="\begin{singlespace}
+\begin{align}
+F_x &amp;= \left[ \left( T_{xx} + \Delta T_{xx} \r...
+...elta T_{xz} \right) A_z - T_{xz} A_z \right] \notag
+\end{align}\end{singlespace}">
+<BR>
+<SPAN  CLASS="textit">Newton's 2<SUP>nd</SUP> Law of Motion</SPAN> states that the force an object experiences equals its
+mass times its acceleration, or <!-- MATH
+ $F = m \ddot{u}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="390" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img32.png"
+ ALT="$F = m \ddot{u}$"></SPAN>, where <!-- MATH
+ $\ddot{u}
+= \frac{\partial^2u}{\partial t^2}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="61" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.png"
+ ALT="$\ddot{u}
+= \frac{\partial^2u}{\partial t^2}$"></SPAN>. The mass of the particle is its density
+<SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.png"
+ ALT="$\rho$"></SPAN> times its volume, or <!-- MATH
+ $\rho \Delta x \Delta y \Delta z$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="$\rho \Delta x \Delta y \Delta z$"></SPAN>. 
+Using equation (<A HREF="#forcecomp">1.1.2</A>), we can now find an equation that relates an
+acceleration in the <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$x$"></SPAN> direction, <SPAN CLASS="MATH"><IMG
+ WIDTH="78" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.png"
+ ALT="$\ddot{u}_x$"></SPAN>, to the 
+resulting effect on the stress tensor, <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.png"
+ ALT="$\Delta T_{ij}$"></SPAN>[<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;16]:
+<BR>
+<A NAME="motioncomp"></A><IMG
+ WIDTH="40" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img38.png"
+ ALT="\begin{singlespace}
+\begin{align}
+\rho \Delta x \Delta y \Delta z \frac{\partial...
+...lta z \\
++ &amp;\Delta T_{xz} \Delta x \Delta y \notag
+\end{align}\end{singlespace}">
+<BR>
+Now we can simplify equation (<A HREF="#motioncomp">1.1.3</A>) and take the limit as the
+particle volume approaches zero to derive the <SPAN  CLASS="textit">Equations of Motion</SPAN> for a
+solid:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\sum_{j=1}^{3} \frac{\partial T_{ij}}{\partial x_j} = \rho \frac{\partial ^2
+u_i}{\partial t^2}
+\end{equation}
+ -->
+<A NAME="motion"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="motion"></A><IMG
+ WIDTH="380" HEIGHT="83" BORDER="0"
+ SRC="img39.png"
+ ALT="\begin{displaymath}
+\sum_{j=1}^{3} \frac{\partial T_{ij}}{\partial x_j} = \rho \frac{\partial ^2
+u_i}{\partial t^2}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">1</SPAN>.2)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Above, <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$i$"></SPAN> refers to the axis along which the motion is to be described.[<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;16] [<A
+ HREF="node33.html#Kino1987">18</A>, p.&nbsp;4]
+
+<P>
+<SPAN  CLASS="textit">Hooke's Law</SPAN> describes the behavior of an elastic material by relating the strain
+to the stress with a coefficient, <SPAN CLASS="MATH"><IMG
+ WIDTH="340" HEIGHT="75" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$c$"></SPAN>. It is a first-order approximation, which implies a linear relationship between these terms. The benefits of this approximation will be made clear when we discuss the <SPAN  CLASS="textit">superposition principle</SPAN> in section <A HREF="node3.html#sec:lossy">1.2</A>. In one dimension, Hooke's Law is <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.png"
+ ALT="$T = cS$"></SPAN>. In the general case we are deriving, recall that stress, <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$T_{ij}$"></SPAN>, is a 2<SUP>nd</SUP>-rank tensor, and so is strain, <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$S_{ij}$"></SPAN>. To allow the coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="340" HEIGHT="75" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$c$"></SPAN> to map between these two 2<SUP>nd</SUP>-rank tensors, it is necessary to invoke it as a 4<SUP>th</SUP>-rank tensor <SPAN CLASS="MATH"><IMG
+ WIDTH="55" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.png"
+ ALT="$c_{ijkl}$"></SPAN>. Stating Hooke's Law in 3 dimensions this way, and generalizing it for any stress vector, on each surface of the particle, <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$T_{ij}$"></SPAN>, produces the <SPAN  CLASS="textit">Elastic Constitutive Relation</SPAN>[<A
+ HREF="node33.html#Kino1987">18</A>, p.&nbsp;542]:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+T_{ij} = \sum_{k,l=1}^3 c_{ijkl} S_{kl}
+\end{equation}
+ -->
+<A NAME="ecrelation"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="ecrelation"></A><IMG
+ WIDTH="33" HEIGHT="31" BORDER="0"
+ SRC="img43.png"
+ ALT="\begin{displaymath}
+T_{ij} = \sum_{k,l=1}^3 c_{ijkl} S_{kl}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">1</SPAN>.3)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+It is desirable to reduce the number of unique components in equation
+(<A HREF="#ecrelation">1.1.5</A>). Recall that <SPAN CLASS="MATH"><IMG
+ WIDTH="55" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.png"
+ ALT="$c_{ijkl}$"></SPAN> is a 4<SUP>th</SUP>-rank
+tensor--effectively a 4-dimensional matrix with 3 components in each dimension--with <SPAN CLASS="MATH"><IMG
+ WIDTH="342" HEIGHT="76" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.png"
+ ALT="$3^4 = 81$"></SPAN> components total. Fortunately, not all of these components are unique. Exploiting the redundancies endemic to the stress and strain tensors, it is
+possible to rewrite equation (<A HREF="#ecrelation">1.1.5</A>), with <SPAN CLASS="MATH"><IMG
+ WIDTH="313" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$T$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="81" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$S$"></SPAN> stated in terms 
+of a single index <SPAN CLASS="MATH"><IMG
+ WIDTH="56" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.png"
+ ALT="$I$"></SPAN>, and <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.png"
+ ALT="$J$"></SPAN>, respectively. These new indeces will be denoted as a capitol letter. This is because <!-- MATH
+ $S_{kl} =
+S_{kl}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img47.png"
+ ALT="$S_{kl} =
+S_{kl}$"></SPAN>, as shown in equation (<A HREF="#strain">1.1.1</A>). Reduced index <SPAN CLASS="MATH"><IMG
+ WIDTH="56" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.png"
+ ALT="$I$"></SPAN> maps to standard tensor indeces <SPAN CLASS="MATH"><IMG
+ WIDTH="69" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img48.png"
+ ALT="$ij$"></SPAN>, and <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.png"
+ ALT="$J$"></SPAN>, analogously, to <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img49.png"
+ ALT="$kl$"></SPAN>. 
+Using this simplification, known as <SPAN  CLASS="textit">reduced notation</SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$T_I$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.png"
+ ALT="$S_J$"></SPAN> can refer
+to any of the 6 unique components in <SPAN CLASS="MATH"><IMG
+ WIDTH="313" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$T$"></SPAN> or <SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="81" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$S$"></SPAN>, by defining <!-- MATH
+ $S_{J} \equiv
+S_{kl} = S_{kl}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img52.png"
+ ALT="$S_{J} \equiv
+S_{kl} = S_{kl}$"></SPAN>. The reduced notation form of <SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="81" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$S$"></SPAN> is shown below, expanded into matrix form[<A
+ HREF="node33.html#Kino1987">18</A>, p.&nbsp;542]:
+<BR>
+<IMG
+ WIDTH="111" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img53.png"
+ ALT="\begin{singlespace}
+\begin{equation}
+S = \begin{bmatrix}
+S_{1} &amp; \frac{S_{6}}{...
+..._{5}}{2} &amp; \frac{S_{4}}{2} &amp; S_{3}
+\end{bmatrix}\end{equation}\end{singlespace}">
+<BR>
+The reduced notation subscripts, used above, map to the standard tensor notation, developed in equation (<A HREF="#ecrelation">1.1.5</A>), as follows[<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;17] [<A
+ HREF="node33.html#Kino1987">18</A>, p.&nbsp;543]:
+<BR>
+<A NAME="tab:tensor"></A><IMG
+ WIDTH="345" HEIGHT="77" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="\begin{singlespace}
+\begin{tabular}{l \vert c \vert r}
+\hline
+Reduced Index &amp; St...
+...ar z - x\\
+6 &amp; xy = yx &amp; Shear x - y
+\end{tabular}{}\\
+{}\\
+\end{singlespace}">
+<BR>
+Similarly, the components in <SPAN CLASS="MATH"><IMG
+ WIDTH="340" HEIGHT="75" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$c$"></SPAN> are reduced to <SPAN CLASS="MATH"><IMG
+ WIDTH="464" HEIGHT="135" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.png"
+ ALT="$c_{IJ}$"></SPAN>, where capitol indeces
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img56.png"
+ ALT="$IJ$"></SPAN> are an analogous reduction of the four indeces <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$ijkl$"></SPAN> to 36 unique components. This follows from the reduction to indeces <SPAN CLASS="MATH"><IMG
+ WIDTH="56" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.png"
+ ALT="$I$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.png"
+ ALT="$J$"></SPAN> above. This 6 x 6 matrix can be further reduced, since <!-- MATH
+ $c_{IJ} = c_{JI}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.png"
+ ALT="$c_{IJ} = c_{JI}$"></SPAN>. Most solids can be described with a stiffness matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="464" HEIGHT="135" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.png"
+ ALT="$c_{IJ}$"></SPAN> consisting of only 21 components. Of these, 6 are diagonal--meaning they describe collinear relationships--and 15 are triangular--meaning they describe transverse relationships. The term <SPAN  CLASS="textit">isotropic</SPAN> denotes that the inter-particulate lattice behaves symmetrically in all directions. Isotropic crystals, for example, provide a helpful case to consider, as they require only 2 terms to describe fully. Combinations of these two elasticity coefficients, called the Lam&#233; constants, are sufficient for describing all Hookean vibration in the material. The degree to which we can reduce a solid's stiffness, strain, and stress matrices <SPAN CLASS="MATH"><IMG
+ WIDTH="340" HEIGHT="75" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$c$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="81" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$S$"></SPAN>, &amp; <SPAN CLASS="MATH"><IMG
+ WIDTH="313" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$T$"></SPAN>, respectively, depends on the symmetries encoded in the material's inter-particulate 
+relationships. [<A
+ HREF="node33.html#Ballantine1997">3</A>] To elucidate especially complex behavior, we will occasionally assume isotropy in our treatment of waves.
+
+<P>
+For a general, non-isotropic solid, equation (<A HREF="#ecrelation">1.1.5</A>) can then be written, somewhat more humanely, as:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+T_{I} = \sum_{J=1}^{6} c_{IJ} S_{J}
+\end{equation}
+ -->
+<A NAME="recrelation"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="recrelation"></A><IMG
+ WIDTH="70" HEIGHT="31" BORDER="0"
+ SRC="img59.png"
+ ALT="\begin{displaymath}
+T_{I} = \sum_{J=1}^{6} c_{IJ} S_{J}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">1</SPAN>.4)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Note that for plane waves, whose particle displacements act in a single direction, the same symmetries that permitted the simplifications from equation (<A HREF="#ecrelation">1.1.5</A>) to equation (<A HREF="#recrelation">1.1.7</A>) also mean that <!-- MATH
+ $S_{kl} =\frac{\partial u_k}{\partial x_l}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="331" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img60.png"
+ ALT="$S_{kl} =\frac{\partial u_k}{\partial x_l}$"></SPAN>. With that in mind, differentiating the above equation with respect to a single direction of particulate displacement <SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$x_j$"></SPAN> gives the following[<A
+ HREF="node33.html#Ballantine1997">3</A>]:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\sum_{j=1}^3 \frac{\partial T_{ij}}{\partial x_{j}} = \sum_{j,k,l=1}^3 c_{ijkl}\frac{\partial^2 u_k}{\partial x_j \partial x_l}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="20" HEIGHT="31" BORDER="0"
+ SRC="img62.png"
+ ALT="\begin{displaymath}
+\sum_{j=1}^3 \frac{\partial T_{ij}}{\partial x_{j}} = \sum_...
+...=1}^3 c_{ijkl}\frac{\partial^2 u_k}{\partial x_j \partial x_l}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">1</SPAN>.5)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Finally, we can derive the <SPAN  CLASS="textit">Non-piezoelectric Wave Equation</SPAN> by setting the right side of the above equation equal to that of equation (<A HREF="#motion">1.1.4</A>), i.e.:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\rho\frac{\partial^2u_i}{\partial t^2} = \sum_{j,k,l=1}^3 c_{ijkl} \frac{\partial^2 u_k}{\partial x_j \partial x_l}
+\end{equation}
+ -->
+<A NAME="npwaveq"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="npwaveq"></A><IMG
+ WIDTH="202" HEIGHT="76" BORDER="0"
+ SRC="img63.png"
+ ALT="\begin{displaymath}
+\rho\frac{\partial^2u_i}{\partial t^2} = \sum_{j,k,l=1}^3 c_{ijkl} \frac{\partial^2 u_k}{\partial x_j \partial x_l}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">1</SPAN>.6)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Before moving on to solutions for this equation, we should explain what was meant at the outset of this document by ``the transfer of energy without the global translation of matter.'' It should be clear from our definition of the strain tensor <SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="81" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$S$"></SPAN> that we are ignoring global translation and rotation of particles. Thus, all that remains is the definition of <SPAN  CLASS="textit">energy</SPAN> in this context. Energy in this system is defined in two components: <SPAN  CLASS="textit">kinetic</SPAN> and <SPAN  CLASS="textit">potential</SPAN>. The kinetic energy per unit volume is due to the particulate motion of the material, i.e.[<A
+ HREF="node33.html#Kino1987">18</A>, p.&nbsp;6],
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+W_k = \frac{\rho \dot{u}^2}{2}\qquad \text{,}
+\end{equation}
+ -->
+<A NAME="kinetic"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="kinetic"></A><IMG
+ WIDTH="187" HEIGHT="76" BORDER="0"
+ SRC="img64.png"
+ ALT="\begin{displaymath}
+W_k = \frac{\rho \dot{u}^2}{2}\qquad \text{,}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">1</SPAN>.7)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where the density, <SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.png"
+ ALT="$\rho$"></SPAN>, is that of the unstressed material. The potential energy per unit volume, on the other hand, is due to the elasticity of the material, i.e., [<A
+ HREF="node33.html#Kino1987">18</A>, p.&nbsp;6]
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+W_p = \frac{TS}{2}\qquad \text{.}
+\end{equation}
+ -->
+<A NAME="potential"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="potential"></A><IMG
+ WIDTH="107" HEIGHT="64" BORDER="0"
+ SRC="img65.png"
+ ALT="\begin{displaymath}
+W_p = \frac{TS}{2}\qquad \text{.}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">1</SPAN>.8)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+N.B. these are instantaneous values. In a lossless medium, these values will fluctuate together in antagonism. The total instantaneous energy of the system will be their sum. In a perfectly elastic medium, this value will not diminish, and we are in the possession of a perpetual motion machine of the 1st kind.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html72"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html70"
+  HREF="node1.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html64"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html73"
+  HREF="node3.html">Solutions to the Wave</A>
+<B> Up:</B> <A NAME="tex2html71"
+  HREF="node1.html">Miller Puckette</A>
+<B> Previous:</B> <A NAME="tex2html65"
+  HREF="node1.html">Miller Puckette</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+joe
+2014-01-09
+</ADDRESS>
+</BODY>
+</HTML>

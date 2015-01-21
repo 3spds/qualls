@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: equations.aux
+The style file: plain.bst
+Database file #1: /media/joe/Milarepa/Quall_Docs/bibliography/qualls.bib
+Warning--empty journal in Avilagh
+Warning--empty year in Avilagh
+Warning--empty publisher in Burden2005
+Warning--can't use both author and editor fields in Cremer1973
+Warning--empty journal in Fodor2002
+Warning--empty journal in Huang2013
+Warning--empty publisher in Jenny2001
+Warning--can't use both author and editor fields in Kino1987
+Warning--empty publisher in Marshall2004
+Warning--empty journal in Miguel1997
+Warning--empty journal in Wang2011
+You've used 55 entries,
+            2118 wiz_defined-function locations,
+            858 strings with 11737 characters,
+and the built_in function-call counts, 15858 in all, are:
+= -- 1546
+> -- 697
+< -- 5
++ -- 276
+- -- 221
+* -- 1045
+:= -- 2726
+add.period$ -- 164
+call.type$ -- 55
+change.case$ -- 268
+chr.to.int$ -- 0
+cite$ -- 66
+duplicate$ -- 645
+empty$ -- 1280
+format.name$ -- 221
+if$ -- 3270
+int.to.chr$ -- 0
+int.to.str$ -- 55
+missing$ -- 69
+newline$ -- 276
+num.names$ -- 112
+pop$ -- 303
+preamble$ -- 1
+purify$ -- 220
+quote$ -- 0
+skip$ -- 424
+stack$ -- 0
+substring$ -- 819
+swap$ -- 86
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 186
+warning$ -- 11
+while$ -- 157
+width$ -- 57
+write$ -- 592
+(There were 11 warnings)

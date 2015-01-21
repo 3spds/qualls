@@ -1,0 +1,374 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>A Proposed Mode-Solver</TITLE>
+<META NAME="description" CONTENT="A Proposed Mode-Solver">
+<META NAME="keywords" CONTENT="web_equations">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="web_equations.css">
+
+<LINK REL="previous" HREF="Other_Modal_Measurement.html">
+<LINK REL="up" HREF="Miller_Puckette.html">
+<LINK REL="next" HREF="Tamara_Smyth.html">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" 
+	TEXT="BLACK" 
+	LINK="BLACK" 
+	ALINK="BLUE"
+	VLINK="GRAY">
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+
+<A NAME="tex2html152"
+  HREF="Tamara_Smyth.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.png"></A> <A NAME="tex2html153"
+  HREF="Tamara_Smyth.html">Tamara Smyth</A>
+<BR>
+
+<A NAME="tex2html150"
+  HREF="Miller_Puckette.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.png"></A> <A NAME="tex2html151"
+  HREF="Miller_Puckette.html">Miller Puckette</A>
+<BR>
+
+<A NAME="tex2html146"
+  HREF="Other_Modal_Measurement.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.png"></A> <A NAME="tex2html147"
+  HREF="Other_Modal_Measurement.html">Other Modal Measurement Techniques</A>
+<BR>
+
+<HR>
+<BR>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00190000000000000000"></A><A NAME="sec:modesolver"></A>
+<BR>
+A Proposed Mode-Solver
+</H1>
+
+<P>
+We now describe an algorithm for finding modes in multichannel datasets. The algorithm is intended to be maximally application-agnostic: no calibration, no <SPAN  CLASS="textit">a priori</SPAN> knowledge about the system, no precooked bases. Also, while this algorithm has not yet been implemented for realtime operation, it has been designed with this in mind. Of all the techniques for modal decomposition that have been described above, this algorithm bears the most similarity to DMD. However, the discovery that methods of this kind were even considered worthwhile came as a shock, after much of the development and testing had already occurred. Ultimately, it has been inspiring and encouraging to know that the pursuit is not a misguided waste of time.
+
+<P>
+This technique, like DMD and the PDE technique described in section <A HREF="Modal_Analysis_via.html#sec:PDEmodes">1.7</A>, constructs a companion matrix, <SPAN CLASS="MATH"><IMG
+ WIDTH="2281" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$A$"></SPAN>, which multiplies the current audio block to predict what the next incoming sample will be on each input. Like both the PDE and DMD method, the matrix is largely a shifting submatrix, which is fed by a prediction submatrix. However, this method treats the data points from all locations on the surface as equally valid predictors of each new sample. This differs from both the PDE technique and from DMD, which make assessments of the (possibly many) channels as independent time series, only later finding eigenvectors that relate them. As a result, this technique leverages the many spatial samples in making a regression analysis, in addition to the time series. 
+
+<P>
+Furthermore, this algorithm differs from DMD because it is a multirate process. The DMD behaves similarly to a DFT, where it is applied on a single block of data. This causes limitations in temporal accuracy, particularly if one wanted to calculate the residual, which would consist of the forcing function and noise. The proposed technique does not have these limitations.
+
+<P>
+For example, let <SPAN CLASS="MATH"><IMG
+ WIDTH="98" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img240.png"
+ ALT="$X$"></SPAN> be an incoming matrix of data. This is a real-valued matrix with <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img188.png"
+ ALT="$n$"></SPAN> rows and <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img241.png"
+ ALT="$b$"></SPAN> columns, where <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img241.png"
+ ALT="$b$"></SPAN> is the number of spatial measurement points, and <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img188.png"
+ ALT="$n$"></SPAN> is the length in samples of the largest timescale we care to look at, momentarily. Each column vector in <SPAN CLASS="MATH"><IMG
+ WIDTH="98" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img240.png"
+ ALT="$X$"></SPAN> is a time series that progresses downward, so the last element in <SPAN CLASS="MATH"><IMG
+ WIDTH="98" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img240.png"
+ ALT="$X$"></SPAN> is the most recent value observed at a given position. Each column vector in <SPAN CLASS="MATH"><IMG
+ WIDTH="98" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img240.png"
+ ALT="$X$"></SPAN> is mean-subtracted. Let <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img242.png"
+ ALT="$C$"></SPAN> be the covariance matrix defined as follows:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+C_{i,j} = \sum_{i,j = 1}^{(k+1)b} X([n - w - j : n - i], [1:b]) \cdot X([n - w - j : n - i], [1:b])'
+\end{equation}
+ -->
+<A NAME="covariance_w"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="covariance_w"></A><IMG
+ WIDTH="13" HEIGHT="16" BORDER="0"
+ SRC="img243.png"
+ ALT="\begin{displaymath}
+C_{i,j} = \sum_{i,j = 1}^{(k+1)b} X([n - w - j : n - i], [1:b]) \cdot X([n - w - j : n - i], [1:b])'
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">9</SPAN>.1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+This accumulates the variances over a period of <SPAN CLASS="MATH"><IMG
+ WIDTH="2391" HEIGHT="75" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="$w$"></SPAN> samples and forms a square, symmetric matrix of length <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img245.png"
+ ALT="$(k+1)b$"></SPAN>, which we partition like so:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+C = \left(
+\begin{array}{c c c | c}
+ {} & {} & {} &{} \\
+ {} & X_0 & {} & X_1 \\
+ {} & {} &  {} & {} \\
+ \hline
+ {} & X_1 & {} & {}
+\end{array}
+\right)
+\end{equation}
+ -->
+<A NAME="covariance_part"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="covariance_part"></A><IMG
+ WIDTH="60" HEIGHT="34" BORDER="0"
+ SRC="img246.png"
+ ALT="\begin{displaymath}
+C = \left(
+\begin{array}{c c c \vert c}
+{} &amp; {} &amp; {} &amp;{} \\...
+...} &amp; {} &amp; {} \\
+\hline
+{} &amp; X_1 &amp; {} &amp; {}
+\end{array}\right)
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">9</SPAN>.2)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+In <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img242.png"
+ ALT="$C$"></SPAN>, then, the top <SPAN CLASS="MATH"><IMG
+ WIDTH="2223" HEIGHT="150" ALIGN="MIDDLE" BORDER="0"
+ SRC="img247.png"
+ ALT="$kb \times kb$"></SPAN> matrix is the covariance between the previous <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.png"
+ ALT="$k$"></SPAN> windows of <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img241.png"
+ ALT="$b$"></SPAN> channels. (Once again, the windows are accumulated over <SPAN CLASS="MATH"><IMG
+ WIDTH="2391" HEIGHT="75" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="$w$"></SPAN> samples.) Call this top-left submatrix <SPAN CLASS="MATH"><IMG
+ WIDTH="55" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img248.png"
+ ALT="$X_0$"></SPAN>. The bottom-left submatrix has <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img241.png"
+ ALT="$b$"></SPAN> rows and <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img249.png"
+ ALT="$kb$"></SPAN> columns, and contains the covariance between the previous <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img249.png"
+ ALT="$kb$"></SPAN> summations of length <SPAN CLASS="MATH"><IMG
+ WIDTH="2391" HEIGHT="75" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="$w$"></SPAN>, and the most recent values of <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img241.png"
+ ALT="$b$"></SPAN>. Call this matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img250.png"
+ ALT="$X_1$"></SPAN>.
+
+<P>
+Another way to express these matrices, which might make them seem more familiar, is
+<BR>
+<IMG
+ WIDTH="27" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img251.png"
+ ALT="\begin{singlespace}
+\begin{align}
+X_0 &amp;= K'K\notag\\
+X_1 &amp;= K'u \text{,} \qquad...
+...n*}
+K'K\hat{c} &amp;= K'u\\
+\hat{c} &amp;= (K'K)^{-1} K'u
+\end{align*}\end{singlespace}">
+<BR>
+or, using our variables, <!-- MATH
+ $X_0^{-1} X_1 = P$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="4283" HEIGHT="130" ALIGN="MIDDLE" BORDER="0"
+ SRC="img252.png"
+ ALT="$X_0^{-1} X_1 = P$"></SPAN>, so named because it is our predictor submatrix. which constructs each of the values in <SPAN CLASS="MATH"><IMG
+ WIDTH="2220" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$x_1$"></SPAN> as a linear combination of all the previous values <SPAN CLASS="MATH"><IMG
+ WIDTH="90" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img253.png"
+ ALT="$x_0$"></SPAN>. We cook this matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img254.png"
+ ALT="$P$"></SPAN> into a companion matrix of the form
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+A = \left(
+\frac{
+\begin{array}{ c | c }
+ 0 &I
+\end{array}
+}{P}\right)
+\end{equation}
+ -->
+<A NAME="companion_part"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="companion_part"></A><IMG
+ WIDTH="14" HEIGHT="16" BORDER="0"
+ SRC="img255.png"
+ ALT="\begin{displaymath}
+A = \left(
+\frac{
+\begin{array}{ c \vert c }
+0 &amp;I
+\end{array}}{P}\right)
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">9</SPAN>.3)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+If we were performing a typical linear prediction, we would make <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img241.png"
+ ALT="$b$"></SPAN> predictions, each of which uses the last <SPAN CLASS="MATH"><IMG
+ WIDTH="2196" HEIGHT="90" ALIGN="MIDDLE" BORDER="0"
+ SRC="img256.png"
+ ALT="$k-1$"></SPAN> data points for each column vector time series. However, this algorithm makes use of the presumed linear dependence of the variables across space as well as time, so our <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img241.png"
+ ALT="$b$"></SPAN> predictions will each use the last <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img257.png"
+ ALT="$(k-1) wb$"></SPAN> data points. The hypothesis is that this would allow us to make a higher order prediction after less time has passed. 
+
+<P>
+The eigendecomposition of this matrix <!-- MATH
+ $A = S\Lambda S^{-1}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img258.png"
+ ALT="$A = S\Lambda S^{-1}$"></SPAN> is an approximate modal decomposition of the system, in the least squares sense. In the current implementation, they are calculated using an Arnoldi implementation from the software package ARPACK. Regressions of the form described in equation (<A HREF="Modal_Analysis_via.html#coef_regression">1.7.7</A>) are possible, if the coefficients of another dataset are required. In this case, the new dataset could be modeled in terms of a combination of the homogeneous response + forcing function, as described in equation (<A HREF="Modal_Analysis_via.html#residual_regress">1.7.10</A>). 
+
+<P>
+An initial set of experiments was undertaken to test the validity of the algorithm, and the conditions for convergence of the eigenfrequencies. Multichannel audio signals were synthesized using all-pole filters and white noise. The activations of the eigenfrequencies were randomly distributed across the channels for each signal. This was intended to simulate the coupling between mode shape and measurement location, which must be assumed to be unknown, therefore random. The signals could simulate a number of damping regimes by varying the distributions of the magnitudes of the poles. 
+
+<P>
+A total of 20 parameter states were tested with 2 trials for each state. The stimuli were each 1000 samples long, with 4 channels of data. The two parameters that varied were the damping regimes and number of modes in the stimulus. 
+
+<P>
+The stimuli were grouped by the magnitudes of their poles into 10 ranges varying from 0-10%, 10-20%, 20-30%, and so on. The stimuli were further divided into 2 groups: one which exhibited 24 modes, the other which exhibited 28. The mode solver always attempted to find 24 eigenfrequencies.
+
+<P>
+The resulting eigenvalue sets were plotted against each other on the complex plane for each trial. Overall, the results suggest the mode solver performs better at finding modes which are less damped, which is fairly consistent with the findings of others. [<A
+ HREF="Bibliography.html#Chen2012">5</A>] [<A
+ HREF="Bibliography.html#Feeny1998">9</A>] [<A
+ HREF="Bibliography.html#Kerschen2002">17</A>] [<A
+ HREF="Bibliography.html#Han2003">14</A>] 
+
+<P>
+The mode solver was also asked to plot the mode shapes as complex contours. Since the stimulus model did not explicitly specify these, they cannot be verified against any data. They just look pretty.
+
+<P>
+N.B., this algorithm does not suffer from the negative effects of mean-subtraction as referenced in [<A
+ HREF="Bibliography.html#Chen2012">5</A>], and above in section <A HREF="Other_Modal_Measurement.html#sec:modes_other">1.8</A>. Our method subtracts the mean of the entire data set from each point in the data set, then it breaks the entire data set into smaller matrices of length <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img249.png"
+ ALT="$kb$"></SPAN>, spaced one sample apart, and proceeds with the DMD on each of those blocks. therefore, each submatrix is not re-centered, but rather permitted to drift on timescales much larger than <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.png"
+ ALT="$k$"></SPAN>.
+
+<P>
+Therefore the frequency-domain distortions associated with the DFT, i.e. arranging the poles at evenly spaced intervals around the unit circle, will not occur. This technique's behavior, like that of DMD--and presumably other least-squares prediction methods--converges on DFT-like behavior as the time-series order, <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.png"
+ ALT="$k$"></SPAN>, approaches the time-series length of dataset, <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img188.png"
+ ALT="$n$"></SPAN>. Thus there appears to be a compromise between the number of modes this type of system can find, and the accuracy. Since we do not perform mean-subtraction across column vectors of <SPAN CLASS="MATH"><IMG
+ WIDTH="98" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img240.png"
+ ALT="$X$"></SPAN>, this is perhaps another reason to use wider, rather than longer, datasets. However, this is just speculation at the moment.
+
+<P>
+Future tests will attempt to find the effects of increasing the number of channels. This will require a different implementation of the stimulus synthesizer. Other aspects of future work include verifying the forcing function estimation and mode shapes. 
+
+<P>
+Refer to section <A HREF="Experiment_Results.html#sec:exp_results">4.1</A> for an initial assesment of the algorithm.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html152"
+  HREF="Tamara_Smyth.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.png"></A> <A NAME="tex2html153"
+  HREF="Tamara_Smyth.html">Tamara Smyth</A>
+<BR>
+
+<A NAME="tex2html150"
+  HREF="Miller_Puckette.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.png"></A> <A NAME="tex2html151"
+  HREF="Miller_Puckette.html">Miller Puckette</A>
+<BR>
+
+<A NAME="tex2html146"
+  HREF="Other_Modal_Measurement.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.png"></A> <A NAME="tex2html147"
+  HREF="Other_Modal_Measurement.html">Other Modal Measurement Techniques</A>
+<BR>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<HR>Copyright &#169; <I>2014-01-09</I><BR>
+<A href="http://www.ucsd.edu/">
+	My Own Center for My Own Studies (MOCMOS),</A>
+&nbsp;
+<A href="http://www.ucsd.edu/"> UCSD</A>,
+<A HREF="http://www.etc.com/">Etc.</A>
+
+</ADDRESS>
+</BODY>
+</HTML>

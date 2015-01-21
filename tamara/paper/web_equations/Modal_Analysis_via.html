@@ -1,0 +1,554 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Modal Analysis via Partial Differential Equations</TITLE>
+<META NAME="description" CONTENT="Modal Analysis via Partial Differential Equations">
+<META NAME="keywords" CONTENT="web_equations">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="web_equations.css">
+
+<LINK REL="next" HREF="Other_Modal_Measurement.html">
+<LINK REL="previous" HREF="Modes_Introduction.html">
+<LINK REL="up" HREF="Miller_Puckette.html">
+<LINK REL="next" HREF="Other_Modal_Measurement.html">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" 
+	TEXT="BLACK" 
+	LINK="BLACK" 
+	ALINK="BLUE"
+	VLINK="GRAY">
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+
+<A NAME="tex2html134"
+  HREF="Other_Modal_Measurement.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.png"></A> <A NAME="tex2html135"
+  HREF="Other_Modal_Measurement.html">Other Modal Measurement Techniques</A>
+<BR>
+
+<A NAME="tex2html132"
+  HREF="Miller_Puckette.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.png"></A> <A NAME="tex2html133"
+  HREF="Miller_Puckette.html">Miller Puckette</A>
+<BR>
+
+<A NAME="tex2html126"
+  HREF="Modes_Introduction.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.png"></A> <A NAME="tex2html127"
+  HREF="Modes_Introduction.html">Modes: An Introduction</A>
+<BR>
+
+<HR>
+<BR>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00170000000000000000"></A><A NAME="sec:PDEmodes"></A>
+<BR>
+Modal Analysis 
+<BR>
+via Partial Differential Equations
+</H1>
+
+<P>
+This technique begins with the assumption that the differential equation of motion in the object is known. Furthermore, the technique requires the assumption that the system is linear, or that the data has been conditioned such that it resembles an analysis of a linear system. The goal, as introduced qualitatively in the previous section, is to describe the behavior of the system as a linear combination of modes. The algorithm is presented without reference to dimensionality. It has been successfully applied to vectors of coefficients as well as matrices. [<A
+ HREF="Bibliography.html#Strang2009">31</A>, p.&nbsp;317]
+
+<P>
+Another perspective: what we have been calling the ``modes'' are actually the <SPAN  CLASS="textit">eigenvectors</SPAN> of a matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="2281" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$A$"></SPAN>, that describes the motion of the system as a <SPAN  CLASS="textit">constant-coefficient linear differential equation</SPAN>. Recall from linear algebra that <SPAN  CLASS="textit">eigenvalues</SPAN> are solutions <SPAN CLASS="MATH"><IMG
+ WIDTH="2232" HEIGHT="45" ALIGN="BOTTOM" BORDER="0"
+ SRC="img138.png"
+ ALT="$\lambda$"></SPAN>, such that <!-- MATH
+ $Ax = \lambda A$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="2291" HEIGHT="80" ALIGN="BOTTOM" BORDER="0"
+ SRC="img194.png"
+ ALT="$Ax = \lambda A$"></SPAN>, and the eigenvectors are <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$x$"></SPAN>.[<A
+ HREF="Bibliography.html#Strang2009">31</A>, p.&nbsp;283] If we think of a matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="2281" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$A$"></SPAN> as a <SPAN  CLASS="textit">linear transformation</SPAN> of a vector, for example a filter, the eigenvectors are vectors that pass through the linear transformation unchanged except for a scale factor, <SPAN CLASS="MATH"><IMG
+ WIDTH="2232" HEIGHT="45" ALIGN="BOTTOM" BORDER="0"
+ SRC="img138.png"
+ ALT="$\lambda$"></SPAN>, which is the eigenvalue. Our description of a mode shape is almost precisely this: a closed path, through which the eigenvalue rotates the vibration in phase. [<A
+ HREF="Bibliography.html#Marshall2004">23</A>, p.&nbsp;8] A constant-coefficient linear differential equation could be, e.g., the wave equation as derived in <A HREF="Derivation_Non_Piezoelectri.html#sec:npwaveq_nd">1.1</A>, however it need not merely be a 2<SUP>nd</SUP>-order differential equation. In fact, this equation could be of 
+arbitrary order, up to the practical limitations of the abacus, and the amount of papyrus being used to implement the technique. This is because we assume, once again, the solutions to the equation of interest to be of the form <!-- MATH
+ $e^{-\mathsf{i}\omega t}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="68" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img195.png"
+ ALT="$e^{-\mathsf{i}\omega t}$"></SPAN>, so differentiating is equivalent to multiplying by the factor <!-- MATH
+ $(-\mathsf{i}\omega t)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="20" ALIGN="MIDDLE" BORDER="0"
+ SRC="img196.png"
+ ALT="$(-\mathsf{i}\omega t)$"></SPAN>. The modes are eigenvectors will form a basis which diagonalizes the single n<SUP>th</SUP>-order differential equation into a system of n 1<SUP>st</SUP>-order differential equations. Such equations are of the general form[<A
+ HREF="Bibliography.html#Reid1992">27</A>, p.&nbsp;16]
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+D^n x + a_{n-1} D^n-1 x + \cdots a_1 Dx + a_0 x = f ,
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="46" HEIGHT="34" BORDER="0"
+ SRC="img197.png"
+ ALT="\begin{displaymath}
+D^n x + a_{n-1} D^n-1 x + \cdots a_1 Dx + a_0 x = f ,
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">7</SPAN>.1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where the operator <SPAN CLASS="MATH"><IMG
+ WIDTH="2293" HEIGHT="56" ALIGN="BOTTOM" BORDER="0"
+ SRC="img198.png"
+ ALT="$D$"></SPAN> is a differentiation with respect to time, <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$x$"></SPAN> is the current displacement, and the values <!-- MATH
+ $a_0 \cdots a_{n-1}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img199.png"
+ ALT="$a_0 \cdots a_{n-1}$"></SPAN> are the parameters of the differential equation, e.g., in the case of our wave equation, <SPAN CLASS="MATH"><IMG
+ WIDTH="77" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img200.png"
+ ALT="$a_0$"></SPAN> is the spring constant, <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img201.png"
+ ALT="$a_1$"></SPAN> is the frictional coefficient (``damping,'' in our terminology developed in section <A HREF="Solutions_Wave_Equation.html#sec:lossy">1.2</A>), and <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.png"
+ ALT="$a_2$"></SPAN> is the mass of the particle. The right-hand side, <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img74.png"
+ ALT="$f$"></SPAN>, is the residual force. If <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img203.png"
+ ALT="$f=0$"></SPAN>, the system is not experiencing excitation from the outside. It is in a ``homogeneous'' state, reacting to the initial conditions <SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.png"
+ ALT="$u(0)$"></SPAN>. Let's say we wanted to know what this matrix would do after an arbitrarily long amount of time, in response to the initial conditions <SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.png"
+ ALT="$u(0)$"></SPAN>. 
+
+<P>
+The first step is to convert this n<SUP>th</SUP>-order equation into a system of first-order equations using matrices. The matrix to construct will be a <SPAN  CLASS="textit">companion</SPAN> matrix, one that applies the transition from <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$x$"></SPAN> to <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.png"
+ ALT="$\dot{x}$"></SPAN>, etc. Call it <SPAN CLASS="MATH"><IMG
+ WIDTH="2281" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$A$"></SPAN> in this general case. It looks like this:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\begin{pmatrix}
+0 &1 &0 &\cdots &0\\
+0 &0 &1 &\ddots &\vdots\\
+\vdots &\vdots &\ddots &\ddots &0\\
+0 &0 &\cdots &0 &1\\
+-a_{n-1} &\cdots &\cdots &-a_1 &-a_0
+\end{pmatrix}
+\end{equation}
+ -->
+<A NAME="companion"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="companion"></A><IMG
+ WIDTH="10" HEIGHT="16" BORDER="0"
+ SRC="img206.png"
+ ALT="\begin{displaymath}
+\begin{pmatrix}
+0 &amp;1 &amp;0 &amp;\cdots &amp;0\\
+0 &amp;0 &amp;1 &amp;\ddots &amp;\vdot...
+...ots &amp;0 &amp;1\\
+-a_{n-1} &amp;\cdots &amp;\cdots &amp;-a_1 &amp;-a_0
+\end{pmatrix}\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">7</SPAN>.2)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+This matrix multiplies a column vector by the negative differential parameters and shifts the values up. In our vector <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$u$"></SPAN> we will store previous increasing orders of derivatives of <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$x$"></SPAN>. The entire equation in tableau becomes[<A
+ HREF="Bibliography.html#Reid1992">27</A>, p.&nbsp;17]
+
+<P>
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+D \begin{pmatrix}
+      x\\
+      \dot{x}\\
+      \vdots\\
+      D^{n-1}x
+     \end{pmatrix}
+-
+\begin{pmatrix}
+0 &1 &0 &\cdots &0\\
+0 &0 &1 &\ddots &\vdots\\
+\vdots &\vdots &\ddots &\ddots &0\\
+0 &0 &\cdots &0 &1\\
+-a_{n-1} &\cdots &\cdots &-a_1 &-a_0
+\end{pmatrix}
+\begin{pmatrix}
+      x\\
+      \dot{x}\\
+      \vdots\\
+      D^{n-1}x
+     \end{pmatrix}
+= 0
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="251" HEIGHT="204" BORDER="0"
+ SRC="img207.png"
+ ALT="\begin{displaymath}
+D \begin{pmatrix}
+x\\
+\dot{x}\\
+\vdots\\
+D^{n-1}x
+\...
+...trix}
+x\\
+\dot{x}\\
+\vdots\\
+D^{n-1}x
+\end{pmatrix}= 0
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">7</SPAN>.3)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+or, more humanely, <SPAN CLASS="MATH"><IMG
+ WIDTH="2371" HEIGHT="185" ALIGN="BOTTOM" BORDER="0"
+ SRC="img208.png"
+ ALT="$Du = Au$"></SPAN> . We can solve the response of the system as a sum of exponentials,
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+u_h(t) = e^{At}u(0) \text{.}
+\end{equation}
+ -->
+<A NAME="homogeneous_exp"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="homogeneous_exp"></A><IMG
+ WIDTH="72" HEIGHT="16" BORDER="0"
+ SRC="img209.png"
+ ALT="\begin{displaymath}
+u_h(t) = e^{At}u(0) \text{.}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">7</SPAN>.4)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+If the matrix A has a set of unique eigenvalues, <SPAN CLASS="MATH"><IMG
+ WIDTH="2199" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.png"
+ ALT="$\lambda_n$"></SPAN>, the corresponding eigenvectors will be the modal vectors <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img211.png"
+ ALT="$S_n$"></SPAN>. <SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="81" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$S$"></SPAN> is a matrix which ``diagonalizes'' <SPAN CLASS="MATH"><IMG
+ WIDTH="2281" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$A$"></SPAN> into <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img212.png"
+ ALT="$\Lambda$"></SPAN>, a diagonal matrix with every <SPAN CLASS="MATH"><IMG
+ WIDTH="2232" HEIGHT="45" ALIGN="BOTTOM" BORDER="0"
+ SRC="img138.png"
+ ALT="$\lambda$"></SPAN> down the middle. In this case, it would take a lot of graph paper to calculate the expansion of the matrix exponential, as its Taylor series involves taking arbitrarily high powers of a non-diagonal matrix. Fortunately, we can calculate the powers of a diagonal matrix very easily, and furthermore,[<A
+ HREF="Bibliography.html#Reid1992">27</A>, p.&nbsp;20]
+
+<P>
+<BR>
+<IMG
+ WIDTH="17" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img213.png"
+ ALT="\begin{align*}
+A^2 = (S \Lambda S^{-1})^2
+= S \Lambda S^{-1} S \Lambda S^{-1}
+= S \Lambda \Lambda S^{-1}
+= S \Lambda^2 S^{-1} \text{,}
+\end{align*}">
+<BR>
+so for our exponential function, we may instead write
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+S e^{\Lambda t} S^{-1}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="434" HEIGHT="21" BORDER="0"
+ SRC="img214.png"
+ ALT="\begin{displaymath}
+S e^{\Lambda t} S^{-1}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">7</SPAN>.5)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+Substituting this in for equation (<A HREF="#homogeneous_exp">1.7.4</A>), we get the following:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+u_h(t) = e^{At} = Se^{\Lambda t} S^{-1} u(0) \text{.}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="64" HEIGHT="58" BORDER="0"
+ SRC="img215.png"
+ ALT="\begin{displaymath}
+u_h(t) = e^{At} = Se^{\Lambda t} S^{-1} u(0) \text{.}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">7</SPAN>.6)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+We then find the coefficients for the initial conditions using a regression of the form
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+c = S^{-1} u(0) \text{,}
+\end{equation}
+ -->
+<A NAME="coef_regression"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="coef_regression"></A><IMG
+ WIDTH="214" HEIGHT="63" BORDER="0"
+ SRC="img216.png"
+ ALT="\begin{displaymath}
+c = S^{-1} u(0) \text{,}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">7</SPAN>.7)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+which is essentially a change of basis into the eigenvector basis: <SPAN CLASS="MATH"><IMG
+ WIDTH="2204" HEIGHT="75" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$c$"></SPAN> tells us what combinations of <SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="81" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$S$"></SPAN> are needed to produce <SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.png"
+ ALT="$u(0)$"></SPAN>. Then we plug these coefficients back into our formula to find the response:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+u_h(t) = \sum_{i=1}^n c_i e^{\lambda t} (S)_i
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="98" HEIGHT="63" BORDER="0"
+ SRC="img217.png"
+ ALT="\begin{displaymath}
+u_h(t) = \sum_{i=1}^n c_i e^{\lambda t} (S)_i
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">7</SPAN>.8)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+When we examine the eigenvectors and eigenvalues of a constant-coefficient linear differential equation, many things become clear. We can even determine a solution for <SPAN CLASS="MATH"><IMG
+ WIDTH="2214" HEIGHT="73" ALIGN="BOTTOM" BORDER="0"
+ SRC="img218.png"
+ ALT="$t = \infty$"></SPAN>. If we analyze the values in <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img212.png"
+ ALT="$\Lambda$"></SPAN>, which will likely be complex, we will find that the mode shape in <SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="81" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$S$"></SPAN> with the largest corresponding <!-- MATH
+ $\Re\{\lambda_i\}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img219.png"
+ ALT="$\Re\{\lambda_i\}$"></SPAN> will dominate, if there is a component of the initial condition <SPAN CLASS="MATH"><IMG
+ WIDTH="2204" HEIGHT="75" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$c$"></SPAN> in this vector. If any <!-- MATH
+ $\Re\{\lambda_i\} = 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img220.png"
+ ALT="$\Re\{\lambda_i\} = 0$"></SPAN>, the system will tend towards an oscillation along the mode shape in the corresponding <SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="81" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$S$"></SPAN>. If any <!-- MATH
+ $\Re\{\lambda_i\} > 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="75" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img221.png"
+ ALT="$\Re\{\lambda_i\} &gt; 1$"></SPAN>, the system is acausal. [<A
+ HREF="Bibliography.html#Strang2009">31</A>, p.&nbsp;318]
+
+<P>
+Because we typically want to perform the algorithm for a mesh of mass-spring models in a network, we likely would form the vectors <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$u$"></SPAN> into matrices, and adjust the dimensions accordingly.[<A
+ HREF="Bibliography.html#Reid1992">27</A>, p.&nbsp;20]
+
+<P>
+The decomposition of the forcing function would reduce to:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+Bu_f = S^{-1} e^{\Lambda t} \int_0^t e^{-D \tau} S f(\tau) d\tau \text{, }
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="78" HEIGHT="34" BORDER="0"
+ SRC="img222.png"
+ ALT="\begin{displaymath}
+Bu_f = S^{-1} e^{\Lambda t} \int_0^t e^{-D \tau} S f(\tau) d\tau \text{, }
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">7</SPAN>.9)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="2254" HEIGHT="67" ALIGN="BOTTOM" BORDER="0"
+ SRC="img223.png"
+ ALT="$\tau = 2\pi$"></SPAN>. The total disturbance due to the forcing function and the homogeneous response is
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+u_f(t) = e^{At}v(0) + S^{-1}e^{\Lambda t} \int_0^t e^{-D \tau} S f(\tau) d\tau
+\end{equation}
+ -->
+<A NAME="residual_regress"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="residual_regress"></A><IMG
+ WIDTH="59" HEIGHT="20" BORDER="0"
+ SRC="img224.png"
+ ALT="\begin{displaymath}
+u_f(t) = e^{At}v(0) + S^{-1}e^{\Lambda t} \int_0^t e^{-D \tau} S f(\tau) d\tau
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">7</SPAN>.10)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+This technique has the benefit of minimizing numerical error by avoiding discretization. Since the techniques for the decomposition of a system into its mode shapes, mode frequencies, and coefficients is a numerical process, we must move from the continuous description of the previous sections, to a discrete one. There is an entire class of numerical techniques for making this leap, which is not the topic of interest presently. The curious or suspicious reader is referred to [<A
+ HREF="Bibliography.html#Strang2009">31</A>, p.&nbsp;317] [<A
+ HREF="Bibliography.html#Press1988">26</A>] [<A
+ HREF="Bibliography.html#Reid1992">27</A>] [<A
+ HREF="Bibliography.html#Courant1937">6</A>], and countless others. In fact, when numerically implemented, the technique described above must at some point discretize its output. The sacred compromise between accuracy and cost is a major factor in choosing one algorithm or another. However, hardware and algorithmic developments certainly make it difficult to predict whether a technique that has been formerly thought intractable will become available in the near future. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html134"
+  HREF="Other_Modal_Measurement.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.png"></A> <A NAME="tex2html135"
+  HREF="Other_Modal_Measurement.html">Other Modal Measurement Techniques</A>
+<BR>
+
+<A NAME="tex2html132"
+  HREF="Miller_Puckette.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.png"></A> <A NAME="tex2html133"
+  HREF="Miller_Puckette.html">Miller Puckette</A>
+<BR>
+
+<A NAME="tex2html126"
+  HREF="Modes_Introduction.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.png"></A> <A NAME="tex2html127"
+  HREF="Modes_Introduction.html">Modes: An Introduction</A>
+<BR>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<HR>Copyright &#169; <I>2014-01-09</I><BR>
+<A href="http://www.ucsd.edu/">
+	My Own Center for My Own Studies (MOCMOS),</A>
+&nbsp;
+<A href="http://www.ucsd.edu/"> UCSD</A>,
+<A HREF="http://www.etc.com/">Etc.</A>
+
+</ADDRESS>
+</BODY>
+</HTML>

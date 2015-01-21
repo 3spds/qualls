@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Experiment Results</TITLE>
+<META NAME="description" CONTENT="Experiment Results">
+<META NAME="keywords" CONTENT="web_equations">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="web_equations.css">
+
+<LINK REL="previous" HREF="node31.html">
+<LINK REL="up" HREF="node31.html">
+<LINK REL="next" HREF="node33.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html385"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html383"
+  HREF="node31.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html379"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html386"
+  HREF="node33.html">Bibliography</A>
+<B> Up:</B> <A NAME="tex2html384"
+  HREF="node31.html">A Proposed Mode-Solver: Assessment</A>
+<B> Previous:</B> <A NAME="tex2html380"
+  HREF="node31.html">A Proposed Mode-Solver: Assessment</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00410000000000000000"></A><A NAME="sec:exp_results"></A>
+<BR>
+Experiment Results
+</H1>
+An initial set of experiments was undertaken to test the validity of the algorithm described in <A HREF="node10.html#sec:modesolver">1.9</A>, and the conditions for convergence of the eigenfrequencies. Multichannel audio signals were synthesized using all-pole filters and white noise. The activations of the eigenfrequencies were randomly distributed across the channels for each signal. This was intended to simulate the coupling between mode shape and measurement location, which must be assumed to be unknown, therefore random. The signals could simulate a number of damping regimes by varying the distributions of the magnitudes of the poles. 
+
+<P>
+A total of 20 parameter states were tested with 2 trials for each state. The stimuli were each 1000 samples long, with 4 channels of data. The two parameters that varied were the damping regimes and number of modes in the stimulus. 
+
+<P>
+The stimuli were grouped by the magnitudes of their poles into 10 ranges varying from 0-10%, 10-20%, 20-30%, and so on. The stimuli were further divided into 2 groups: one which exhibited 24 modes, the other which exhibited 28. The mode solver always attempted to find 24 eigenfrequencies.
+
+<P>
+The resulting eigenvalue sets were plotted against each other on the complex plane for each trial. Overall, the results suggest the mode solver performs better at finding modes which are less damped, which is fairly consistent with the findings of others. [<A
+ HREF="node33.html#Chen2012">5</A>] [<A
+ HREF="node33.html#Feeny1998">9</A>] [<A
+ HREF="node33.html#Kerschen2002">17</A>] [<A
+ HREF="node33.html#Han2003">14</A>] 
+
+<P>
+The mode solver was also asked to plot the mode shapes as complex contours. Since the stimulus model did not explicitly specify these, they cannot be verified against any data. They just look pretty.
+
+<P>
+N.B., this algorithm does not suffer from the negative effects of mean-subtraction as referenced in [<A
+ HREF="node33.html#Chen2012">5</A>], and above in section <A HREF="node9.html#sec:modes_other">1.8</A>. Our method subtracts the mean of the entire data set from each point in the data set, then it breaks the entire data set into smaller matrices of length <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img249.png"
+ ALT="$kb$"></SPAN>, spaced one sample apart, and proceeds with the DMD on each of those blocks. therefore, each submatrix is not re-centered, but rather permitted to drift on timescales much larger than <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.png"
+ ALT="$k$"></SPAN>.
+
+<P>
+Therefore the frequency-domain distortions associated with the DFT, i.e. arranging the poles at evenly spaced intervals around the unit circle, will not occur. This technique's behavior, like that of DMD--and presumably other least-squares prediction methods--converges on DFT-like behavior as the time-series order, <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.png"
+ ALT="$k$"></SPAN>, approaches the time-series length of dataset, <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img188.png"
+ ALT="$n$"></SPAN>. Thus there appears to be a compromise between the number of modes this type of system can find, and the accuracy. Since we do not perform mean-subtraction across column vectors of <SPAN CLASS="MATH"><IMG
+ WIDTH="98" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img240.png"
+ ALT="$X$"></SPAN>, this is perhaps another reason to use wider, rather than longer, datasets. However, this is just speculation at the moment.
+
+<P>
+Future tests will attempt to find the effects of increasing the number of channels. This will require a different implementation of the stimulus synthesizer. Other aspects of future work include verifying the forcing function estimation and mode shapes. 
+
+<P>
+In the complex plots below, the stimulus poles are plotted in red, while the algorithm's 24 estimation poles are plotted in blue. The first block of stimuli had 24 modes, and the second block had 28. These plots are ordered by increasing polar magnitude (or decreasing damping).
+
+<P>
+The complex contour plots of the modes, which begin on page <A HREF="node32.html#fig:mode_contours"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="/usr/share/latex2html/icons/crossref.png"></A> of this chapter, describe the mode shapes as they are expressed across each of the four channels, for six samples (in time) each. The real contours are placed above the imaginary contours. Only block 1, trial 1, pass 1 is printed.
+<BR>
+<A NAME="fig:mode_contours"></A><IMG
+ WIDTH="62" HEIGHT="79" ALIGN="BOTTOM" BORDER="0"
+ SRC="img379.png"
+ ALT="\begin{singlespace}
+% latex2html id marker 1610\begin{figure}[h]
+\includegraph...
+...(above) block 1, trial 10, pass 1, modes 23 \&amp; 24}
+\end{figure}\end{singlespace}">
+<BR>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html385"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html383"
+  HREF="node31.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html379"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html386"
+  HREF="node33.html">Bibliography</A>
+<B> Up:</B> <A NAME="tex2html384"
+  HREF="node31.html">A Proposed Mode-Solver: Assessment</A>
+<B> Previous:</B> <A NAME="tex2html380"
+  HREF="node31.html">A Proposed Mode-Solver: Assessment</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+joe
+2014-01-09
+</ADDRESS>
+</BODY>
+</HTML>

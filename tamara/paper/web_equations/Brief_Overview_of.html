@@ -1,0 +1,459 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>A Brief Overview of Electromagnetic Theory</TITLE>
+<META NAME="description" CONTENT="A Brief Overview of Electromagnetic Theory">
+<META NAME="keywords" CONTENT="web_equations">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="web_equations.css">
+
+<LINK REL="next" HREF="Laser_Beam_Characterization.html">
+<LINK REL="previous" HREF="Vibration_Sensors_that.html">
+<LINK REL="up" HREF="Tamara_Smyth.html">
+<LINK REL="next" HREF="Laser_Beam_Characterization.html">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" 
+	TEXT="BLACK" 
+	LINK="BLACK" 
+	ALINK="BLUE"
+	VLINK="GRAY">
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+
+<A NAME="tex2html201"
+  HREF="Laser_Beam_Characterization.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.png"></A> <A NAME="tex2html202"
+  HREF="Laser_Beam_Characterization.html">Laser Beam Characterization via Transverse EM Modes</A>
+<BR>
+
+<A NAME="tex2html199"
+  HREF="Tamara_Smyth.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.png"></A> <A NAME="tex2html200"
+  HREF="Tamara_Smyth.html">Tamara Smyth</A>
+<BR>
+
+<A NAME="tex2html193"
+  HREF="Vibration_Sensors_that.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.png"></A> <A NAME="tex2html194"
+  HREF="Vibration_Sensors_that.html">Vibration Sensors that Require Inertial Coupling</A>
+<BR>
+
+<HR>
+<BR>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00230000000000000000"></A><A NAME="sec:optics"></A>
+<BR>
+A Brief Overview 
+<BR>
+of Electromagnetic Theory
+</H1>
+ The characterization of light sources is essential for any optical imaging application. Like sound, light can be described as a wave phenomenon: a solution to the differential wave equation. This time, the wave equation derives from the differential form of Maxwell's equations for free space. This model is known as the <SPAN  CLASS="textit">Classical</SPAN> model, and we will largely content ourselves with this oversimplification, just as we did for acoustics earlier in this document. The vector formulation of Maxwell's equations is concisely descriptive: [<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;44]
+<BR>
+<A NAME="maxwell"></A><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img299.png"
+ ALT="\begin{align}
+\nabla^2 E &amp;= \epsilon_0 \mu_0 \frac{\partial^2 E}{\partial t^2} \...
+...\\
+\nabla^2 B &amp;= \epsilon_0 \mu_0 \frac{\partial^2 B}{\partial t^2}
+\end{align}">
+<BR>
+Above, <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img274.png"
+ ALT="$E$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="2200" HEIGHT="78" ALIGN="BOTTOM" BORDER="0"
+ SRC="img300.png"
+ ALT="$B$"></SPAN> are vectors with <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img301.png"
+ ALT="$x, y,$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$z$"></SPAN> components. <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img302.png"
+ ALT="$\epsilon_0$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img303.png"
+ ALT="$\mu_0$"></SPAN> are the permittivity and permeability of free space, respectively. Thus, the propagation speed of such a disturbance (in a vacuum) is <!-- MATH
+ $v = 1/\mathpalette
+\setbox 0=\hbox{$:\oldsqrt{!\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox 2=\hbox{\vrule height\ht0 depth -\dimen0}{\box0\lower0.4pt\box2}:}{\epsilon_0 \mu_0}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img304.png"
+ ALT="$v = 1/\mathpalette
+\setbox 0=\hbox{$:\oldsqrt{! }$}\dimen0=\ht0
+\advance\dime...
+...ox{\vrule height\ht0 depth -\dimen0}{\box0\lower0.4pt\box2}:}{\epsilon_0 \mu_0}$"></SPAN>. Light is a coupled electromagnetic field disturbance--that is, an electric and magnetic field, moving in synchrony--each component of which satisfies the scalar differential wave equation, just as we saw for sound in section <A HREF="Derivation_Non_Piezoelectri.html#sec:npwaveq_nd">1.1</A>. That equation, which we have seen before in terms of exponential functions in equation (<A HREF="Derivation_Non_Piezoelectri.html#npwaveq">1.1.9</A>), looks like this when written more generally. [<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;44]
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\frac{\partial^2\Psi}{\partial x^2} + \frac{\partial^2 \Psi}{\partial y^2} + \frac{\partial^2 \Psi}{\partial z^2}= \frac{1}{v_0^2}\frac{\partial^2\Psi}{\partial t^2}
+\end{equation}
+ -->
+<A NAME="waveq_light"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="waveq_light"></A><IMG
+ WIDTH="84" HEIGHT="54" BORDER="0"
+ SRC="img305.png"
+ ALT="\begin{displaymath}
+\frac{\partial^2\Psi}{\partial x^2} + \frac{\partial^2 \Psi}...
+...rtial z^2}= \frac{1}{v_0^2}\frac{\partial^2\Psi}{\partial t^2}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN>.1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+We will once again restrict our discussion of wave propagation to harmonic plane waves, without loss of generality (cf. section <A HREF="Solutions_Wave_Equation.html#sec:lossy">1.2</A>) because light behaves linearly at relatively small amplitudes, just like sound.[<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;286] Recall that harmonic waves are of the form, e.g., <!-- MATH
+ $e^{-\mathsf{i}(\omega t \pm kx)}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="2247" HEIGHT="68" ALIGN="BOTTOM" BORDER="0"
+ SRC="img306.png"
+ ALT="$e^{-\mathsf{i}(\omega t \pm kx)}$"></SPAN>. Harmonic waves are also called <SPAN  CLASS="textit">monochromatic</SPAN>, in the context of light. In a vacuum, both constituent fields of light propagate in transverse waves, and they are in phase. Their axes of displacement are not only perpendicular to their propagation direction, but to each other.  Plane waves can therefore be oriented, or <SPAN  CLASS="textit">polarized</SPAN>, by rotating these vectors along the plane of constant phase.[<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;45]
+Just like acoustic waves, electromagnetic waves transmit energy without globally translating matter, according to the classical model. We can now define the energy per unit volume of a traveling harmonic plane wave. This invites cautious analogies to equation (<A HREF="Derivation_Non_Piezoelectri.html#kinetic">1.1.10</A>):
+<BR>
+<A NAME="em_energy"></A><IMG
+ WIDTH="75" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img307.png"
+ ALT="\begin{align}
+W_E &amp;= \frac{\epsilon_0 E^2}{2}\notag\\
+W_B &amp;= \frac{\mu_0 B^2}{2}\qquad \text{,}
+\end{align}">
+<BR>
+with the notable difference that with light, we have two field variables to keep straight, whereas acoustic waves only had kinetic energy. N.B. the above equations are distinct from our treatment in section <A HREF="Solutions_Wave_Equation.html#sec:lossy">1.2</A> of kinetic versus potential energy. While in acoustics, we described impedance and damping in terms of complex numbers, which changed the phase relationships between <SPAN CLASS="MATH"><IMG
+ WIDTH="2202" HEIGHT="77" ALIGN="MIDDLE" BORDER="0"
+ SRC="img308.png"
+ ALT="$W_k$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.png"
+ ALT="$W_p$"></SPAN>, this is not the case with <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img310.png"
+ ALT="$W_E$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img311.png"
+ ALT="$W_B$"></SPAN>. The electric and magnetic fields cannot be out of phase with one another: doing so would violate Maxwell's Equations. [<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;46] Because these two disturbances are always connected to each other--with a real-valued constant, no less--the description of one field disturbance or another is typically sufficient. The standard conceit is to describe the <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img274.png"
+ ALT="$E$"></SPAN>-field, since its magnitudes are much ``larger.'' A simple manipulation of Maxwell's Equations reveals by how much  (for plane waves): [<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;45]
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+E_i = v_0 B_j \qquad \text{,}
+\end{equation}
+ -->
+<A NAME="EvB"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="EvB"></A><IMG
+ WIDTH="35" HEIGHT="36" BORDER="0"
+ SRC="img312.png"
+ ALT="\begin{displaymath}
+E_i = v_0 B_j \qquad \text{,}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN>.2)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="2197" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.png"
+ ALT="$v_0$"></SPAN> is <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img314.png"
+ ALT="$2.997E8$"></SPAN> meters per second. The <SPAN  CLASS="textit">energy</SPAN> in each field, however, is the same. The total energy per unit volume of the wave is then given by [<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;46] 
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+W_t = W_E + W_B = \epsilon_0 E^2 = \frac{B^2}{2} \qquad \text{.}
+\end{equation}
+ -->
+<A NAME="emEtotal"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="emEtotal"></A><IMG
+ WIDTH="62" HEIGHT="16" BORDER="0"
+ SRC="img315.png"
+ ALT="\begin{displaymath}
+W_t = W_E + W_B = \epsilon_0 E^2 = \frac{B^2}{2} \qquad \text{.}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN>.3)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+To calculate the total power flow per unit area, we use the <SPAN  CLASS="textit">Poynting vector</SPAN>, 
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+S(x,y,z) = v_0^2 \epsilon_0 E(x,y,z) \times B(x,y,z)
+\end{equation}
+ -->
+<A NAME="poynting"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="poynting"></A><IMG
+ WIDTH="273" HEIGHT="70" BORDER="0"
+ SRC="img316.png"
+ ALT="\begin{displaymath}
+S(x,y,z) = v_0^2 \epsilon_0 E(x,y,z) \times B(x,y,z)
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN>.4)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where the operator <SPAN CLASS="MATH"><IMG
+ WIDTH="2274" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img317.png"
+ ALT="$\times$"></SPAN> denotes a cross-product. [<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;46] The Poynting vector is an instantaneous measure that fluctuates in length with twice the frequency of the radiation. This makes it impossible to observe directly, and essentially meaningless for time-averaged values. Generally, to quantify the degree to which something is illuminated, the measure to use is <SPAN  CLASS="textit">irradiance</SPAN>. Irradiance is the field variable that most sensors will measure. It is defined by
+<BR>
+<A NAME="irradiance"></A><IMG
+ WIDTH="19" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img318.png"
+ ALT="\begin{align}
+I = \epsilon_0 v_0 \langle E^2 \rangle_T \qquad \text{,}
+\end{align}">
+<BR>
+wherein the braces and the subscript, <!-- MATH
+ $\langle \rangle_T$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="2209" HEIGHT="19" ALIGN="MIDDLE" BORDER="0"
+ SRC="img319.png"
+ ALT="$\langle \rangle_T$"></SPAN>, denote a time-average. [<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;48]
+
+<P>
+The angle of reflection <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img320.png"
+ ALT="$\theta_r$"></SPAN>, exhibited by a wavefront of light after striking a reflective surface, will always be equal to the angle of the wavefront's incident, <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img321.png"
+ ALT="$\theta_i$"></SPAN>. When light travels through an appropriately transparent, non-dispersive material, the permittivity <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img275.png"
+ ALT="$\epsilon$"></SPAN> and permeability <SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img165.png"
+ ALT="$\mu$"></SPAN>, and, as a result, the velocity <SPAN CLASS="MATH"><IMG
+ WIDTH="2185" HEIGHT="56" ALIGN="BOTTOM" BORDER="0"
+ SRC="img89.png"
+ ALT="$v$"></SPAN>, change. While this change in propagation velocity does not affect the temporal frequency (color) of the light, it alters the angle of transmitted light, <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img322.png"
+ ALT="$\theta_t$"></SPAN>, and the amplitude of the reflected and transmitted components. The ratio which describes this change in propagation is called the <SPAN  CLASS="textit">relative index-of-refraction</SPAN> between the two media and it is given by <SPAN  CLASS="textit">Snell's Law</SPAN>[<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.97]:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\eta_{ti} \equiv \frac{\sin{\theta_i}}{\sin{theta_t}} = \frac{v_i}{v_t}
+\end{equation}
+ -->
+<A NAME="snell_em"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="snell_em"></A><IMG
+ WIDTH="13" HEIGHT="32" BORDER="0"
+ SRC="img323.png"
+ ALT="\begin{displaymath}
+\eta_{ti} \equiv \frac{\sin{\theta_i}}{\sin{theta_t}} = \frac{v_i}{v_t}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN>.5)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+In contrast to this value, which compares two materials, there is also an index-of-refraction <SPAN CLASS="MATH"><IMG
+ WIDTH="2199" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img93.png"
+ ALT="$\eta$"></SPAN>, which describes a given material's properties in relation to a vacuum. The incident, transmitted, and reflected vectors are all coplanar, and that plane is called the plane-of-incidence. To find the amplitudes and polarizations of the resulting refracted and reflected light, we must split the incident <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img274.png"
+ ALT="$E$"></SPAN>-field into components which are parallel and perpendicular to this plane. Assuming the change in permeability is negligible, we can use the <SPAN  CLASS="textit">Fresnel equations</SPAN>: [<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;109]
+<BR>
+<A NAME="fresnel"></A><IMG
+ WIDTH="2217" HEIGHT="66" ALIGN="BOTTOM" BORDER="0"
+ SRC="img324.png"
+ ALT="\begin{align}
+r_\perp \equiv \left( \frac{E_0r}{E_0i} \right)_\perp = \frac{n_i ...
+...{2n_i \cos{\theta_i}}{n_i \cos{\theta_t} + n_t \cos{\theta_i}}\notag
+\end{align}">
+<BR>
+These equations may be verified using the boundary conditions and Maxwell's equations. The boundary conditions require that the <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img274.png"
+ ALT="$E$"></SPAN>-field component tangent to the boundary be continuous, while the <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img274.png"
+ ALT="$E$"></SPAN>-field component normal to the boundary must rotate by <SPAN CLASS="MATH"><IMG
+ WIDTH="2240" HEIGHT="56" ALIGN="BOTTOM" BORDER="0"
+ SRC="img182.png"
+ ALT="$\pi$"></SPAN>. N.B. for a given interface and polarization, may be an angle where <!-- MATH
+ $\theta_t = \pi / 2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="2269" HEIGHT="220" ALIGN="MIDDLE" BORDER="0"
+ SRC="img325.png"
+ ALT="$\theta_t = \pi / 2$"></SPAN>, called the <SPAN  CLASS="textit">critical angle</SPAN>. At this angle, all of the light is internally reflected. [<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;112] Electromagnetic waves that propagate in this regime bear certain similarities to mechanical waves in SAW devices, in that their propagation is restricted. However, the similarities have more to do with the applications than with the physical phenomena. [<A
+ HREF="Bibliography.html#Kino1987">18</A>, p.&nbsp;440]
+
+<P>
+It is common to simplify the propagation of waves into <SPAN  CLASS="textit">rays</SPAN>: straight lines perpendicular to the wavefronts. The ray model loses a lot of detail, even in its description of free-space propagation, however it is beneficial for back-of-the-envelope estimates of some interactions. [<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;95] Making the further assumption that such rays travel together in bundles which subtend only small angles from the main axis of an optical system, is called the <SPAN  CLASS="textit">Paraxial approximation</SPAN>. This allows us to assume that optical components behave linearly, and as a result, many free-space optical systems can be easily modeled as matrix multiplications. [<A
+ HREF="Bibliography.html#Goodman2005">13</A>, p.&nbsp;444] This technique, of constructing <SPAN  CLASS="textit">ray transfer matrices</SPAN>, has implications for both modeling and regression analysis.
+
+<P>
+On the other hand, this assumes that all light travels as a plane wave, which is a fine assumption to make until these waves start interfering with each other. <SPAN  CLASS="textit">Huygen's principle</SPAN> is another useful approximation that suggests all the points of a propagating wavefront are the sources of spherical wavelets, which add together to form the wavefront at some later time. This assumption will help us visualize phenomena related to <SPAN  CLASS="textit">diffraction</SPAN>. [<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;100]
+
+<P>
+Diffraction is a broadly defined family of effects caused by the confinement of waves. It is caused by the constructive and destructive interference patterns endemic to all waves, exacerbated by the discontinuities in propagation factors at the boundaries. It is especially  apparent when the extent of the wave's confinement is comparable to their wavelength. [<A
+ HREF="Bibliography.html#Goodman2005">13</A>, p.&nbsp;32] However, diffraction is present in even the most finely calibrated optical systems. 
+
+<P>
+Optical systems that are theoretically perfect--from a geometrical optics perspective, at least--are said to be ``diffraction limited.'' [<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;143] There are several methods for describing the performance of the optical system in this state. These depend on application-specific assumptions, such as the coherence--chromatic purity, measured in average spatial beat length. Despite their differences, however, all of these measures somehow involve the <SPAN  CLASS="textit">Airy pattern</SPAN>, a radially symmetric function of irradiance over deviation angle. The Airy pattern is essentially a cross-section of an ideal point-source at infinity, which has passed through an aperture at some point in the optical path, i.e., [<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;445]
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+I(\theta) = \left[ \frac{2 J_1 (ka \sin{\theta})}{ka \sin{\theta}} \right]^2 \qquad \text{,}
+\end{equation}
+ -->
+<A NAME="airy_patt"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="airy_patt"></A><IMG
+ WIDTH="65" HEIGHT="34" BORDER="0"
+ SRC="img326.png"
+ ALT="\begin{displaymath}
+I(\theta) = \left[ \frac{2 J_1 (ka \sin{\theta})}{ka \sin{\theta}} \right]^2 \qquad \text{,}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN>.6)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="2245" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img327.png"
+ ALT="$J_1(u)$"></SPAN> is a Bessel function of the 1<SUP>st</SUP> kind, order zero, <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.png"
+ ALT="$k$"></SPAN> is the spatial frequency of the light source, <SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img328.png"
+ ALT="$a$"></SPAN> is the aperture radius, and <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img329.png"
+ ALT="$\theta$"></SPAN> is the angle of deviation from the center. [<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;445]
+
+<P>
+By ``at infinity,'' we mean that the wavefronts of the point source--ostensibly spherical--have traveled sufficiently far to become plane waves. Since all lenses, mirrors, etc are of finite radius, we can assume any distant object fits this description. In the neighborhood of <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img330.png"
+ ALT="$\theta = 0$"></SPAN>, this function is at a maximum. This circular region is known as the <SPAN  CLASS="textit">Airy disk</SPAN>: [<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;445] 
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+(\Delta \varphi)_{min} = \Delta \theta = \frac{1.22 \lambda}{D} \qquad \text{,}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="48" HEIGHT="21" BORDER="0"
+ SRC="img331.png"
+ ALT="\begin{displaymath}
+(\Delta \varphi)_{min} = \Delta \theta = \frac{1.22 \lambda}{D} \qquad \text{,}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN>.7)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="2293" HEIGHT="56" ALIGN="BOTTOM" BORDER="0"
+ SRC="img198.png"
+ ALT="$D$"></SPAN> is the diameter of the aperture, and <SPAN CLASS="MATH"><IMG
+ WIDTH="2232" HEIGHT="45" ALIGN="BOTTOM" BORDER="0"
+ SRC="img138.png"
+ ALT="$\lambda$"></SPAN> is the wavelength. This disk is the result of <SPAN  CLASS="textit">Fraunhofer</SPAN> (far-field) diffraction, and the Airy pattern from equation (<A HREF="#airy_patt">2.3.10</A>) is the Fourier Transform of the aperture. [<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;496] Sadly, time and space constraints preclude the author from providing this fascinating proof. However, an excellent form of it may be found in [<A
+ HREF="Bibliography.html#Goodman2005">13</A>, p.&nbsp;104]. 
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html201"
+  HREF="Laser_Beam_Characterization.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.png"></A> <A NAME="tex2html202"
+  HREF="Laser_Beam_Characterization.html">Laser Beam Characterization via Transverse EM Modes</A>
+<BR>
+
+<A NAME="tex2html199"
+  HREF="Tamara_Smyth.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.png"></A> <A NAME="tex2html200"
+  HREF="Tamara_Smyth.html">Tamara Smyth</A>
+<BR>
+
+<A NAME="tex2html193"
+  HREF="Vibration_Sensors_that.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.png"></A> <A NAME="tex2html194"
+  HREF="Vibration_Sensors_that.html">Vibration Sensors that Require Inertial Coupling</A>
+<BR>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<HR>Copyright &#169; <I>2014-01-09</I><BR>
+<A href="http://www.ucsd.edu/">
+	My Own Center for My Own Studies (MOCMOS),</A>
+&nbsp;
+<A href="http://www.ucsd.edu/"> UCSD</A>,
+<A HREF="http://www.etc.com/">Etc.</A>
+
+</ADDRESS>
+</BODY>
+</HTML>

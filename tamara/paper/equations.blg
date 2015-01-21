@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: equations.aux
+The style file: plain.bst
+Database file #1: /media/joe/Milarepa/Quall_Docs/bibliography/qualls2.bib
+Warning--can't use both author and editor fields in Cremer1973
+Warning--empty journal in Fodor2002
+Warning--empty publisher in Jenny2001
+Warning--can't use both author and editor fields in Kino1987
+Warning--empty publisher in Marshall2004
+You've used 34 entries,
+            2118 wiz_defined-function locations,
+            704 strings with 8064 characters,
+and the built_in function-call counts, 9131 in all, are:
+= -- 876
+> -- 403
+< -- 1
++ -- 161
+- -- 127
+* -- 556
+:= -- 1608
+add.period$ -- 103
+call.type$ -- 34
+change.case$ -- 159
+chr.to.int$ -- 0
+cite$ -- 39
+duplicate$ -- 397
+empty$ -- 751
+format.name$ -- 127
+if$ -- 1884
+int.to.chr$ -- 0
+int.to.str$ -- 34
+missing$ -- 50
+newline$ -- 173
+num.names$ -- 70
+pop$ -- 196
+preamble$ -- 1
+purify$ -- 131
+quote$ -- 0
+skip$ -- 242
+stack$ -- 0
+substring$ -- 358
+swap$ -- 46
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 104
+warning$ -- 5
+while$ -- 85
+width$ -- 36
+write$ -- 373
+(There were 5 warnings)

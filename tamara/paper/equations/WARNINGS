@@ -1,0 +1,10 @@
+No implementation found for style `graphicx'
+No implementation found for style `caption'
+No implementation found for style `mathtools'
+No implementation found for style `setspace'
+
+equations.tex is newer than equations.aux: Please rerun latex.
+
+? brace missing for \
+
+equations.tex is newer than equations.bbl: Please rerun latex and bibtex.

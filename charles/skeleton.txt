@@ -1,0 +1,93 @@
+﻿I)	Lucier - imagery dealing with nature
+	a)	eg – animal communication, acoustics, landscapes, biology
+	b)	these images serve to produce a spectacle
+	c)	frequently the performer must participate in embodied measurement
+	d)	locating Lucier's work in the context of post-war American experimental music
+	e) 	a cursory description of the pieces to be analyzed
+		1)	Vespers (1968)
+		2)	Queen of the South (1972)
+		3)	Bird and Person Dyning (1975)
+II)	Nature
+	a)	latour / foucault / helmreich
+		1)	politicians have used the naturalist interpretation of science for legitimacy
+			i) 	naturalism uproots the results of science and expands them into world
+			ii)	seeks to unify scientific lab practices into a continuous domain
+			iii)	supports a whig search for “origin”
+		2) 	naturalism as coming from the myth that the West was modern
+			i)	“occidentalism”
+			ii)	tendency to separate form from medium
+		3)	the reality: recent developments have made us more dependent
+		4)	universality / naturalisation of laws is not 'wrong,' necessarily
+		5)	scientists are no longer decoupled from their institutions
+			i)	messy inner workings, mistakes
+			ii)	sacrifice of subject of knowledge
+			iii)	life / nature : given → contingent
+	b)	bonds - “absolute music”
+			1)	naturphilosophie – nature is given, immutable, complete
+			2) 	Hanslick - beauty has a natural basis in form
+				i)	a veiled appeal to the Absolute in musical beauty
+				ii)	absolute: free from representation
+			3)	Hanslick refuses to accept n.p.'s reliance on metaphysics
+				i)	instead, he describes music as free from representation
+				ii)	and then defers to nature as source of universal laws
+					a)	Beauty could be explained by nature
+					b)	musical beauty reflects all of beauty
+					c)	because natural phenomena reflect nature as a whole
+					d)	“motion”
+III) 	a historical treatment of ernst chladni's discoveries in acoustics
+	a) a short bio
+	b) how chladni situated his findings
+		1)	functioning similar to, but distinct from, musical virtuosity
+		2)	demonstrations- allowed him to travel
+		3)	appears more concerned with applications than theory
+			i)	his inventions meant more to him than sweeping statements
+			ii)	however, the spectacle his inventions produced incited others to make 					
+				sweeping statements of their own
+	c) encounter with goethe & subsequent interpretation of chladni's laws
+		1)	Orsted links laws of nature → musical beauty
+			i)	therefore musical beauty is eternal
+				a)	Hanslick misrepresents Orsted in his assessment
+				b)	despite the fact that his conclusion is essentially Orsted's
+			ii)	Orsted cites Chladni figures as evidence of this
+		2)	many natural philosophers do this
+			i)	goethe, nageli, schelling
+	d) chladni's encounters with napoleon
+		1)	offers chladni 6000 francs to publish Akustik in french
+			i)	subsequent dedication to napoleon
+			ii)	translation of “schall,” “klang,” and “ton”
+		2)	offers a reward to the person who can explain the figures mathematically
+			i)	deadline extended by 4 years
+			ii)	finally partially solved by Sophie Germain
+				a)	PDE correct, boundary conditions wrong
+				b)	Gustav Robert Kirchoff solves it
+		3)	makes the comment that the description of chladni patterns in more complex 				
+			shapes could be useful in other domains
+			i)	turns out he was right: equivalence between
+				a)	stationary wave eq
+				b)	helmholtz eq
+				c)	schrodinger eq
+			ii)	applications of irregular nodal patterns include
+				a)	quantum chaos
+				b)	optics
+				c)	earthquakes
+				d)	pattern formation in visual cortex
+IV)	a historical treatment of Hans Jenny's Cymatics
+	a) 	short bio
+	b) 	appeals to scientific method 
+	c) 	similarities with naturphilosophie
+		1)	anthroposophy
+	d)	"Cymatics" book released 1967
+		1)	featured engaging visual display of wave phenomena
+		2)	appeals to universal laws connecting disparate fields of study
+		3)	emphasizes (without direct citation) that his work is empirical
+		4)	makes sweeping statements about nature and beauty
+V)	Analysis of language used in "Queen of the South"
+	a)	direct references to Chladni & Jenny
+	b)	appropriates alchemical imagery
+	c)	performer's implied "character" could be allusion to scientific practices
+	d)	what does this characterization impart to Lucier's "measurement" music?
+		1)	an appeal to science as a solution to the contradictions of Modernism
+		2)	similar to chladni, these presentations function like musical virtuosity
+VI)	Supporting evidence from Vespers
+VII)	Supporting evidence from Bird and Person Dyning
+VIII)	Conclusion 

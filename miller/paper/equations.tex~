@@ -1,0 +1,67 @@
+\documentclass[a4paper,10pt, twocolumn]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[font=footnotesize]{caption}
+\usepackage{mathtools}
+
+% Title Page
+\title{Miller Paper}
+\author{Joseph Mariglio}
+
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\end{abstract}
+A few equations you are likely to need include:
+
+In liquids of low viscosity, stress is the force normal to the surface per unit area:
+\begin{equation}\label{stressnorm}
+T = \frac{F_n}{Area}
+\end{equation}
+
+On solids and viscous liquids, stress is a vector $T^n$ defined by:
+\begin{equation}\label{stressvec}
+T^n = n  \cdot \sigma
+\end{equation}
+
+where $n$ is the vector normal to the surface and $\sigma$ is the Cauchy stress tensor. 
+We will simplify our derivation to use the definition in \eqref{stressnorm} with no loss to the derivation.
+Stress on the object results in strain, a dimensionless proportion of displacements given by:
+\begin{equation}
+\frac{l_{s}}{l_{e}}
+\end{equation}
+where $l_s$ and $l_e$ are the lengths of the material while stressed and at equilibrium, respectively.
+
+The displacement throughout the object will vary continuously throughout the object, from particle to particle.
+
+Of particular interest are the local deformations of the object, rather than the overall translation of the object in space.
+These local deformations are given by displacement gradient $\nabla u$, a 2nd rank tensor:
+\begin{equation}
+\nabla u \begin{pmatrix}
+         \frac{\partial u_x}{\partial x} & \frac{\partial u_x}{\partial y} & \frac{\partial u_x}{\partial z} \\[0.5em]
+         \frac{\partial u_y}{\partial x} & \frac{\partial u_y}{\partial y} & \frac{\partial u_y}{\partial z} \\[0.5em]
+         \frac{\partial u_z}{\partial x} & \frac{\partial u_z}{\partial y} & \frac{\partial u_z}{\partial z}
+        \end{pmatrix}
+\end{equation}
+
+The strain matrix $S$ eliminates the contributions given by rotations and describes local stretching only. 
+The formula for $S$ is:
+\begin{equation}
+S = \frac{\nabla u + \left(\nabla u \right)^T}{2}
+\end{equation}
+
+We are now equipped to derive the equation of motion for an elastic solid.
+
+Plane wave propagating in the x direction:
+\begin{equation}\label{planewave}
+u(x,y,z,t) = (u_x x + u_y y + u_z z) e^{i(\omega t - k x)}
+\end{equation}
+
+\bibliography{/media/joe/Milarepa/Quall_Docs/bibliography/qualls}
+\bibliographystyle{plain}
+\nocite{*}
+
+\end{document}          

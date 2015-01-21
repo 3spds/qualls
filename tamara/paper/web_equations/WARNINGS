@@ -1,0 +1,12 @@
+No implementation found for style `graphicx'
+No implementation found for style `caption'
+No implementation found for style `mathtools'
+No implementation found for style `setspace'
+
+web_equations.tex is newer than web_equations.aux: Please rerun latex.
+
+? brace missing for \
+
+? brace missing for \setbox
+
+web_equations.tex is newer than web_equations.bbl: Please rerun latex and bibtex.

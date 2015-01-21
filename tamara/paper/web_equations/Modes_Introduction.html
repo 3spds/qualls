@@ -1,0 +1,292 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Modes: An Introduction</TITLE>
+<META NAME="description" CONTENT="Modes: An Introduction">
+<META NAME="keywords" CONTENT="web_equations">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="web_equations.css">
+
+<LINK REL="next" HREF="Modal_Analysis_via.html">
+<LINK REL="previous" HREF="General_Plane_Wave.html">
+<LINK REL="up" HREF="Miller_Puckette.html">
+<LINK REL="next" HREF="Modal_Analysis_via.html">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" 
+	TEXT="BLACK" 
+	LINK="BLACK" 
+	ALINK="BLUE"
+	VLINK="GRAY">
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+
+<A NAME="tex2html124"
+  HREF="Modal_Analysis_via.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.png"></A> <A NAME="tex2html125"
+  HREF="Modal_Analysis_via.html">Modal Analysis via Partial Differential Equations</A>
+<BR>
+
+<A NAME="tex2html122"
+  HREF="Miller_Puckette.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.png"></A> <A NAME="tex2html123"
+  HREF="Miller_Puckette.html">Miller Puckette</A>
+<BR>
+
+<A NAME="tex2html116"
+  HREF="General_Plane_Wave.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.png"></A> <A NAME="tex2html117"
+  HREF="General_Plane_Wave.html">General Plane Wave Reflection and Refraction</A>
+<BR>
+
+<HR>
+<BR>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00160000000000000000"></A><A NAME="sec:modes"></A>
+<BR>
+Modes: An Introduction
+</H1>
+ We have barely dented the surface of the possibly infinite ways a general object can vibrate. Even for objects so simple they cannot be found in the real world, the vibrational energy flow through an object may take a staggering multiplicity of paths, as the above treatment has hopefully demonstrated. Even if we ignore the bizarre effects of the model described in section <A HREF="General_Plane_Wave.html#sec:refrac">1.5</A>, the mere tracing of propagation vectors through an irregularly shaped object is an example of classical chaos. Compounded by this are the effects of polarization on a given vibration's wavelength, and damping. However, despite the complexity of the propagation mechanisms and the myriad ways in which a material can support the transfer of vibrational energy, most objects we encounter exhibit the highly improbable behavior of accommodating the vibrations of certain frequencies over others. 
+
+<P>
+In 2 dimensions, an analogous problem, frequently studied by mathematicians, is billiards. If a billiard ball--for our purposes a massless point-particle, experiencing lossless specular reflection at the boundaries--travels freely over an enclosed space, the behavior of the system is entirely determined by the shape of the space. If the space is an ideal circle, the paths traced by the billiard ball, i.e., the dynamics of the system, will be regular. After only a short number of reflections, a pattern can clearly be recognized in the propagation of the ball. Furthermore, the lengths of each path segment between collisions with the boundary are identical in this case. However, if the circle is flattened on one side, a completely different, frequently chaotic behavior emerges. [<A
+ HREF="Bibliography.html#Backer2007">1</A>]
+
+<P>
+Recall the discussion at the end of section <A HREF="Impedance_Behavior_at.html#sec:impedance">1.4</A>, where a standing wave was first observed. We continue this simplified example to search for a way to describe those vibrations that are intrinsic to the structure through which they propagate. We can do this by closing the structure, so that its volume is finite. We then proceed by fitting a solution (or perhaps a set of solutions) to the wave equation as we have constructed it, along with the spatial constraints imposed by the boundary conditions, now that we have both of them. 
+
+<P>
+While the previous one dimensional case was constructed with only a single, free, boundary at <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.png"
+ ALT="$x = 0$"></SPAN>, a similar behavior could be expected from a finite object, such as a rod with one free end and one fixed end. Let the free end remain where it was in the previous example, and add a fixed end at length <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img180.png"
+ ALT="$x=l$"></SPAN>. At a fixed end, the boundary conditions for the particulate velocity and the stress wave are the reverse of those of a free end, i.e., 
+<IMG
+ WIDTH="46" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img181.png"
+ ALT="\begin{equation*}
+x=l \qquad \text{ and } \qquad \dot{u} = 0 \quad \text{,}
+\end{equation*}">
+and therefore the force (or stress, if our rod's cross-sections had area) would vary maximally at <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img180.png"
+ ALT="$x=l$"></SPAN>. In this system, one of the two boundaries rotates the wave's phase by <SPAN CLASS="MATH"><IMG
+ WIDTH="2240" HEIGHT="56" ALIGN="BOTTOM" BORDER="0"
+ SRC="img182.png"
+ ALT="$\pi$"></SPAN>, so therefore, the wave-train requires 4 boundary reflections--two of each--to return to its original location and phase.
+
+<P>
+Because this wave-train reaches a boundary, it must reflect back and propagate in the opposing direction. Thus, when the two wave-trains sum together, the system forms a standing-wave, all of whose field variables change periodically as a function of time and length.[<A
+ HREF="Bibliography.html#Cremer1973">7</A>, p.&nbsp;117] The time period of this particular standing-wave is:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+p = 4l / v
+\end{equation}
+ -->
+<A NAME="0thmode"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="0thmode"></A><IMG
+ WIDTH="17" HEIGHT="20" BORDER="0"
+ SRC="img183.png"
+ ALT="\begin{displaymath}
+p = 4l / v
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">6</SPAN>.1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="2185" HEIGHT="56" ALIGN="BOTTOM" BORDER="0"
+ SRC="img89.png"
+ ALT="$v$"></SPAN> is the phase-velocity of the wave-train in the medium. This is the amount of time required for the wave to travel the length of the rod 4 times. We might be inclined look for more wave-trains which fit these propagation and boundary conditions.[<A
+ HREF="Bibliography.html#Cremer1973">7</A>, p.117] 
+
+<P>
+From the period, we find the frequency of the standing-wave to be <SPAN CLASS="MATH"><IMG
+ WIDTH="2173" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img184.png"
+ ALT="$\frac{1}{p}$"></SPAN>. Consider that the wave-train described above could consist of any wave satisfying the boundary conditions, so long as it still closes in on itself in phase. This system of self-reinforcing, periodic motion might very well support odd integer multiples of the spatial frequency, <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.png"
+ ALT="$k$"></SPAN>, because those are the candidates likely to support the boundary conditions. Of course, whether this is actually true or not depends on the dispersion relation of the vibratory regime in the medium. Furthermore, damping effects might attenuate an otherwise valid frequency. However, at the very least, it might be reasonable to assume that these natural frequencies cluster into families, based on the above simplification.[<A
+ HREF="Bibliography.html#Cremer1973">7</A>, p.&nbsp;126]
+
+<P>
+Such a system of self-reinforcing periodic motion is known as a <SPAN  CLASS="textit">normal mode</SPAN>. A normal mode consists of both the wave-train's temporal frequency and its spatial path. Generally, the temporal frequency--which includes instantaneous complex amplitude--is called the <SPAN  CLASS="textit">modal frequency</SPAN>, or <SPAN  CLASS="textit">eigenfrequency</SPAN>. Similarly, the path traced by the closed loop--which also includes instantaneous complex amplitude--is called the <SPAN  CLASS="textit">mode shape</SPAN> or <SPAN  CLASS="textit">eigenmode</SPAN>. Since modes are encountered almost anywhere there is wave motion, they have many epithets. [<A
+ HREF="Bibliography.html#Cremer1973">7</A>, p.&nbsp;319]
+
+<P>
+Modes can be characterized by their shapes, which are complex-valued, and always occur in complex-conjugate pairs. The mode shapes pair with their mode frequencies, which are also complex-valued, and occur in complex-conjugate pairs. This means that every mode requires two complex exponentials to describe it in abstract. The phasor description of a mode, therefore, requires an additional complex term to encode the location-dependency of the shape. To describe a particular state of the mode at a given time requires a third complex term, which describes the complex amplitude (or amplitude and phase-shift) of the system's state with respect to a single mode. Modes can thus describe temporal frequency and damping (or growth), spatial frequency, and complex amplitude. Thus, modes provide solutions to problems such as those discussed in <A HREF="Other_Types_Waves.html#sec:waves">1.3</A>. 
+
+<P>
+Modes are often designated a number, which describes the amount of half-cycles taken up by the mode across the surface, in a single dimension. The mode whose period is described in equation (<A HREF="#0thmode">1.6.1</A>) is of mode number zero, or, alternatively, a zeroth-order mode. This is the lowest frequency mode accommodated by the system described.
+
+<P>
+An important quality that modes have is their <SPAN  CLASS="textit">completeness</SPAN>, meaning that any behavior of a system, regardless of whether it is being perturbed by some outside force, can be expressed as a combination of that system's modes. Such a process of finding the coefficients that multiply the modes to result in the present behavior is called a <SPAN  CLASS="textit">modal decomposition</SPAN>. This regression holds true even if the system's behavior is overwhelmingly dominated by outside forces. For a proof of the completeness of modal decomposition, see [<A
+ HREF="Bibliography.html#Courant1937">6</A>, p.&nbsp;281].
+
+<P>
+It is often said, in the literature, that modes are orthogonal. Careful attention must be paid to what is meant by this statement, because it implies that we could simply examine each mode shape, and ascertain that they are perpendicular, for example, by taking the dot product[<A
+ HREF="Bibliography.html#Cremer1973">7</A>, p.&nbsp;320]:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\int_S m'' \varphi_n(x,z) \varphi_m(x,z) \partial x \partial z = 0 \qquad \text{for} \qquad m \neq n ,
+\end{equation}
+ -->
+<A NAME="mode_ortho"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="mode_ortho"></A><IMG
+ WIDTH="18" HEIGHT="42" BORDER="0"
+ SRC="img185.png"
+ ALT="\begin{displaymath}
+\int_S m'' \varphi_n(x,z) \varphi_m(x,z) \partial x \partial z = 0 \qquad \text{for} \qquad m \neq n ,
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">6</SPAN>.2)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="2320" HEIGHT="67" ALIGN="BOTTOM" BORDER="0"
+ SRC="img186.png"
+ ALT="$m''$"></SPAN> is the mass distribution (which likely involves <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$y$"></SPAN> and another coordinate), and <SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="81" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$S$"></SPAN> is the <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="16" ALIGN="MIDDLE" BORDER="0"
+ SRC="img187.png"
+ ALT="$(x, z)$"></SPAN> area of a face of the object. This demonstrates modal othogonality perfectly well in an abstract sense. Notice the dependence on the mass distribution, for example. However, an abstract understanding of this fact is not nearly as telling or profound as the physicality it points to. In order to demonstrate this, consider a system vibrating exclusively in some mode <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img188.png"
+ ALT="$n$"></SPAN>. The total kinetic energy is [<A
+ HREF="Bibliography.html#Cremer1973">7</A>, p.&nbsp;320]
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+E_{kin} = \frac{1}{2} \int_S \dot{u}_n^2 m'' \varphi_n^2(x, z) \partial x \partial z \text{.}
+\end{equation}
+ -->
+<A NAME="mode_kenergy_n"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="mode_kenergy_n"></A><IMG
+ WIDTH="17" HEIGHT="20" BORDER="0"
+ SRC="img189.png"
+ ALT="\begin{displaymath}
+E_{kin} = \frac{1}{2} \int_S \dot{u}_n^2 m'' \varphi_n^2(x, z) \partial x \partial z \text{.}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">6</SPAN>.3)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Meanwhile, the kinetic energy of the object vibrating in another mode <SPAN CLASS="MATH"><IMG
+ WIDTH="2254" HEIGHT="67" ALIGN="BOTTOM" BORDER="0"
+ SRC="img190.png"
+ ALT="$m$"></SPAN>, such that, as in (<A HREF="#mode_ortho">1.6.2</A>), <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img191.png"
+ ALT="$m \neq n$"></SPAN>, is
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+E_{kin} = \frac{1}{2} \int_S \dot{u}_m^2 m'' \varphi_m^2(x, z) \partial x \partial z \text{.}
+\end{equation}
+ -->
+<A NAME="mode_kenergy_m"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="mode_kenergy_m"></A><IMG
+ WIDTH="49" HEIGHT="32" BORDER="0"
+ SRC="img192.png"
+ ALT="\begin{displaymath}
+E_{kin} = \frac{1}{2} \int_S \dot{u}_m^2 m'' \varphi_m^2(x, z) \partial x \partial z \text{.}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">6</SPAN>.4)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+If the two modes occur simultaneously, exactly as above in (<A HREF="#mode_kenergy_n">1.6.3</A>) and (<A HREF="#mode_kenergy_m">1.6.4</A>), and the modes are independent of one another, then, to avoid creating or destroying energy,
+<BR>
+<IMG
+ WIDTH="2260" HEIGHT="67" ALIGN="BOTTOM" BORDER="0"
+ SRC="img193.png"
+ ALT="\begin{align}
+\frac{
+\begin{array}{c c}
+&amp;\frac{1}{2} \int_S \dot{u}_n^2 m'' \var...
+...m(x, z) + \dot{u}_n m'' \varphi_n(x, z) ]^2 \partial x \partial z
+}
+\end{align}">
+<BR>
+which can only be true if (<A HREF="#mode_ortho">1.6.2</A>) is true. [<A
+ HREF="Bibliography.html#Cremer1973">7</A>, p.&nbsp;322]
+
+<P>
+This demonstrates some of the conditions under which the orthogonality of the modes--either as given by variables in the model we have constructed, or as measured by instruments in the field--may not hold. If energy in this system is not conserved--i.e., if the system is not closed, then we cannot assume orthogonality. Frequently, we would like to measure the modal response of a system which is experiencing forced vibration, as in our example in section <A HREF="Impedance_Behavior_at.html#sec:impedance">1.4</A>. Neither of these systems were closed, and therefore we cannot assume orthogonality of the modes. Furthermore, if the mass distribution is not known, or is poorly approximated, we similarly cannot assume orthogonality. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html124"
+  HREF="Modal_Analysis_via.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.png"></A> <A NAME="tex2html125"
+  HREF="Modal_Analysis_via.html">Modal Analysis via Partial Differential Equations</A>
+<BR>
+
+<A NAME="tex2html122"
+  HREF="Miller_Puckette.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.png"></A> <A NAME="tex2html123"
+  HREF="Miller_Puckette.html">Miller Puckette</A>
+<BR>
+
+<A NAME="tex2html116"
+  HREF="General_Plane_Wave.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.png"></A> <A NAME="tex2html117"
+  HREF="General_Plane_Wave.html">General Plane Wave Reflection and Refraction</A>
+<BR>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<HR>Copyright &#169; <I>2014-01-09</I><BR>
+<A href="http://www.ucsd.edu/">
+	My Own Center for My Own Studies (MOCMOS),</A>
+&nbsp;
+<A href="http://www.ucsd.edu/"> UCSD</A>,
+<A HREF="http://www.etc.com/">Etc.</A>
+
+</ADDRESS>
+</BODY>
+</HTML>

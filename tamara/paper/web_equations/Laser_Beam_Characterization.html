@@ -1,0 +1,486 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Laser Beam Characterization
+via Transverse EM Modes</TITLE>
+<META NAME="description" CONTENT="Laser Beam Characterization
+via Transverse EM Modes">
+<META NAME="keywords" CONTENT="web_equations">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="web_equations.css">
+
+<LINK REL="next" HREF="Vibration_Sensors_that.html">
+<LINK REL="previous" HREF="Brief_Overview_of.html">
+<LINK REL="up" HREF="Tamara_Smyth.html">
+<LINK REL="next" HREF="Vibration_Sensors_that.html">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" 
+	TEXT="BLACK" 
+	LINK="BLACK" 
+	ALINK="BLUE"
+	VLINK="GRAY">
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+
+<A NAME="tex2html211"
+  HREF="Vibration_Sensors_that.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.png"></A> <A NAME="tex2html212"
+  HREF="Vibration_Sensors_that.html">Vibration Sensors that Do not Require Inertial Coupling</A>
+<BR>
+
+<A NAME="tex2html209"
+  HREF="Tamara_Smyth.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.png"></A> <A NAME="tex2html210"
+  HREF="Tamara_Smyth.html">Tamara Smyth</A>
+<BR>
+
+<A NAME="tex2html203"
+  HREF="Brief_Overview_of.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.png"></A> <A NAME="tex2html204"
+  HREF="Brief_Overview_of.html">A Brief Overview of Electromagnetic Theory</A>
+<BR>
+
+<HR>
+<BR>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00240000000000000000"></A><A NAME="sec:lasers"></A>
+<BR>
+Laser Beam Characterization
+<BR>
+via Transverse EM Modes
+</H1>
+<SPAN  CLASS="textit">Lasers</SPAN> use resonance to produce a beam of polarized, monochromatic light. These devices provide a light source which can create finely detailed images of vibratory motion. In order to reliably image vibration with laser light, we must characterize the beam lasers produce. This will both provide us with the means to interpret the results of imaging, and equip us with a vocabulary to differentiate the quality of illumination sources. 
+
+<P>
+While there are several implementations for lasers, all designs are based on the principle of optical feedback. An easily visualized case is the gas laser. In gas lasers, the resonance is produced in a halogen tube which is periodically excited and relaxed electrically. During the relaxation part of this cycle, the gas mixture releases photons, which are initially scattered in all directions. The component frequencies of this light are limited by the properties of the <SPAN  CLASS="textit">transition bandwidth</SPAN> of the gases used. Either end of the tube is affixed with high reflectance mirrors, one or both of which can also transmit light. Prior to reaching the mirrors, the light passes through angled polarizing filters, which only permit the emission of light whose <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img274.png"
+ ALT="$E$"></SPAN>-field is parallel to the plane-of-incidence. [<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.564]
+
+<P>
+Because of the phase-aligning effect of the boundaries in the cavity, light in this tube behaves like vibration in a solid object with two free ends. For reference, the case of a solid object with a single free end was discussed in section <A HREF="Modes_Introduction.html#sec:modes">1.6</A>. In the present case, the minimum round-trip length the light must traverse before emission is <SPAN CLASS="MATH"><IMG
+ WIDTH="2244" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img332.png"
+ ALT="$2L$"></SPAN>, if <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img333.png"
+ ALT="$L$"></SPAN> is the length of the tube. Light at this frequency would constitute the first longitudinal cavity mode. Note that these are not longitudinal waves, as only transverse waves are possible. A given tube theoretically has an infinite number of these modes, at integer multiples of the fundamental, however, these must coincide with the transition bandwidth of the material in order to be emitted.[<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.558]
+
+<P>
+In addition to longitudinal modes, the light inside the tube can exhibit standing waves that are transverse to the tube's axis as well. These modes are called <SPAN  CLASS="textit">Transverse Electric and Magnetic</SPAN> modes, or <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img334.png"
+ ALT="$TEM_{mn}$"></SPAN> for short. <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img334.png"
+ ALT="$TEM_{mn}$"></SPAN> indeces refer to the mode number for each axis of symmetry, and prescribe much of the beam's behavior on exiting the tube. Depending on the construction of the laser, these irradiance profiles can be either rectangularly symmetric (Hermite-Gaussian),
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+U_{mn}(x, y, z) = H_m\left(\frac{x}{w}\right)H_n\left(\frac{y}{w}\right)u(x,y,z)\qquad \text{,}
+\end{equation}
+ -->
+<A NAME="rect_mode"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="rect_mode"></A><IMG
+ WIDTH="72" HEIGHT="36" BORDER="0"
+ SRC="img335.png"
+ ALT="\begin{displaymath}
+U_{mn}(x, y, z) = H_m\left(\frac{x}{w}\right)H_n\left(\frac{y}{w}\right)u(x,y,z)\qquad \text{,}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">4</SPAN>.1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="2308" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img336.png"
+ ALT="$H$"></SPAN> refers to a pair of Hermite polynomials, and <SPAN CLASS="MATH"><IMG
+ WIDTH="2391" HEIGHT="75" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="$w$"></SPAN> is the radius of the beam, or circularly symmetric (Laguerre-Gaussian),
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+U_{pl}(r, \varphi, z) = L_{pl}\left(\frac{r}{w}, \varphi\right)u(r, z)\qquad \text{,}
+\end{equation}
+ -->
+<A NAME="circ_mode"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="circ_mode"></A><IMG
+ WIDTH="16" HEIGHT="16" BORDER="0"
+ SRC="img337.png"
+ ALT="\begin{displaymath}
+U_{pl}(r, \varphi, z) = L_{pl}\left(\frac{r}{w}, \varphi\right)u(r, z)\qquad \text{,}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">4</SPAN>.2)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img333.png"
+ ALT="$L$"></SPAN> refers to a Laguerre polynomial, <SPAN CLASS="MATH"><IMG
+ WIDTH="2271" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img338.png"
+ ALT="$r$"></SPAN> is a radial coordinate and <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img339.png"
+ ALT="$\varphi$"></SPAN> is an angular coordinate. [<A
+ HREF="Bibliography.html#Marshall2004">23</A>, p.&nbsp;4] The function <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$u$"></SPAN> refers to the Gaussian Distribution, of the form
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+u = \mathpalette
+\setbox 0=\hbox{$:\oldsqrt{!\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox 2=\hbox{\vrule height\ht0 depth -\dimen0}{\box0\lower0.4pt\box2}:}{ \frac{2}{\pi}} e^{-\frac{x^2 + y^2}{w^2}} = \mathpalette 
+\setbox 0=\hbox{$:\oldsqrt{!\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+
+\setbox 2=\hbox{\vrule height\ht0 depth -\dimen0}{\box0\lower0.4pt\box2}:}{ \frac{2}{\pi}}e^{-\frac{r^2}{w^2}} \qquad \text{,}
+
+\end{equation}
+ -->
+<A NAME="gauss"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="gauss"></A><IMG
+ WIDTH="18" HEIGHT="35" BORDER="0"
+ SRC="img340.png"
+ ALT="\begin{displaymath}
+u = \mathpalette
+\setbox 0=\hbox{$:\oldsqrt{! }$}\dimen0=\...
+...pt\box2}:}{ \frac{2}{\pi}}e^{-\frac{r^2}{w^2}} \qquad \text{,}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">4</SPAN>.3)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+depending on the axis of symmetry. [<A
+ HREF="Bibliography.html#Marshall2004">23</A>, p.&nbsp;5] In addition to these modes, there also exist <SPAN  CLASS="textit">degenerate modes</SPAN>, notated as <SPAN CLASS="MATH"><IMG
+ WIDTH="2175" HEIGHT="167" ALIGN="MIDDLE" BORDER="0"
+ SRC="img341.png"
+ ALT="$TEM_{mn}^*$"></SPAN>, which consist of two modes that share a frequency, arranged in quadrature. [<A
+ HREF="Bibliography.html#Marshall2004">23</A>, p.&nbsp;6] These modes are loosely analogous to those found in plates. 
+
+<P>
+Typical lasers exhibit several of these modes simultaneously. This is possible because modes are energetically orthogonal (cf. <A HREF="Modes_Introduction.html#sec:modes">1.6</A>). Mixed-mode beams are generally more tolerant to microscopic impurities on the lenses or mirrors, and therefore sometimes desirable for specific tasks. However, the irradiance profile which best minimizes divergence from the collinear regime--due to diffraction--is the Gaussian distribution, equation (<A HREF="#gauss">2.4.3</A>). [<A
+ HREF="Bibliography.html#Marshall2004">23</A>, p.&nbsp;13] 
+
+<P>
+The Airy disk is a reasonable place to start characterizing the irradiance profiles of monochromatic beams: 84% of the irradiance may be localized this way. Another 7% may be localized within the second null of the bessel function. However, the width of such beams is not constant, and so measurements which take into account only the width at the aperture fail to completely characterize the beam.[<A
+ HREF="Bibliography.html#Marshall2004">23</A>, p.&nbsp;2] 
+
+<P>
+A Gaussian, fundamental-mode (<SPAN CLASS="MATH"><IMG
+ WIDTH="64" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img342.png"
+ ALT="$TEM_{00}$"></SPAN>), non-aberrant laser beam differs from the cylinder implied by such measurements, and also from the cone implied by ray tracing. These spatial distortions amount to a hyperbolic change in radius over the propagation length, of the form:[<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;562]
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+w(z) = w_0 \mathpalette
+\setbox 0=\hbox{$:\oldsqrt{!\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox 2=\hbox{\vrule height\ht0 depth -\dimen0}{\box0\lower0.4pt\box2}:}{ 1 + \left( \frac{\lambda z}{\pi w_0^2} \right)^2 } \qquad \text{,}
+
+\end{equation}
+ -->
+<A NAME="wz"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="wz"></A><IMG
+ WIDTH="65" HEIGHT="36" BORDER="0"
+ SRC="img343.png"
+ ALT="\begin{displaymath}
+w(z) = w_0 \mathpalette
+\setbox 0=\hbox{$:\oldsqrt{! }$}\...
+...\left( \frac{\lambda z}{\pi w_0^2} \right)^2 } \qquad \text{,}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">4</SPAN>.4)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$z$"></SPAN> is the position along the beam, measured from the location of the minimum radius, or ``waist.'' The radius <SPAN CLASS="MATH"><IMG
+ WIDTH="2196" HEIGHT="128" ALIGN="MIDDLE" BORDER="0"
+ SRC="img344.png"
+ ALT="$w_0$"></SPAN> is the smallest radius the beam achieves, which occurs at <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img345.png"
+ ALT="$z=0$"></SPAN>. N.B. ray tracing would have us believe this radius to be zero, but diffraction causes this to be limited by the wavelength, <SPAN CLASS="MATH"><IMG
+ WIDTH="2232" HEIGHT="45" ALIGN="BOTTOM" BORDER="0"
+ SRC="img138.png"
+ ALT="$\lambda$"></SPAN>. <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img345.png"
+ ALT="$z=0$"></SPAN> usually occurs some distance away from the aperture.[<A
+ HREF="Bibliography.html#Marshall2004">23</A>, p.11] Obviously, if this distance is known, we could call it <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img346.png"
+ ALT="$z_0$"></SPAN> and replace the occurrences of <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$z$"></SPAN> in these equations with <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img347.png"
+ ALT="$z-z_0$"></SPAN> to shift the spatial functions the appropriate amount.
+
+<P>
+A complete characterization of the ideal fundamental-mode beam merely requires a knowledge of the length over which the cross sectional area doubles, from the minimum. This range is called the <SPAN  CLASS="textit">Rayleigh range</SPAN> <SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img348.png"
+ ALT="$z_R$"></SPAN>, and is, equivalently, the region where radius grows from <SPAN CLASS="MATH"><IMG
+ WIDTH="2196" HEIGHT="128" ALIGN="MIDDLE" BORDER="0"
+ SRC="img344.png"
+ ALT="$w_0$"></SPAN> to <!-- MATH
+ $\mathpalette
+\setbox 0=\hbox{$:\oldsqrt{!\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox 2=\hbox{\vrule height\ht0 depth -\dimen0}{\box0\lower0.4pt\box2}:}{2}w_0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img349.png"
+ ALT="$\mathpalette
+\setbox 0=\hbox{$:\oldsqrt{! }$}\dimen0=\ht0
+\advance\dimen0-0.2...
+...setbox 2=\hbox{\vrule height\ht0 depth -\dimen0}{\box0\lower0.4pt\box2}:}{2}w_0$"></SPAN>. From <SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img348.png"
+ ALT="$z_R$"></SPAN>, we may infer all other spatial parameters of an ideal beam. Thus, the Rayleigh range is an extremely important aspect of the beam, given by[<A
+ HREF="Bibliography.html#Hecht1987">15</A>, p.&nbsp;562] 
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+z_R = \frac{\pi w_0^2}{\lambda} \qquad \text{.}
+\end{equation}
+ -->
+<A NAME="zr"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="zr"></A><IMG
+ WIDTH="80" HEIGHT="54" BORDER="0"
+ SRC="img350.png"
+ ALT="\begin{displaymath}
+z_R = \frac{\pi w_0^2}{\lambda} \qquad \text{.}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">4</SPAN>.5)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+An ideal fundamental-mode beam will also have variations in the curvature of its wavefronts. This measure is given by the beam's <SPAN  CLASS="textit">radius of curvature</SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="2196" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img351.png"
+ ALT="$R(z)$"></SPAN>, expressed as a function of <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$z$"></SPAN>:[<A
+ HREF="Bibliography.html#Marshall2004">23</A>, p.&nbsp;12]
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+R(z) = z \left(1 - \frac{z_R^2}{z^2} \right) \qquad \text{.}
+\end{equation}
+ -->
+<A NAME="rz"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="rz"></A><IMG
+ WIDTH="34" HEIGHT="34" BORDER="0"
+ SRC="img352.png"
+ ALT="\begin{displaymath}
+R(z) = z \left(1 - \frac{z_R^2}{z^2} \right) \qquad \text{.}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">4</SPAN>.6)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Within the Rayleigh range, <SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img348.png"
+ ALT="$z_R$"></SPAN>, these curvatures will be arbitrarily close to plane waves. At the edges, <SPAN CLASS="MATH"><IMG
+ WIDTH="2230" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img353.png"
+ ALT="$\pm z_R$"></SPAN>, the magnitude of the curvature is maximized. At <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img345.png"
+ ALT="$z=0$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img354.png"
+ ALT="$z=\pm \infty$"></SPAN>, the magnitude of curvature is minimized. The sign of the curvature matches the sign of <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$z$"></SPAN>. This parameter will affect the beam's interaction with lenses, as well as define regions where near-field (Rayleigh) versus far-field (Fraunhofer) diffraction regimes are attainable. 
+
+<P>
+We can also determine the phase-shift <SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img355.png"
+ ALT="$\psi$"></SPAN> accumulated across the beam as a function of <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$z$"></SPAN>:[<A
+ HREF="Bibliography.html#Marshall2004">23</A>, p.&nbsp;12]
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\psi(z) = -\tan^{-1}\left(\frac{z}{z_R}\right) \qquad \text{,}
+\end{equation}
+ -->
+<A NAME="psiz"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="psiz"></A><IMG
+ WIDTH="12" HEIGHT="32" BORDER="0"
+ SRC="img356.png"
+ ALT="\begin{displaymath}
+\psi(z) = -\tan^{-1}\left(\frac{z}{z_R}\right) \qquad \text{,}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">4</SPAN>.7)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+in comparison to an ideal plane wave. 
+
+<P>
+The full angular divergence, <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img329.png"
+ ALT="$\theta$"></SPAN>, is the largest angle developed by the beam on either side of the <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$z$"></SPAN> axis. Once again, this angle is asymptotically approached in the far positive and negative fields. This limit is given by [<A
+ HREF="Bibliography.html#Marshall2004">23</A>, p.&nbsp;12]
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\theta = \frac{2\lambda}{\pi w_0} = \frac{2w_0}{z_R} \qquad \text{.}
+\end{equation}
+ -->
+<A NAME="fadiv"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="fadiv"></A><IMG
+ WIDTH="214" HEIGHT="75" BORDER="0"
+ SRC="img357.png"
+ ALT="\begin{displaymath}
+\theta = \frac{2\lambda}{\pi w_0} = \frac{2w_0}{z_R} \qquad \text{.}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">4</SPAN>.8)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+The above equations (<A HREF="#wz">2.4.4</A>) (<A HREF="#zr">2.4.5</A>) (<A HREF="#rz">2.4.6</A>) &amp; (<A HREF="#psiz">2.4.7</A>) must be adjusted for the case of mixed-mode beams. To do this, we consider that the given combination of higher-order modes are related to a fundamental mode, <SPAN  CLASS="textit">embedded Gaussian</SPAN> beam, which may or may not be mixed into the given beam. We posit that the diameter of this embedded Gaussian beam is proportional to that of the given beam at all points <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$z$"></SPAN>. This ratio is <SPAN CLASS="MATH"><IMG
+ WIDTH="2217" HEIGHT="66" ALIGN="BOTTOM" BORDER="0"
+ SRC="img358.png"
+ ALT="$M$"></SPAN>. By custom, the values of the mixed-mode beam are capitalized, and <!-- MATH
+ $M \equiv W_0 / w_0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img359.png"
+ ALT="$M \equiv W_0 / w_0$"></SPAN>. Noting that <SPAN CLASS="MATH"><IMG
+ WIDTH="91" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img360.png"
+ ALT="$Z_R = z_r$"></SPAN>, and making both substitutions into our equations (<A HREF="#wz">2.4.4</A>) (<A HREF="#rz">2.4.6</A>) &amp; (<A HREF="#fadiv">2.4.8</A>), gives us another set of equations that characterize the mixed-mode parameters:[<A
+ HREF="Bibliography.html#Marshall2004">23</A>, p.&nbsp;13]
+<BR>
+<A NAME="mixed_mode"></A><IMG
+ WIDTH="63" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img361.png"
+ ALT="\begin{align}
+&amp;Z_R = \frac{\pi W_0^2}{M^2 \lambda} = z_R\notag\\
+{}\notag\\
+&amp;W...
+...
+&amp;\Theta = \frac{2M^2 \lambda}{\pi W_0}= \frac{W_0}{z_R} = M\theta
+\end{align}">
+<BR>
+Equation (<A HREF="#psiz">2.4.7</A>) cannot apply to the mixed-mode case in a straightforward way, because our Gaussian beam had only one frequency component, whereas the mixed-mode beam ostensibly has more. The value used to denote this relationship is <SPAN CLASS="MATH"><IMG
+ WIDTH="161" HEIGHT="154" ALIGN="BOTTOM" BORDER="0"
+ SRC="img362.png"
+ ALT="$M^2$"></SPAN>, because it is an invariant of the beam, and unchanged by optical elements.[<A
+ HREF="Bibliography.html#Marshall2004">23</A>, p.&nbsp;15]
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html211"
+  HREF="Vibration_Sensors_that.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.png"></A> <A NAME="tex2html212"
+  HREF="Vibration_Sensors_that.html">Vibration Sensors that Do not Require Inertial Coupling</A>
+<BR>
+
+<A NAME="tex2html209"
+  HREF="Tamara_Smyth.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.png"></A> <A NAME="tex2html210"
+  HREF="Tamara_Smyth.html">Tamara Smyth</A>
+<BR>
+
+<A NAME="tex2html203"
+  HREF="Brief_Overview_of.html">
+<IMG WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.png"></A> <A NAME="tex2html204"
+  HREF="Brief_Overview_of.html">A Brief Overview of Electromagnetic Theory</A>
+<BR>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<HR>Copyright &#169; <I>2014-01-09</I><BR>
+<A href="http://www.ucsd.edu/">
+	My Own Center for My Own Studies (MOCMOS),</A>
+&nbsp;
+<A href="http://www.ucsd.edu/"> UCSD</A>,
+<A HREF="http://www.etc.com/">Etc.</A>
+
+</ADDRESS>
+</BODY>
+</HTML>

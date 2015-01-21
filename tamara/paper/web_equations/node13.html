@@ -1,0 +1,476 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Vibration Sensors that Require Inertial Coupling</TITLE>
+<META NAME="description" CONTENT="Vibration Sensors that Require Inertial Coupling">
+<META NAME="keywords" CONTENT="web_equations">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="web_equations.css">
+
+<LINK REL="next" HREF="node14.html">
+<LINK REL="previous" HREF="node12.html">
+<LINK REL="up" HREF="node11.html">
+<LINK REL="next" HREF="node14.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html189"
+  HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html187"
+  HREF="node11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html181"
+  HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html190"
+  HREF="node14.html">A Brief Overview of</A>
+<B> Up:</B> <A NAME="tex2html188"
+  HREF="node11.html">Tamara Smyth</A>
+<B> Previous:</B> <A NAME="tex2html182"
+  HREF="node12.html">Practical Considerations for Vibratory</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00220000000000000000"></A><A NAME="sec:coupling"></A>
+<BR>
+Vibration Sensors 
+<BR>
+that Require Inertial Coupling
+</H1>
+ A large number of structural vibration measurement devices require the mechanical coupling of the sensor to the object of interest. Even fairly recent articles in structural vibration analysis cite methods that involve these devices. [<A
+ HREF="node33.html#Han2003">14</A>] [<A
+ HREF="node33.html#Kerschen2002">17</A>] Using sensors which mechanically couple to the vibrating body has many advantages: they often provide high quality measurements with a low cost, extremely field-ready apparatus. Furthermore, many of these devices are reversible, meaning they can also serve as actuators. [<A
+ HREF="node33.html#Cremer1973">7</A>, p.&nbsp;69] In some applications, these sensors can be extremely precise, and can hone in on specific mode families within the material. [<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;36]
+
+<P>
+The drawbacks to using mechanically coupled sensors most frequently involve the acoustic impedance load concomitant with their operation. All sensors have inertia, and this will always result in a normal stress being added to the system, in the location of the sensor. Recall that the characteristic impedance of a material is given by the stress over the particle velocity in the medium, or <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="17" ALIGN="MIDDLE" BORDER="0"
+ SRC="img266.png"
+ ALT="$T/\dot{u}$"></SPAN>. If the impedance of the sensor is high enough, the dynamic behavior of the object changes. This can be somewhat ameliorated by ensuring the sensors are extremely lightweight, or perhaps by the clever use of suspension springs. [<A
+ HREF="node33.html#Cremer1973">7</A>, p.&nbsp;4] Recall from section <A HREF="node5.html#sec:impedance">1.4</A> that at an interface between two impedances <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img134.png"
+ ALT="$Z_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img135.png"
+ ALT="$Z_2$"></SPAN>, if <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img135.png"
+ ALT="$Z_2$"></SPAN> is much higher than <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img134.png"
+ ALT="$Z_1$"></SPAN>, the reflected wave will not be completely inverted at the interface, and a partial standing-wave will result. The least adversely affected frequencies are those for which the sensor has a resonance. Since the sensor's inertial and 
+restorative forces are <SPAN CLASS="MATH"><IMG
+ WIDTH="376" HEIGHT="56" ALIGN="BOTTOM" BORDER="0"
+ SRC="img182.png"
+ ALT="$\pi$"></SPAN> apart in phase at such frequencies, the impedance will tend toward zero. However, the severely limited bandwidth of such a measuring device would not make for a particularly good sensor. [<A
+ HREF="node33.html#Cremer1973">7</A>, p.&nbsp;9] 
+
+<P>
+The carbon microphone is an element which changes its resistance in response to strain. The principle of operation is simple: carbon particles are suspended in a insulating substrate, which are pressed together when the material exhibits strain. A voltage across the element encodes the strain into changes in current. This type of instrument is very light-weight, cheap, and can be made into force sensing resistors (FSR's) and strain gauges. However, carbon microphones do not have reasonable signal to noise ratios or bandwidths for high-quality vibration sensing. Furthermore, they are fairly easily damaged. Their generality is also questionable, since they must be glued onto the object of study. They do, however, work fairly well for measuring low frequencies. [<A
+ HREF="node33.html#Cremer1973">7</A>, p&nbsp;.26]
+
+<P>
+Variable inductance sensors typically measure displacement. They are usually implemented with an alternating voltage, and the displacement is encoded into the current. This approach allows the engineer to filter out interference sidebands easily. However, the carrier frequency must high enough that the entire bandwidth of interest can pass through without artifacts. Typically the usable bandwidth is from DC to about one quarter the carrier frequency. This technique encodes the signal onto the amplitude of the carrier wave. An alternative to the variable inductance method is to use an LC oscillator with the inductor safely hidden within the housing, and instead measuring variable capacitance. In this case, the frequency of the circuit will vary as 
+<IMG
+ WIDTH="28" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img267.png"
+ ALT="\begin{equation*}
+\omega_0 = \frac{1}{\mathpalette
+\setbox 0=\hbox{$:\oldsqrt{!...
+...ight\ht0 depth -\dimen0}{\box0\lower0.4pt\box2}:}{LC}} \text{,}
+\end{equation*}">
+although there will also be some amplitude modulation as well. The second plate of the capacitor may either be the object itself or some foil attached to it. The variable capacitance sensor can measure very small excursions of the material. The mechanical impedance entailed by this method can be fairly low, at least in comparison to others in its family. However, the technique is susceptible to interference, and not particularly field-ready. [<A
+ HREF="node33.html#Cremer1973">7</A>]
+
+<P>
+By far, the most common type of coupled instrument for structure-borne sound is the piezoelectric transducer. These devices are extremely convenient and cheap. Furthermore, they can be made to be quite accurate. Because of the potentially high efficiency with which these devices can convert energy from stress to current and back, piezoelectrics are desirable in low power or high frequency applications. When used as sensors, they can be made to approach ideal accelerometers. [<A
+ HREF="node33.html#Cremer1973">7</A>, p.&nbsp;67] They are so important in structure-borne sound that we will consider their unique acoustic properties in moderate detail. 
+
+<P>
+Piezoelectric materials are generally crystals or amorphous ceramics that have asymmetries in their atomic lattice. [<A
+ HREF="node33.html#Kino1987">18</A>, p.&nbsp;17] These materials have a different set of constitutive relations, and therefore a different wave equation, which explains the lengthy title of section <A HREF="node2.html#sec:npwaveq_nd">1.1</A>. These materials exhibit coupling between strain and electrical polarization, which is the result of unevenly distributed charges in the lattice. This coupling results in two effects, which are always observed together: the <SPAN  CLASS="textit">direct</SPAN> piezoelectric effect, wherein the material develops a macroscopic net charge distribution as the result of mechanical strain, and the <SPAN  CLASS="textit">converse</SPAN> piezoelectric effect, wherein mechanical strain occurs as the result of the application of an electric field. [<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;23] The constitutive relations for piezoelectric materials may be derived from an adjustment of the non-piezoelectric elastic constitutive relations, as defined in equation (<A HREF="node2.html#ecrelation">1.1.5</A>),
+ by adding a second equation, resulting in a system of equations[<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;24],
+<BR>
+<A NAME="pecrelation"></A><IMG
+ WIDTH="319" HEIGHT="164" ALIGN="BOTTOM" BORDER="0"
+ SRC="img268.png"
+ ALT="\begin{align}
+T_I &amp;= \sum_{J=1}^6 \left( c_{IJ}^E S_J \right)- \sum_{k=1}^3 \lef...
+...j \right) + \sum_{J = 1}^6 \left( e_{iJ} S_J \right) \qquad \text{,}
+\end{align}">
+<BR>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="403" HEIGHT="105" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.png"
+ ALT="$e_{Ij}$"></SPAN> is a 3<SUP>rd</SUP>-rank tensor in reduced notation (see section <A HREF="node2.html#sec:npwaveq_nd">1.1</A>) describing the piezoelectric stress constants, <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img270.png"
+ ALT="$D_i$"></SPAN> is a 1<SUP>st</SUP>-rank tensor containing the electrical displacement components, <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img271.png"
+ ALT="$\epsilon_{ij}$"></SPAN> is a 2<SUP>nd</SUP>-rank tensor of the permittivity constants, and <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img272.png"
+ ALT="$E_j$"></SPAN> is a 1<SUP>st</SUP>-rank tensor containing the electric field components. [<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;24]<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img273.png"
+ ALT="$c_{IJ}^E$"></SPAN> is analogous to the elasticity tensor, <SPAN CLASS="MATH"><IMG
+ WIDTH="464" HEIGHT="135" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.png"
+ ALT="$c_{IJ}$"></SPAN>, from equation (<A HREF="node2.html#recrelation">1.1.7</A>), except that we have now defined its components for the condition of zero electric field. [<A
+ HREF="node33.html#Kino1987">18</A>, p.&nbsp;19] The above system of equations shows the nature of the interdependence of the electric and mechanical variables: stress relates to strain through the elasticity constants <SPAN CLASS="MATH"><IMG
+ WIDTH="340" HEIGHT="75" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$c$"></SPAN> (as usual), and to the electric field through the piezoelectric stress constants <SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="48" ALIGN="BOTTOM" BORDER="0"
+ SRC="img71.png"
+ ALT="$e$"></SPAN>, while the electric displacement <SPAN CLASS="MATH"><IMG
+ WIDTH="429" HEIGHT="56" ALIGN="BOTTOM" BORDER="0"
+ SRC="img198.png"
+ ALT="$D$"></SPAN> relates to the electric field <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img274.png"
+ ALT="$E$"></SPAN> through the permittivity 
+constants <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img275.png"
+ ALT="$\epsilon$"></SPAN>, and to the strain through the piezoelectric stress constants once again. The entire system forms a loop of dependence among the variables. A piezoelectric solid requires <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img276.png"
+ ALT="$3\times6 = 18$"></SPAN> constants to describe each of these relationships, and thus fully characterize it. Furthermore, strain patterns will vary with the piezoelectric material chosen. [<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;24]
+
+<P>
+From the constitutive relations defined in equations (<A HREF="#pecrelation">2.2.1</A>), we can now derive the <SPAN  CLASS="textit">Piezoelectric Wave Equation</SPAN> in a few simple steps. First, we note that the electric field components, <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img274.png"
+ ALT="$E$"></SPAN>, can be written in terms of potential, <SPAN CLASS="MATH"><IMG
+ WIDTH="77" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.png"
+ ALT="$\phi$"></SPAN>, as <!-- MATH
+ $E_k = {}^{-\partial \phi}/_{\partial x_k}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img278.png"
+ ALT="$E_k = {}^{-\partial \phi}/_{\partial x_k}$"></SPAN>. We also note that <!-- MATH
+ $S_J = {}^{\partial u_l}/_{\partial x_k}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="101" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img279.png"
+ ALT="$S_J = {}^{\partial u_l}/_{\partial x_k}$"></SPAN>, which comes from (<A HREF="node2.html#recrelation">1.1.7</A>). Substituting these into our definition of <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$T_I$"></SPAN> from (<A HREF="#pecrelation">2.2.1</A>), we find[<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;26]
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+T_{ij} = \sum_{J=1}^6 \left( c_{IJ}^E \frac{\partial u_l}{\partial x_k}\right) + \sum_{k=1}^3 \left( e_{Ik} \frac{\partial \phi}{\partial x_k} \right) \qquad \text{,}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="89" HEIGHT="35" BORDER="0"
+ SRC="img280.png"
+ ALT="\begin{displaymath}
+T_{ij} = \sum_{J=1}^6 \left( c_{IJ}^E \frac{\partial u_l}{\p...
+...Ik} \frac{\partial \phi}{\partial x_k} \right) \qquad \text{,}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">2</SPAN>.1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+differentiating both sides with respect to <SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$x_j$"></SPAN>, and noting, just as we did in (<A HREF="node2.html#motion">1.1.4</A>), that <!-- MATH
+ ${}^{\partial T_I} /_\partial x_j = \rho \ddot{u}_i$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="431" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img281.png"
+ ALT="${}^{\partial T_I} /_\partial x_j = \rho \ddot{u}_i$"></SPAN> gives the piezoelectric wave equation[<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;27]:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\rho\ddot{u}_i = \sum_{j,k,l = 1}^3 \left( c_{ijkl} \frac{\partial^2 u_l}{\partial x_k \partial x_j} \right)
++ \sum_{j,k=1}^3 e_{ijk}\left( \frac{\partial^2 \phi}{\partial x_k \partial x_j} \right)
+\end{equation}
+ -->
+<A NAME="pwaveq"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="pwaveq"></A><IMG
+ WIDTH="96" HEIGHT="35" BORDER="0"
+ SRC="img282.png"
+ ALT="\begin{displaymath}
+\rho\ddot{u}_i = \sum_{j,k,l = 1}^3 \left( c_{ijkl} \frac{\p...
+...eft( \frac{\partial^2 \phi}{\partial x_k \partial x_j} \right)
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">2</SPAN>.2)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The above system represents 3 equations, but there are four unknowns: <SPAN CLASS="MATH"><IMG
+ WIDTH="455" HEIGHT="76" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.png"
+ ALT="$u_{xyz}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="77" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.png"
+ ALT="$\phi$"></SPAN>. If we believe the divergence of electric displacement <!-- MATH
+ $\nabla \cdot D = 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="35" HEIGHT="30" ALIGN="BOTTOM" BORDER="0"
+ SRC="img284.png"
+ ALT="$\nabla \cdot D = 0$"></SPAN>, which is true for a piezoelectric solid with no free charges, we can find the fourth equation to be[<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;27]
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\sum_{i,k,l=1}^3 e_{ikl}\frac{\partial^2 u_l}{\partial x_k \partial_i} - \sum_{i,k=1}^3 \epsilon_{ik} \frac{\partial^2 \phi}{\partial x_k \partial x_i} = 0 \qquad \text{.}
+\end{equation}
+ -->
+<A NAME="pwaveq_phi"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="pwaveq_phi"></A><IMG
+ WIDTH="67" HEIGHT="16" BORDER="0"
+ SRC="img285.png"
+ ALT="\begin{displaymath}
+\sum_{i,k,l=1}^3 e_{ikl}\frac{\partial^2 u_l}{\partial x_k \...
+...partial^2 \phi}{\partial x_k \partial x_i} = 0 \qquad \text{.}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">2</SPAN>.3)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+Piezoelectric coupling changes the effective elasticity coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="340" HEIGHT="75" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$c$"></SPAN>. To find this effect, we solve the system of equations for a plane shear wave. We start by setting two of our particle displacement components, <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$u$"></SPAN>, to zero, and combining equations (<A HREF="#pwaveq">2.2.3</A>) and (<A HREF="#pwaveq_phi">2.2.4</A>). Since our hypothetical wave only has displacement coefficients along a single component--notated as <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$x$"></SPAN>--we will drop the tensor notation for clarity. [<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;27]
+<BR>
+<A NAME="pwaveq_plane"></A><IMG
+ WIDTH="431" HEIGHT="76" ALIGN="BOTTOM" BORDER="0"
+ SRC="img286.png"
+ ALT="\begin{align}
+c \frac{\partial^2 u}{\partial x^2} + e \frac{\partial^2 \phi}{\pa...
+...tial x^2} - \epsilon \frac{\partial^2 \phi}{\partial x^2} &amp;= 0\notag
+\end{align}">
+<BR>
+Manipulating the the second equation's <SPAN CLASS="MATH"><IMG
+ WIDTH="77" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.png"
+ ALT="$\phi$"></SPAN> term to enable subtracting it from the first equation yields:
+<IMG
+ WIDTH="342" HEIGHT="78" ALIGN="BOTTOM" BORDER="0"
+ SRC="img287.png"
+ ALT="\begin{equation*}
+\frac{e^2}{\epsilon} \frac{\partial^2 u}{\partial x^2} - e \frac{\partial^2 \phi}{\partial x^2} = 0 \qquad \text{,}
+\end{equation*}">
+which can now be added to equation (<A HREF="#pwaveq_plane">2.2.5</A>), to cancel the <SPAN CLASS="MATH"><IMG
+ WIDTH="77" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.png"
+ ALT="$\phi$"></SPAN> terms,
+<IMG
+ WIDTH="168" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img288.png"
+ ALT="\begin{equation*}
+\left(\frac{e^2}{\epsilon} + c\right) \frac{\partial^2u}{\partial x^2} = \rho \ddot{u} \qquad \text{.}
+\end{equation*}">
+Comparing the left-hand side of the above equation to that of equation (<A HREF="node2.html#npwaveq">1.1.9</A>) shows the relationship between the elasticity coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="366" HEIGHT="68" ALIGN="BOTTOM" BORDER="0"
+ SRC="img289.png"
+ ALT="$c'$"></SPAN> in a material exhibiting piezoelectric coupling, and the elasticity coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="340" HEIGHT="75" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$c$"></SPAN> in a material not exhibiting such coupling (for that vibratory regime), all other things being equal, to be
+<BR>
+<IMG
+ WIDTH="18" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img290.png"
+ ALT="\begin{align*}
+c' = c\left( 1 + \frac{e^2}{c \epsilon}\right)
+c' = c (1 + K^2) \qquad \text{.}
+\end{align*}">
+<BR>
+This value, <!-- MATH
+ $K^2 = e^2/c \epsilon$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="250" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img291.png"
+ ALT="$K^2 = e^2/c \epsilon$"></SPAN>, is called the <SPAN  CLASS="textit">electromechanical coupling coefficient</SPAN>, and it is given for a wave with a specific propagation direction and specific particulate displacement direction, on a particular material. Thus, it has the same dimensionality as <SPAN CLASS="MATH"><IMG
+ WIDTH="340" HEIGHT="75" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$c$"></SPAN>. [<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;28] N.B. this is a different variable from <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.png"
+ ALT="$k$"></SPAN>, the spatial frequency, although they are intimately related. Piezoelectric stiffening always results in a lower spatial frequency <!-- MATH
+ $k = \omega / v$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img292.png"
+ ALT="$k = \omega / v$"></SPAN>, and a higher phase velocity <SPAN CLASS="MATH"><IMG
+ WIDTH="321" HEIGHT="56" ALIGN="BOTTOM" BORDER="0"
+ SRC="img89.png"
+ ALT="$v$"></SPAN>, relative to the effective values, since 
+<BR>
+<A NAME="pvelocity_K"></A><IMG
+ WIDTH="63" HEIGHT="34" ALIGN="BOTTOM" BORDER="0"
+ SRC="img293.png"
+ ALT="\begin{align}
+k' &amp;= \omega  \mathpalette
+\setbox 0=\hbox{$:\oldsqrt{! }$}\di...
+...t0 depth -\dimen0}{\box0\lower0.4pt\box2}:}{1 + K^2} \qquad \text{.}
+\end{align}">
+<BR>
+Ceramics like PZT can have a <SPAN CLASS="MATH"><IMG
+ WIDTH="192" HEIGHT="46" ALIGN="BOTTOM" BORDER="0"
+ SRC="img294.png"
+ ALT="$K^2$"></SPAN> value of up to <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img295.png"
+ ALT="$0.5$"></SPAN>, while other substances like gallium arsenide can have <SPAN CLASS="MATH"><IMG
+ WIDTH="192" HEIGHT="46" ALIGN="BOTTOM" BORDER="0"
+ SRC="img294.png"
+ ALT="$K^2$"></SPAN> on the order of <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img296.png"
+ ALT="$10^{-4}$"></SPAN>. [<A
+ HREF="node33.html#Kino1987">18</A>, p.&nbsp;22]
+
+<P>
+Perhaps the most common method of incorporating piezoelectrics into vibrational measurement involves simply coupling the element to a surface and reading off the voltage-encoded acceleration signal. These are the kind of sensors typically used as ``contact microphones.'' Care must be taken to provide the the correct electrical impedance load to these sensors, otherwise the frequency response will be muffled. Care must also be taken to ensure the mechanical coupling is secure: in semi-permanent applications, the author prefers a double coat of epoxy, and for temporary applications, rare earth magnets. This method is cost-effective, as the resonant properties of the piezoelectric can be ignored, and virtually no external gear is needed. Piezoelectrics are at least as field ready as any other accelerometer; perhaps moreso because of how readily they can be replaced should things go awry. The only real drawback is the mechanical impedance caused by coupling. 
+
+<P>
+The piezoelectric effect is frequently used in the implementation of other devices as well. As electromechanical resonators, piezoelectrics are extremely selective in frequency, which allows them to be used as efficient oscillators and filters. [<A
+ HREF="node33.html#Kino1987">18</A>, p.&nbsp;27] There are several variants of piezoelectric sensors, each one sensing a different mode of vibration. However, the vibrations most of these devices are intended to sense are forced. These forced signals are often produced by the converse piezoelectric effect. [<A
+ HREF="node33.html#Cremer1973">7</A>, p.&nbsp;154] Therefore, despite their novelty, their applicability to the topic at hand--that of spatially measuring acoustic vibration in the field--is fatally limited.
+
+<P>
+<SPAN  CLASS="textit">Thickness Shear Mode resonators</SPAN> (TSM), as their name implies, act on the shear mode of vibration as it propagates the thickness of the crystal. TSM resonators are similar in form factor to the general purpose ``piezo-discs,'' however they are much more sensitive when driven to resonance. By tracking fluctuations in the resonant frequency of the crystal, a rigidly bound mass may be measured. [<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;37]
+
+<P>
+The measurement works using the fairly simple hypothesis offered by Lord Rayleigh: that the mechanical resonance only occurs when the peak kinetic energy balances the peak potential energy in a system. A mass that has been rigidly coupled to the surface of the crystal results in a change in kinetic energy, since the surface is naturally an anti-node for the strain wave, without a change in potential energy, which is zero at the surface regardless. [<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;43] 
+
+<P>
+Recall from earlier discussions of the boundary behaviors of a vibrating body <A HREF="node5.html#sec:impedance">1.4</A> that the incident surface of a reflected wave is the result of a change in impedance. When the impedance of at the surface is zero, the reflection is <SPAN CLASS="MATH"><IMG
+ WIDTH="376" HEIGHT="56" ALIGN="BOTTOM" BORDER="0"
+ SRC="img182.png"
+ ALT="$\pi$"></SPAN>, and the shear wave traveling across the sensor matches the resonance given by the object alone. However, if the impedance on the other side of the interface is nonzero, the wave is no longer rotated by <SPAN CLASS="MATH"><IMG
+ WIDTH="376" HEIGHT="56" ALIGN="BOTTOM" BORDER="0"
+ SRC="img182.png"
+ ALT="$\pi$"></SPAN>, and in the case of our forced vibration in section <A HREF="node5.html#sec:impedance">1.4</A>, a partial standing wave resulted. [<A
+ HREF="node33.html#Cremer1973">7</A>, p.&nbsp;119] In this case, the vibration is not held at a given frequency, but rather held at resonance, so the frequency of the vibration changes to match the impedance ratio at the barrier. 
+
+<P>
+The quality of TSM measurements, when applied correctly, is outstanding: the sensor can be driven at any of the thickness shear modes, which, similarly to the example we gave in section <A HREF="node7.html#sec:modes">1.6</A>, would favor odd integer multiples of the zero-th modal wave-number, itself likely in the megahertz range. The sensitivity of the TSM is given by the <SPAN  CLASS="textit">Sauerbrey equation</SPAN>,[<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;44]
+<IMG
+ WIDTH="30" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img297.png"
+ ALT="\begin{equation*}
+\delta f = - \frac{2 f_1^2 \rho_s}{sqrt{\mu_q \rho_q}} \qquad \text{,}
+\end{equation*}">
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="355" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img298.png"
+ ALT="$\rho_s$"></SPAN> is the surface mass density, or mass per unit area. Since the fluctuations of frequency as the result of incident mass density are proportional to the square of the resonant frequency, this technique can be calibrated to many applications, particularly in the medical and chemical fields. While typically TSM's measure the contribution of mass density most directly, the Rayleigh hypothesis should hold for any net force in the system. The fact that these devices must inject vibrations into the object to perform measurements is troubling as well. However, as long as the vibratory frequencies of interest are sufficiently low relative to the resonator, this should not pose much of a problem. Even the nonlinear relationship between incident mass density must be corrected for after the fact.
+
+<P>
+Although they vary over a wide range, the transducer itself is fairly cheap, and the implementation circuit is fairly simple. The frequency and stability of the crystal are the two primary factors in the cost vs quality curve. Digitizing the signal with consumer audio equipment would require heterodyning with a high frequency oscillator, perhaps also supplied by a crystal for stability purposes.
+
+<P>
+The measurement is only precise when the object of interest is thin in comparison with the wavelength of the vibration. This is because a reflection from the opposite boundary of the object measured would then cause its own reflections, and in fact would behave similarly to the coupled sensor as described earlier in this section. As a result of this, typically TSM's are used to measure the mass of rigid, thin films. Therefore, generality is not a strong point of this technique. 
+
+<P>
+We previously discussed <SPAN  CLASS="textit">Surface Acoustic Waves</SPAN> in section <A HREF="node4.html#sec:waves">1.3</A>, in the context of boundary interactions in vibrating objects. These waves have practical uses mostly related to communications and non-destructive testing. That being said, the field of SAW devices is ripe for development. The basic idea for a SAW device is to line a material with strips of piezoelectric material, which alternate to form a pattern that corresponds to the mode of vibration of interest. These striated piezoelectrics, called <SPAN  CLASS="textit">Interdigital Transducers</SPAN>, can be either sensors or transducers. Frequently, these are designed as two-port devices, to encompass both behaviors. [<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;36]
+
+<P>
+Using the IDT as a building-block, along with materials selected for favorable acoustic properties, ultrasonic mechanical circuits can be made to perform a number of signal processing tasks. [<A
+ HREF="node33.html#Kino1987">18</A>, p.&nbsp;318] These devices can perform massive computations in parallel, such as taking arbitrarily large Fourier Transforms, applying filtering, and inverse transforming. [<A
+ HREF="node33.html#Kino1987">18</A>, p.&nbsp;391] Sensor-actuator components have been constructed that exploit a dizzying array of vibratory regimes, for a variety of applications. <SPAN  CLASS="textit">Acoustic Plate Mode</SPAN> devices (APM), which excite shear plate modes both symmetric and asymmetric, and <SPAN  CLASS="textit">Flexural Plate Wave</SPAN> sensors, which are typically used in micromachining processes, both seem especially well-suited for measuring properties of fluids.[<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;106][<A
+ HREF="node33.html#Ballantine1997">3</A>, p.115]
+
+<P>
+However, for our purposes, the essential problem with such devices remains one of impedance. Even in the cases where APM and FPW devices can measure the effects of individual molecules, there is a complex vibratory reaction between the field being measured and the tools used to measure it. [<A
+ HREF="node33.html#Ballantine1997">3</A>, p.&nbsp;120] The quality of the measurements is clearly very high, field readiness and generality questionable, but the impedance is the true site of failure here. We will revisit the topic of piezoelectric devices after a brief characterization of the field in which they may be more useful to us: optics.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html189"
+  HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html187"
+  HREF="node11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html181"
+  HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html190"
+  HREF="node14.html">A Brief Overview of</A>
+<B> Up:</B> <A NAME="tex2html188"
+  HREF="node11.html">Tamara Smyth</A>
+<B> Previous:</B> <A NAME="tex2html182"
+  HREF="node12.html">Practical Considerations for Vibratory</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+joe
+2014-01-09
+</ADDRESS>
+</BODY>
+</HTML>
